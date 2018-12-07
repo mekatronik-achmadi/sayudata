@@ -1,6 +1,6 @@
 <?php
 
-define('HOST','localhost');
+define('HOST','http://156.67.212.124');
 define('USER','u3730452');
 define('PASS','');
 define('DB','u3730452_SayurData');
