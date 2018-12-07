@@ -1,6 +1,6 @@
 <?php
 
-define('HOST','localhost');
+define('HOST','http://sayu-run.com');
 define('USER','u3730452');
 define('PASS','');
 define('DB','u3730452_SayurData');
