@@ -47,7 +47,7 @@
 	}
 	echo "</table>";
 	
-	/Creating sql query
+	//Creating sql query
 	$sql2 = "SELECT * FROM pembeli";
 
 	//getting result
