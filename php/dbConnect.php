@@ -1,8 +1,8 @@
 <?php
 
 define('HOST','localhost');
-define('USER','seno.manggala@gmail.com');
-define('PASS','tosakan15000');
+define('USER','u3730452_achmadi');
+define('PASS','abu_musa');
 define('DB','u3730452_SayurData');
 
 //Connecting to Database
