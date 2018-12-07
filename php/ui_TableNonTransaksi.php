@@ -24,7 +24,7 @@
 	}
 	echo "</table>";
 	
-	echo "<p></p>";
+	echo "<br />";
 
 	//Creating sql query
 	$sql1 = "SELECT * FROM penjual";
@@ -49,7 +49,7 @@
 	}
 	echo "</table>";
 	
-	echo "<p></p>";
+	echo "<br />";
 	
 	//Creating sql query
 	$sql2 = "SELECT * FROM pembeli";
