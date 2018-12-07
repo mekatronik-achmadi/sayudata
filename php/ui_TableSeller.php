@@ -12,7 +12,8 @@
 	echo "<table border='1'>
 	<tr>
 	<th>ID</th>
-	<th>Sayur</th>
+	<th>NAMA</th>
+	<th>WA</th>
 	</tr>";
 
 	while($row = mysqli_fetch_array($result))

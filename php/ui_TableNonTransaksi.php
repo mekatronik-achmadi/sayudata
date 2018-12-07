@@ -4,10 +4,10 @@
 	require_once('dbConnect.php');
 	
 	//Creating sql query
-	$sql = "SELECT * FROM komoditi";
+	$sql0 = "SELECT * FROM komoditi";
 
 	//getting result
-	$result = mysqli_query($con,$sql);
+	$result0 = mysqli_query($con,$sql0);
 
 	echo "<table border='1'>
 	<tr>
@@ -15,55 +15,57 @@
 	<th>Sayur</th>
 	</tr>";
 
-	while($row = mysqli_fetch_array($result))
+	while($row0 = mysqli_fetch_array($result0))
 	{
 	echo "<tr>";
-	echo "<td>" . $row['id'] . "</td>";
-	echo "<td>" . $row['sayur'] . "</td>";
+	echo "<td>" . $row0['id'] . "</td>";
+	echo "<td>" . $row0['sayur'] . "</td>";
 	echo "</tr>";
 	}
 	echo "</table>";
 
 	//Creating sql query
-	$sql = "SELECT * FROM penjual";
+	$sql1 = "SELECT * FROM penjual";
 
 	//getting result
-	$result = mysqli_query($con,$sql);
+	$result1 = mysqli_query($con,$sql1);
 
 	echo "<table border='1'>
 	<tr>
 	<th>ID</th>
-	<th>Sayur</th>
+	<th>NAMA</th>
+	<th>WA</th>
 	</tr>";
 
-	while($row = mysqli_fetch_array($result))
+	while($row1 = mysqli_fetch_array($result1))
 	{
 	echo "<tr>";
-	echo "<td>" . $row['id'] . "</td>";
-	echo "<td>" . $row['name'] . "</td>";
-	echo "<td>" . $row['wa'] . "</td>";
+	echo "<td>" . $row1['id'] . "</td>";
+	echo "<td>" . $row1['name'] . "</td>";
+	echo "<td>" . $row1['wa'] . "</td>";
 	echo "</tr>";
 	}
 	echo "</table>";
 	
 	/Creating sql query
-	$sql = "SELECT * FROM pembeli";
+	$sql2 = "SELECT * FROM pembeli";
 
 	//getting result
-	$result = mysqli_query($con,$sql);
+	$result2 = mysqli_query($con,$sql2);
 
 	echo "<table border='1'>
 	<tr>
 	<th>ID</th>
-	<th>Sayur</th>
+	<th>NAMA</th>
+	<th>WA</th>
 	</tr>";
 
-	while($row = mysqli_fetch_array($result))
+	while($row2 = mysqli_fetch_array($result2))
 	{
 	echo "<tr>";
-	echo "<td>" . $row['id'] . "</td>";
-	echo "<td>" . $row['name'] . "</td>";
-	echo "<td>" . $row['wa'] . "</td>";
+	echo "<td>" . $row2['id'] . "</td>";
+	echo "<td>" . $row2['name'] . "</td>";
+	echo "<td>" . $row2['wa'] . "</td>";
 	echo "</tr>";
 	}
 	echo "</table>";
