@@ -2,7 +2,7 @@
 
 define('HOST','localhost');
 define('USER','u3730452');
-define('PASS','');
+define('PASS','tosakan15000');
 define('DB','u3730452_SayurData');
 
 //Connecting to Database
