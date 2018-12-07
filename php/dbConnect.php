@@ -1,7 +1,7 @@
 <?php
 
 define('HOST','localhost');
-define('USER','u3730452');
+define('USER','seno.manggala@gmail.com');
 define('PASS','tosakan15000');
 define('DB','u3730452_SayurData');
 
