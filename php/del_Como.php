@@ -7,10 +7,9 @@
 
 		$sql0 = "SELECT FROM komoditi WHERE id=$id;";
 
-		$r = mysqli_query($con,$sql0);
+		$r0 = mysqli_query($con,$sql0);
 
-		$row = mysqli_fetch_array($r);
-		$syr = $row['sayur'];
+		while($row0 = mysqli_fetch_array($r0)){$syr = $row0['sayur'];}
 
 		$sql = "DELETE FROM komoditi WHERE id=$id;";
 
