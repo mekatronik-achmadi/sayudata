@@ -40,7 +40,7 @@
 		    	<input type="text" name="sayur" id="NamaSayur" required>
 			</p>
 
-			<input type="submit" value="Hapuskan">
+			<input type="submit" value="Gantikan">
 			<input type="reset"  value="Bersihkan">
 		</form>
 
