@@ -1,9 +1,5 @@
 <?php
-	echo "<head>";
-    echo "<title>Table Non Transaction Contents</title>";
-    echo "</head>";
-    echo "<body>";
-    echo  "<h1>Welcome</h1>";
+    echo "<h1>Welcome</h1>";
 
     ///////////////////////////////////////////
 
@@ -87,6 +83,4 @@
 	echo "</table>";
 
 	mysqli_close($con);
-
-    echo "</body>";
 ?>
