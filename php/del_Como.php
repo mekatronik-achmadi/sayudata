@@ -1,6 +1,6 @@
 <?php
 	//Getting Id
-	$sayur = $_GET['id'];
+	$id = $_GET['id'];
 
 	//Importing database
 	require_once('db_Connect.php');
