@@ -4,7 +4,7 @@
 	$id = $_GET['id'];
 
 	//Importing database
-	require_once('dbConnect.php');
+	require_once('db_Connect.php');
 
 	//Creating sql query with where clause to get an specific employee
 	$sql = "SELECT * FROM komoditi WHERE id=$id";

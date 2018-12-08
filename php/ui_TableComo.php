@@ -1,7 +1,7 @@
 <?php
 
 	//Importing Database Script
-	require_once('dbConnect.php');
+	require_once('db_Connect.php');
 
 	//Creating sql query
 	$sql = "SELECT * FROM komoditi";

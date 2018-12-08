@@ -5,7 +5,7 @@
 		$name = $_POST['sayur'];
 
 		//importing database connection script
-		require_once('dbConnect.php');
+		require_once('db_Connect.php');
 
 		//Creating sql query
 		$sql = "UPDATE komoditi SET sayur = '$sayur' WHERE id = $id;";

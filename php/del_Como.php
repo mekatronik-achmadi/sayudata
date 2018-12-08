@@ -3,7 +3,7 @@
 	$id = $_GET['id'];
 
 	//Importing database
-	require_once('dbConnect.php');
+	require_once('db_Connect.php');
 
 	//Creating sql query
 	$sql = "DELETE FROM komoditi WHERE id=$id;";
