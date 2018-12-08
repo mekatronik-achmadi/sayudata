@@ -16,10 +16,10 @@
 			<input type="reset"  value="Bersihkan">
 		</form>
 
-		<form action="del_Como.php" method="get">
+		<form action="del_Como.php" method="post">
 			<p>
 		    	<label for="IDSayur">ID Sayur:  </label>
-		    	<input type="number" name="id" id="IDSayur">
+		    	<input type="number" name="id" id="IDSayur" required>
 			</p>
 
 			<input type="submit" value="Hapuskan">

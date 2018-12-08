@@ -1,7 +1,7 @@
 <?php
-	if($_SERVER['REQUEST_METHOD']=='GET'){
+	if($_SERVER['REQUEST_METHOD']=='POST'){
 
-		$id = $_GET['id'];
+		$id = $_POST['id'];
 
 		require_once('db_Connect.php');
 
