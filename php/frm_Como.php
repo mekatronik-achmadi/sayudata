@@ -9,7 +9,7 @@
 		<form action="add_Como.php" method="post">
 			<p>
 		    	<label for="JenisSayur">Jenis Sayur:</label>
-		    	<input type="text" name="sayur" id="JenisSayur">
+		    	<input type="text" name="sayur" id="JenisSayur" required>
 			</p>
 
 			<input type="submit" value="Tambahkan">
