@@ -6,6 +6,7 @@
 	</head>
 
 	<body>
+		<h2> Tambah Komoditi </h2>
 		<form action="add_Como.php" method="post">
 			<p>
 		    	<label for="JenisSayur">Jenis Sayur:</label>
@@ -16,10 +17,27 @@
 			<input type="reset"  value="Bersihkan">
 		</form>
 
+		<h2> Hapus Komoditi </h2>
 		<form action="del_Como.php" method="post">
 			<p>
 		    	<label for="IDSayur">ID Sayur:  </label>
 		    	<input type="number" name="id" id="IDSayur" required>
+			</p>
+
+			<input type="submit" value="Hapuskan">
+			<input type="reset"  value="Bersihkan">
+		</form>
+
+		<h2> Ganti Nama Komoditi </h2>
+		<form action="upd_Como.php" method="post">
+			<p>
+		    	<label for="IDSayur">ID Sayur:  </label>
+		    	<input type="number" name="id" id="IDSayur" required>
+			</p>
+
+			<p>
+		    	<label for="NamaSayur">Nama Sayur:  </label>
+		    	<input type="number" name="sayur" id="NamaSayur" required>
 			</p>
 
 			<input type="submit" value="Hapuskan">
