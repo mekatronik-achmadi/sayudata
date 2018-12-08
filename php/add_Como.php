@@ -10,9 +10,9 @@
 
 		//Executing query to database
 		if(mysqli_query($con,$sql)){
-			echo 'Sayur Added Successfully: $sayur';
+			echo "Sayur Added Successfully: $sayur";
 		}else{
-			echo 'Could Not Add Sayur: $sayur';
+			echo "Could Not Add Sayur: $sayur";
 		}
 
 		mysqli_close($con);

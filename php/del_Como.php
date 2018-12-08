@@ -15,9 +15,9 @@
 		$sql = "DELETE FROM komoditi WHERE id=$id;";
 
 		if(mysqli_query($con,$sql)){
-			echo 'Sayur Deleted Successfully: $syr';
+			echo "Sayur Deleted Successfully: $syr";
 		}else{
-			echo 'Could Not Delete Sayur: $syr';
+			echo "Could Not Delete Sayur: $syr";
 		}
 
 		mysqli_close($con);
