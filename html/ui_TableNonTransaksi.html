@@ -5,9 +5,10 @@
     </head>
     <body>
         <h1>Welcome</h1>
+
         <p>Tabel Komoditi.</p>
 <script language="php" >
-	require_once('php/db_Connect.php');
+	require_once('../php/db_Connect.php');
 
 	$sql0 = "SELECT * FROM komoditi";
 
@@ -32,8 +33,8 @@
 </script>
 
 	<p>Tabel Penjual.</p>
-<?php
-	require_once('php/db_Connect.php');
+<script language="php" >
+	require_once('../php/db_Connect.php');
 	$sql1 = "SELECT * FROM penjual";
 
 	$result1 = mysqli_query($con,$sql1);
@@ -56,11 +57,11 @@
 	echo "</table>";
 
 	echo "<br />";
-?>
+</script>
 
 	<p>Tabel Pembeli.</p>
-<?php
-	require_once('php/db_Connect.php');
+<script language="php" >
+	require_once('../php/db_Connect.php');
 	$sql2 = "SELECT * FROM pembeli";
 
 	$result2 = mysqli_query($con,$sql2);
@@ -83,7 +84,7 @@
 	echo "</table>";
 
 	mysqli_close($con);
-?>
+</script>
 
     </body>
 </html>
