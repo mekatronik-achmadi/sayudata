@@ -16,7 +16,7 @@
 			<input type="reset"  value="Bersihkan">
 		</form>
 
-		<form action="del_Como.php" method="post">
+		<form action="del_Como.php" method="get">
 			<p>
 		    	<label for="IDSayur">ID Sayur:  </label>
 		    	<input type="number" name="id" id="IDSayur">
