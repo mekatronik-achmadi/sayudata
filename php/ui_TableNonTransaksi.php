@@ -1,9 +1,9 @@
 <?php
-	echo "<head>"
-    echo "<title>Table Non Transaction Contents</title>"
-    echo "</head>"
-    echo "<body>"
-    echo  "<h1>Welcome</h1>"
+	echo "<head>";
+    echo "<title>Table Non Transaction Contents</title>";
+    echo "</head>";
+    echo "<body>";
+    echo  "<h1>Welcome</h1>";
 
     ///////////////////////////////////////////
 
@@ -11,7 +11,7 @@
 
     ///////////////////////////////////////////
 
-   	echo "<p>Tabel Komoditi.</p>"
+   	echo "<p>Tabel Komoditi.</p>";
 
 	$sql0 = "SELECT * FROM komoditi";
 
@@ -36,7 +36,7 @@
 
 	///////////////////////////////////////////
 
-	echo "<p>Tabel Penjual.</p>"
+	echo "<p>Tabel Penjual.</p>";
 
 	$sql1 = "SELECT * FROM penjual";
 
@@ -63,7 +63,7 @@
 
 	///////////////////////////////////////////
 
-	echo "<p>Tabel Pembeli.</p>"
+	echo "<p>Tabel Pembeli.</p>";
 
 	$sql2 = "SELECT * FROM pembeli";
 
@@ -88,5 +88,5 @@
 
 	mysqli_close($con);
 
-    echo "</body>"
+    echo "</body>";
 ?>
