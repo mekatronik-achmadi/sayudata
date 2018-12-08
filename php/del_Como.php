@@ -7,7 +7,7 @@
 
 		$sql0 = "SELECT FROM komoditi WHERE id=$id;";
 
-		$r = mysqli_query($con,$sql);
+		$r = mysqli_query($con,$sql0);
 
 		$row = mysqli_fetch_array($r);
 		$syr = $row['sayur'];
