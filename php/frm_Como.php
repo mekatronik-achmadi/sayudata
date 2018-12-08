@@ -13,15 +13,17 @@
 			</p>
 
 			<input type="submit" value="Tambahkan">
+			<input type="reset"  value="Bersihkan">
 		</form>
 
 		<form action="del_Como.php" method="post">
 			<p>
 		    	<label for="IDSayur">ID Sayur:  </label>
-		    	<input type="text" name="id" id="IDSayur">
+		    	<input type="number" name="id" id="IDSayur">
 			</p>
 
 			<input type="submit" value="Hapuskan">
+			<input type="reset"  value="Bersihkan">
 		</form>
 
 		<?php
