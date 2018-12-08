@@ -27,8 +27,6 @@
 		</form>
 
 		<?php
-			    echo "<title>Table Non Transaction Contents</title>";
-				echo "<h1>Welcome</h1>";
 				require_once('db_Connect.php');
 			   	echo "<p>Tabel Komoditi.</p>";
 				$sql0 = "SELECT * FROM komoditi";

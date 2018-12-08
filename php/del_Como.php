@@ -8,6 +8,7 @@
 	//Creating sql query
 	$sql = "DELETE FROM komoditi WHERE id=$id;";
 
+	echo "ID is $id";
 	//Deleting record in database
 	if(mysqli_query($con,$sql)){
 		echo 'Sayur Deleted Successfully';
