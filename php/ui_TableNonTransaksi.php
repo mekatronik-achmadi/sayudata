@@ -17,16 +17,21 @@
 
 	echo "<table border='1'>
 	<tr>
+	<th>No</th>
 	<th>ID</th>
 	<th>Sayur</th>
 	</tr>";
 
+	$i = 0;
 	while($row0 = mysqli_fetch_array($result0))
 	{
-	echo "<tr>";
-	echo "<td>" . $row0['id'] . "</td>";
-	echo "<td>" . $row0['sayur'] . "</td>";
-	echo "</tr>";
+		echo "<tr>";
+		echo "<td>" . $i . "</td>";
+		echo "<td>" . $row0['id'] . "</td>";
+		echo "<td>" . $row0['sayur'] . "</td>";
+		echo "</tr>";
+
+		$i++;
 	}
 	echo "</table>";
 
