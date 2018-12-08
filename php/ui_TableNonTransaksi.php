@@ -25,13 +25,12 @@
 	$i = 0;
 	while($row0 = mysqli_fetch_array($result0))
 	{
+		$i++;
 		echo "<tr>";
 		echo "<td>" . $i . "</td>";
 		echo "<td>" . $row0['id'] . "</td>";
 		echo "<td>" . $row0['sayur'] . "</td>";
 		echo "</tr>";
-
-		$i++;
 	}
 	echo "</table>";
 
@@ -52,13 +51,15 @@
 	<th>WA</th>
 	</tr>";
 
+	$i = 0;
 	while($row1 = mysqli_fetch_array($result1))
 	{
-	echo "<tr>";
-	echo "<td>" . $row1['id'] . "</td>";
-	echo "<td>" . $row1['name'] . "</td>";
-	echo "<td>" . $row1['wa'] . "</td>";
-	echo "</tr>";
+		$i++;
+		echo "<tr>";
+		echo "<td>" . $row1['id'] . "</td>";
+		echo "<td>" . $row1['name'] . "</td>";
+		echo "<td>" . $row1['wa'] . "</td>";
+		echo "</tr>";
 	}
 	echo "</table>";
 
@@ -79,13 +80,15 @@
 	<th>WA</th>
 	</tr>";
 
+	$i = 0;
 	while($row2 = mysqli_fetch_array($result2))
 	{
-	echo "<tr>";
-	echo "<td>" . $row2['id'] . "</td>";
-	echo "<td>" . $row2['name'] . "</td>";
-	echo "<td>" . $row2['wa'] . "</td>";
-	echo "</tr>";
+		$i++;
+		echo "<tr>";
+		echo "<td>" . $row2['id'] . "</td>";
+		echo "<td>" . $row2['name'] . "</td>";
+		echo "<td>" . $row2['wa'] . "</td>";
+		echo "</tr>";
 	}
 	echo "</table>";
 
