@@ -5,11 +5,12 @@
 
 		require_once('db_Connect.php');
 
-		$sql0 = "SELECT FROM komoditi WHERE id=$id;";
+		$sql0 = "SELECT * FROM komoditi WHERE id=$id;";
 
 		$r0 = mysqli_query($con,$sql0);
 
-		while($row0 = mysqli_fetch_array($r0)){$syr = $row0['sayur'];}
+		$row0 = mysqli_fetch_array($r0);
+		$syr = $row0['sayur'];
 
 		$sql = "DELETE FROM komoditi WHERE id=$id;";
 
