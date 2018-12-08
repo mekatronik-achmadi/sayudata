@@ -37,7 +37,7 @@
 
 			<p>
 		    	<label for="NamaSayur">Nama Sayur:  </label>
-		    	<input type="number" name="sayur" id="NamaSayur" required>
+		    	<input type="text" name="sayur" id="NamaSayur" required>
 			</p>
 
 			<input type="submit" value="Hapuskan">
