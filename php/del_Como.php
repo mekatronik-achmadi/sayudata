@@ -1,21 +1,25 @@
 <?php
-	//Getting Id
-	$id = $_GET['id'];
+	if($_SERVER['REQUEST_METHOD']=='GET'){
 
-	//Importing database
-	require_once('db_Connect.php');
+		$id = $_GET['id'];
 
-	//Creating sql query
-	$sql = "DELETE FROM komoditi WHERE id=$id;";
+		require_once('db_Connect.php');
 
-	echo "ID is $id";
-	//Deleting record in database
-	if(mysqli_query($con,$sql)){
-		echo 'Sayur Deleted Successfully';
-	}else{
-		echo 'Could Not Delete Sayur Try Again';
+		$sql0 = "SELECT FROM komoditi WHERE id=$id;";
+
+		$r = mysqli_query($con,$sql);
+
+		$row = mysqli_fetch_array($r);
+		$syr = $row['sayur'];
+
+		$sql = "DELETE FROM komoditi WHERE id=$id;";
+
+		if(mysqli_query($con,$sql)){
+			echo 'Sayur Deleted Successfully: $syr';
+		}else{
+			echo 'Could Not Delete Sayur: $syr';
+		}
+
+		mysqli_close($con);
 	}
-
-	//closing connection
-	mysqli_close($con);
 ?>

@@ -1,10 +1,8 @@
 <?php
 	if($_SERVER['REQUEST_METHOD']=='POST'){
 
-		//Getting values
 		$sayur = $_POST['sayur'];
 
-		//Creating an sql query
 		$sql = "INSERT INTO komoditi (sayur) VALUES ('$sayur')";
 
 		//Importing our db connection script
@@ -12,12 +10,11 @@
 
 		//Executing query to database
 		if(mysqli_query($con,$sql)){
-			echo 'Sayur Added Successfully';
+			echo 'Sayur Added Successfully: $sayur';
 		}else{
-			echo 'Could Not Add Sayur';
+			echo 'Could Not Add Sayur: $sayur';
 		}
 
-		//Closing the database
 		mysqli_close($con);
 	}
 ?>
