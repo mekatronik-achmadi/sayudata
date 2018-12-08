@@ -46,7 +46,7 @@
 
 		<?php
 				require_once('db_Connect.php');
-			   	echo "<p>Tabel Komoditi.</p>";
+			   	echo "<h2>Tabel Komoditi.</h2>";
 				$sql0 = "SELECT * FROM komoditi";
 				$result0 = mysqli_query($con,$sql0);
 				echo "<table border='1'>
