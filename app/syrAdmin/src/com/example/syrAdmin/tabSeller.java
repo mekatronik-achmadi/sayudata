@@ -16,8 +16,8 @@ public class tabSeller extends Activity{
 
         TextView tv=new TextView(this);
         tv.setTextSize(25);
-        tv.setGravity(Gravity.CENTER_VERTICAL);
-        tv.setText("This Is Tab2 Activity");
+        tv.setGravity(Gravity.CENTER);
+        tv.setText("This Is Seller Tab");
 
         setContentView(tv);
     }

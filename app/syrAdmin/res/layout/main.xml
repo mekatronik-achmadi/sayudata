@@ -8,18 +8,22 @@
             android:id="@+id/LinearLayout01"
             android:orientation="vertical"
             android:layout_height="fill_parent"
-            android:layout_width="fill_parent">
+            android:layout_width="fill_parent"
+            android:weightSum="100">
 
         <TabWidget
                 android:id="@android:id/tabs"
-                android:layout_height="wrap_content"
-                android:layout_width="fill_parent">
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="7">
         </TabWidget>
 
         <FrameLayout
                 android:id="@android:id/tabcontent"
-                android:layout_height="fill_parent"
-                android:layout_width="fill_parent">
+                android:layout_width="fill_parent"
+                android:layout_height="0dp"
+                android:layout_weight="100
+                ">
         </FrameLayout>
 
     </LinearLayout>

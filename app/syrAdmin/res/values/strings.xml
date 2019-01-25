@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Sayu-Run Admin App</string>
+    <string name="btnComoEntry">Tambahkan Komoditas</string>
 </resources>

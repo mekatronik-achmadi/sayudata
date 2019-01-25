@@ -14,5 +14,6 @@
         </activity>
         <activity android:name=".tabComo"></activity>
         <activity android:name=".tabSeller"></activity>
+        <activity android:name=".tabBuyer"></activity>
     </application>
 </manifest>

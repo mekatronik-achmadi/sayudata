@@ -19,6 +19,7 @@ public class MainActivity extends TabActivity {
 
         TabHost.TabSpec tabComo = tabHost.newTabSpec("Comodity");
         TabHost.TabSpec tabSeller = tabHost.newTabSpec("Seller");
+        TabHost.TabSpec tabBuyer = tabHost.newTabSpec("Buyer");
 
         tabComo.setIndicator("Comodity");
         tabComo.setContent(new Intent(this,tabComo.class));
@@ -26,9 +27,11 @@ public class MainActivity extends TabActivity {
         tabSeller.setIndicator("Seller");
         tabSeller.setContent(new Intent(this,tabSeller.class));
 
+        tabBuyer.setIndicator("Buyer");
+        tabBuyer.setContent(new Intent(this,tabBuyer.class));
 
         tabHost.addTab(tabComo);
         tabHost.addTab(tabSeller);
-
+        tabHost.addTab(tabBuyer);
     }
 }
