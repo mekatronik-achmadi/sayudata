@@ -48,7 +48,6 @@
 	<tr>
 	<th>ID</th>
 	<th>NAMA</th>
-	<th>WA</th>
 	</tr>";
 
 	$i = 0;
@@ -58,7 +57,6 @@
 		echo "<tr>";
 		echo "<td>" . $row1['id'] . "</td>";
 		echo "<td>" . $row1['name'] . "</td>";
-		echo "<td>" . $row1['wa'] . "</td>";
 		echo "</tr>";
 	}
 	echo "</table>";
@@ -77,7 +75,6 @@
 	<tr>
 	<th>ID</th>
 	<th>NAMA</th>
-	<th>WA</th>
 	</tr>";
 
 	$i = 0;
@@ -87,7 +84,6 @@
 		echo "<tr>";
 		echo "<td>" . $row2['id'] . "</td>";
 		echo "<td>" . $row2['name'] . "</td>";
-		echo "<td>" . $row2['wa'] . "</td>";
 		echo "</tr>";
 	}
 	echo "</table>";
