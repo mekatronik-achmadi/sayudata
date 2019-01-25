@@ -15,5 +15,9 @@ public class ServerConst {
     public static final String KEY_COMO_ID = "id";
     public static final String KEY_COMO_SAYUR = "sayur";
 
+    public static final String TAG_COMO_JSON="result";
+    public static final String TAG_COMO_ID="id";
+    public static final String TAG_COMO_SAYUR="sayur";
+
     public static final String ID_COMO = "id_como";
 }

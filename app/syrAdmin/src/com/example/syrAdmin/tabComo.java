@@ -2,13 +2,16 @@ package com.example.syrAdmin;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.Toast;
+import android.widget.*;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -23,6 +26,9 @@ public class tabComo extends Activity implements View.OnClickListener {
     Button btnComoSearch;
     Button btnComoDelete;
     Button btnComoList;
+
+    ListView lstComo;
+    String JSON_BUFFER;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -39,7 +45,11 @@ public class tabComo extends Activity implements View.OnClickListener {
         btnComoDelete = (Button) findViewById(R.id.btnComoDelete);
         btnComoList = (Button) findViewById(R.id.btnComoList);
 
+        lstComo = (ListView) findViewById(R.id.lstComo);
+
         btnComoEntry.setOnClickListener(this);
+
+        getJSON();
     }
 
     private void addComo(){
@@ -74,6 +84,64 @@ public class tabComo extends Activity implements View.OnClickListener {
 
         addComo ac = new addComo();
         ac.execute();
+    }
+
+    private void listComo(){
+        JSONObject jsonObject = null;
+        ArrayList<HashMap<String,String>> arrayList= new ArrayList<HashMap<String, String>>();
+        try{
+            jsonObject = new JSONObject(JSON_BUFFER);
+            JSONArray result = jsonObject.getJSONArray(ServerConst.TAG_COMO_JSON);
+
+            for(int i=0;i<result.length();i++){
+                JSONObject jo = result.getJSONObject(i);
+                String id = jo.getString(ServerConst.TAG_COMO_ID);
+                String sayur = jo.getString(ServerConst.TAG_COMO_SAYUR);
+
+                HashMap<String,String> comodity = new HashMap();
+                comodity.put(ServerConst.TAG_COMO_ID,id);
+                comodity.put(ServerConst.TAG_COMO_SAYUR,sayur);
+                arrayList.add(comodity);
+            }
+        } catch(JSONException e){
+            e.printStackTrace();
+        }
+
+        ListAdapter listAdapter = new SimpleAdapter(
+                tabComo.this, arrayList,R.layout.list_comodity,
+                new String[]{ServerConst.TAG_COMO_ID,ServerConst.TAG_COMO_SAYUR},
+                new int[]{R.id.id,R.id.sayur});
+
+        lstComo.setAdapter(listAdapter);
+    }
+
+    private void getJSON(){
+        class GetJSON extends AsyncTask<Void,Void,String>{
+            ProgressDialog loading;
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                loading = ProgressDialog.show(tabComo.this,"Fetching Data","Wait...",false,false);
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                loading.dismiss();
+                JSON_BUFFER = s;
+                listComo();
+            }
+
+            @Override
+            protected String doInBackground(Void... params) {
+                ReqHandler rh = new ReqHandler();
+                String s = rh.sendGetReq(ServerConst.SERVER_URL + ServerConst.URL_COMO_LIST);
+                return s;
+            }
+        }
+
+        GetJSON gj = new GetJSON();
+        gj.execute();
     }
 
     @Override
