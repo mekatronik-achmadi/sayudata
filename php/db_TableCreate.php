@@ -15,9 +15,7 @@
 
 	$tbl_seller = "CREATE TABLE penjual (
 	 `id` INT(4) NOT NULL AUTO_INCREMENT,
-	 `rid` TEXT NOT NULL,
 	 `name` TEXT NOT NULL,
-	 `wa` TEXT NOT NULL,
 	  PRIMARY KEY (`id`)
 	  ) ENGINE = InnoDB;";
 
@@ -27,9 +25,7 @@
 
 	$tbl_buyer = "CREATE TABLE pembeli (
 	 `id` INT(4) NOT NULL AUTO_INCREMENT,
-	 `rid` TEXT NOT NULL,
 	 `name` TEXT NOT NULL,
-	 `wa` TEXT NOT NULL,
 	  PRIMARY KEY (`id`)
 	  ) ENGINE = InnoDB;";
 
