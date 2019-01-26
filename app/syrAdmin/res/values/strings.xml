@@ -2,8 +2,8 @@
 <resources>
     <string name="app_name">Sayu-Run Admin App</string>
     <string name="btnComoEntry">Tambahkan</string>
-    <string name="btnComoSearch">Cari</string>
-    <string name="btnComoDelete">Hapus</string>
+    <string name="btnComoSearch">Cari Sayur</string>
+    <string name="btnComoDelete">Hapus ID</string>
     <string name="btnComoList">Lihat Semua</string>
     <string name="lblComoList">Daftar Komoditas</string>
     <string name="lblComoSearch">Pencarian Komoditas</string>

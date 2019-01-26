@@ -10,12 +10,13 @@ public class ServerConst {
     public static final String URL_COMO_DEL="del_Como.php";
     public static final String URL_COMO_GET="get_Como.php";
     public static final String URL_COMO_LIST="list_Como.php";
+    public static final String URL_COMO_FIND="find_Como.php?sayur=";
     public static final String URL_COMO_UPD="upd_Como.php";
 
     public static final String KEY_COMO_ID = "id";
     public static final String KEY_COMO_SAYUR = "sayur";
 
-    public static final String TAG_COMO_JSON="result";
+    public static final String TAG_COMO_RESULT="result";
     public static final String TAG_COMO_ID="id";
     public static final String TAG_COMO_SAYUR="sayur";
 

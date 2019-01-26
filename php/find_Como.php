@@ -4,7 +4,7 @@
 
 	require_once('db_Connect.php');
 
-	$sql = "SELECT * FROM komoditi WHERE sayur='$sayur'";
+	$sql = "SELECT * FROM komoditi WHERE sayur='%$sayur%'";
 
 	$r = mysqli_query($con,$sql);
 

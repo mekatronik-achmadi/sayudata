@@ -29,6 +29,8 @@ public class tabComo extends Activity implements View.OnClickListener {
     Runnable listComoReq;
     Handler listComoHndl;
 
+    ListView lstSearch;
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -46,7 +48,11 @@ public class tabComo extends Activity implements View.OnClickListener {
         lstComo = (ListView) findViewById(R.id.lstComo);
         lstComo.setAdapter(null);
 
+        lstSearch = (ListView) findViewById(R.id.lstSearch);
+        lstSearch.setAdapter(null);
+
         btnComoEntry.setOnClickListener(this);
+        btnComoSearch.setOnClickListener(this);
 
         listComoHndl = new Handler();
         listComoReq = new Runnable() {
@@ -96,7 +102,7 @@ public class tabComo extends Activity implements View.OnClickListener {
         ArrayList<HashMap<String,String>> arrayList= new ArrayList<HashMap<String, String>>();
         try{
             jsonObject = new JSONObject(str_input);
-            JSONArray result = jsonObject.getJSONArray(ServerConst.TAG_COMO_JSON);
+            JSONArray result = jsonObject.getJSONArray(ServerConst.TAG_COMO_RESULT);
             String id;
             String sayur;
 
@@ -147,11 +153,74 @@ public class tabComo extends Activity implements View.OnClickListener {
         lc.execute();
     }
 
+    private void viewFindComo(String str_input){
+        JSONObject jsonObject;
+        ArrayList<HashMap<String,String>> arrayList= new ArrayList<HashMap<String, String>>();
+        try{
+            jsonObject = new JSONObject(str_input);
+            JSONArray result = jsonObject.getJSONArray(ServerConst.TAG_COMO_RESULT);
+            String id;
+            String sayur;
+
+            for(int i=0;i<result.length();i++){
+                JSONObject jo = result.getJSONObject(i);
+                id = jo.getString(ServerConst.TAG_COMO_ID);
+                sayur = jo.getString(ServerConst.TAG_COMO_SAYUR);
+
+                HashMap<String,String> comodity = new HashMap();
+                comodity.put(ServerConst.TAG_COMO_ID,id);
+                comodity.put(ServerConst.TAG_COMO_SAYUR,sayur);
+                arrayList.add(comodity);
+            }
+        } catch(JSONException e){
+            e.printStackTrace();
+        }
+
+        ListAdapter listAdapter = new SimpleAdapter(
+                tabComo.this, arrayList,R.layout.list_comodity,
+                new String[]{ServerConst.TAG_COMO_ID,ServerConst.TAG_COMO_SAYUR},
+                new int[]{R.id.id,R.id.sayur});
+
+        lstSearch.setAdapter(listAdapter);
+    }
+
+    private void findComo(){
+        final String sayur = txtComoSearch.getText().toString().trim();
+        txtComoSearch.setText("");
+
+        class findComo extends AsyncTask<Void,Void,String>{
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                viewFindComo(s);
+            }
+
+            @Override
+            protected String doInBackground(Void... v) {
+                ReqHandler rh = new ReqHandler();
+                String s = rh.sendGetRequestParam(ServerConst.SERVER_URL + ServerConst.URL_COMO_FIND,sayur);
+                return s;
+            }
+        }
+
+        findComo fc = new findComo();
+        fc.execute();
+    }
+
     @Override
     public void onClick(View v) {
         if(v == btnComoEntry){
             if(!txtComoEntry.getText().toString().isEmpty()) {
                 addComo();
+            }
+        }else if(v == btnComoSearch){
+            if(!txtComoSearch.getText().toString().isEmpty()) {
+                findComo();
             }
         }
     }
