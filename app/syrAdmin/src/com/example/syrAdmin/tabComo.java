@@ -2,7 +2,6 @@ package com.example.syrAdmin;
 
 import android.app.Activity;
 import android.app.ProgressDialog;
-import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
@@ -28,7 +27,7 @@ public class tabComo extends Activity implements View.OnClickListener {
     Button btnComoList;
 
     ListView lstComo;
-    String JSON_BUFFER;
+    String JSON_COMO;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -48,8 +47,7 @@ public class tabComo extends Activity implements View.OnClickListener {
         lstComo = (ListView) findViewById(R.id.lstComo);
 
         btnComoEntry.setOnClickListener(this);
-
-        getJSON();
+        btnComoList.setOnClickListener(this);
     }
 
     private void addComo(){
@@ -86,11 +84,11 @@ public class tabComo extends Activity implements View.OnClickListener {
         ac.execute();
     }
 
-    private void listComo(){
+    private void viewListComo(){
         JSONObject jsonObject = null;
         ArrayList<HashMap<String,String>> arrayList= new ArrayList<HashMap<String, String>>();
         try{
-            jsonObject = new JSONObject(JSON_BUFFER);
+            jsonObject = new JSONObject(JSON_COMO);
             JSONArray result = jsonObject.getJSONArray(ServerConst.TAG_COMO_JSON);
 
             for(int i=0;i<result.length();i++){
@@ -115,8 +113,8 @@ public class tabComo extends Activity implements View.OnClickListener {
         lstComo.setAdapter(listAdapter);
     }
 
-    private void getJSON(){
-        class GetJSON extends AsyncTask<Void,Void,String>{
+    private void listComo(){
+        class ListComo extends AsyncTask<Void,Void,String>{
             ProgressDialog loading;
             @Override
             protected void onPreExecute() {
@@ -128,8 +126,8 @@ public class tabComo extends Activity implements View.OnClickListener {
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
                 loading.dismiss();
-                JSON_BUFFER = s;
-                listComo();
+                JSON_COMO = s;
+                viewListComo();
             }
 
             @Override
@@ -140,8 +138,8 @@ public class tabComo extends Activity implements View.OnClickListener {
             }
         }
 
-        GetJSON gj = new GetJSON();
-        gj.execute();
+        ListComo lc = new ListComo();
+        lc.execute();
     }
 
     @Override
@@ -150,6 +148,8 @@ public class tabComo extends Activity implements View.OnClickListener {
             if(!txtComoEntry.getText().toString().isEmpty()) {
                 addComo();
             }
+        }else if(v == btnComoList){
+            listComo();
         }
     }
 }
