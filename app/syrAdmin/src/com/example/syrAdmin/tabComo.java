@@ -1,9 +1,9 @@
 package com.example.syrAdmin;
 
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.*;
 import org.json.JSONArray;
@@ -24,12 +24,10 @@ public class tabComo extends Activity implements View.OnClickListener {
     Button btnComoEntry;
     Button btnComoSearch;
     Button btnComoDelete;
-    Button btnComoList;
 
     ListView lstComo;
-    String JSON_COMO;
-
-    TextView txtJSON;
+    Runnable listComoReq;
+    Handler listComoHndl;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -44,15 +42,21 @@ public class tabComo extends Activity implements View.OnClickListener {
         btnComoEntry = (Button) findViewById(R.id.btnComoEntry);
         btnComoSearch = (Button) findViewById(R.id.btnComoSearch);
         btnComoDelete = (Button) findViewById(R.id.btnComoDelete);
-        btnComoList = (Button) findViewById(R.id.btnComoList);
-
-        txtJSON = (TextView) findViewById(R.id.txtJSON);
 
         lstComo = (ListView) findViewById(R.id.lstComo);
         lstComo.setAdapter(null);
 
         btnComoEntry.setOnClickListener(this);
-        btnComoList.setOnClickListener(this);
+
+        listComoHndl = new Handler();
+        listComoReq = new Runnable() {
+            @Override
+            public void run() {
+                listComo();
+                listComoHndl.postDelayed(this,500);
+            }
+        };
+        listComoHndl.post(listComoReq);
     }
 
     private void addComo(){
@@ -60,18 +64,15 @@ public class tabComo extends Activity implements View.OnClickListener {
         txtComoEntry.setText("");
 
         class addComo extends AsyncTask<Void,Void,String>{
-            ProgressDialog loading;
 
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(tabComo.this,"Adding...","Wait...",false,false);
             }
 
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                loading.dismiss();
                 Toast.makeText(tabComo.this,s,Toast.LENGTH_LONG).show();
             }
 
@@ -90,11 +91,11 @@ public class tabComo extends Activity implements View.OnClickListener {
         ac.execute();
     }
 
-    private void viewListComo(){
-        JSONObject jsonObject = null;
+    private void viewListComo(String str_input){
+        JSONObject jsonObject;
         ArrayList<HashMap<String,String>> arrayList= new ArrayList<HashMap<String, String>>();
         try{
-            jsonObject = new JSONObject(JSON_COMO);
+            jsonObject = new JSONObject(str_input);
             JSONArray result = jsonObject.getJSONArray(ServerConst.TAG_COMO_JSON);
             String id;
             String sayur;
@@ -123,24 +124,19 @@ public class tabComo extends Activity implements View.OnClickListener {
 
     private void listComo(){
         class listComo extends AsyncTask<Void,Void,String>{
-            ProgressDialog loading;
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
-                loading = ProgressDialog.show(tabComo.this,"Fetching Data","Wait...",false,false);
             }
 
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                loading.dismiss();
-                JSON_COMO = s;
-                txtJSON.setText(s);
-                viewListComo();
+                viewListComo(s);
             }
 
             @Override
-            protected String doInBackground(Void... params) {
+            protected String doInBackground(Void... v) {
                 ReqHandler rh = new ReqHandler();
                 String s = rh.sendGetReq(ServerConst.SERVER_URL + ServerConst.URL_COMO_LIST);
                 return s;
@@ -157,9 +153,6 @@ public class tabComo extends Activity implements View.OnClickListener {
             if(!txtComoEntry.getText().toString().isEmpty()) {
                 addComo();
             }
-        }else if(v == btnComoList){
-            lstComo.setAdapter(null);
-            listComo();
         }
     }
 }

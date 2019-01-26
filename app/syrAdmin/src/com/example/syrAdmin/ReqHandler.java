@@ -20,8 +20,8 @@ public class ReqHandler {
             url = new URL(reqURL);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
-            conn.setReadTimeout(15000);
-            conn.setConnectTimeout(15000);
+            conn.setReadTimeout(5000);
+            conn.setConnectTimeout(5000);
             conn.setRequestMethod("POST");
             conn.setDoInput(true);
             conn.setDoOutput(true);
@@ -56,6 +56,13 @@ public class ReqHandler {
         try {
             URL url = new URL(requestURL);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
+
+            con.setReadTimeout(5000);
+            con.setConnectTimeout(5000);
+            con.setRequestMethod("GET");
+            con.setDoInput(true);
+            con.setDoOutput(true);
+
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
             String s;
@@ -63,6 +70,7 @@ public class ReqHandler {
                 sb.append(s+"\n");
             }
         }catch(Exception e){
+            e.printStackTrace();
         }
         return sb.toString();
     }
@@ -72,6 +80,11 @@ public class ReqHandler {
         try {
             URL url = new URL(requestURL+id);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
+            con.setReadTimeout(5000);
+            con.setConnectTimeout(5000);
+            con.setRequestMethod("GET");
+            con.setDoInput(true);
+            con.setDoOutput(true);
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
             String s;
