@@ -9,11 +9,14 @@
 	$r = mysqli_query($con,$sql);
 
 	$result = array();
-	$row = mysqli_fetch_array($r);
-	array_push($result,array(
+
+	while($row = mysqli_fetch_array($r)){
+
+		array_push($result,array(
 			"id"=>$row['id'],
-			"sayur"=>$row['sayur'],
+			"sayur"=>$row['sayur']
 		));
+	}
 
 	echo json_encode(array('result'=>$result));
 
