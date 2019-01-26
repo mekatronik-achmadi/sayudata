@@ -34,16 +34,17 @@
 	}
 	echo "</table>";
 	
+	$jsonresult = array();
 	while($row0 = mysqli_fetch_array($result0)){
 
-		array_push($result,array(
-			"id"=>$row['id'],
-			"sayur"=>$row['sayur']
+		array_push($jsonresult,array(
+			"id"=>$row0['id'],
+			"sayur"=>$row0['sayur']
 		));
 	}
 	
 	echo "<p>JSON String.</p>";
-	echo json_encode(array('resultComo'=>$row0));
+	echo json_encode(array('result'=>$jsonresult));
 
 	echo "<br />";
 
