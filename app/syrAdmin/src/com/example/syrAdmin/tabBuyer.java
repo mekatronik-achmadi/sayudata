@@ -215,6 +215,38 @@ public class tabBuyer extends Activity implements View.OnClickListener{
         objFind.execute();
     }
 
+    private void delBuyer(){
+        final String id = txtBuyerDelete.getText().toString().trim();
+        txtBuyerDelete.setText("");
+
+        class delBuyer extends AsyncTask<Void,Void,String>{
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                Toast.makeText(tabBuyer.this,s,Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            protected String doInBackground(Void... v) {
+                HashMap<String,String> params = new HashMap();
+                params.put(ServerConst.KEY_BUYER_ID,id);
+
+                ReqHandler rh = new ReqHandler();
+                String res = rh.sendPostReq(ServerConst.SERVER_URL + ServerConst.URL_BUYER_DEL, params);
+                return res;
+            }
+        }
+
+        delBuyer objDel = new delBuyer();
+        objDel.execute();
+    }
+
     private void hideKeyboard(){
         InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
         imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
@@ -231,6 +263,11 @@ public class tabBuyer extends Activity implements View.OnClickListener{
             if (!txtBuyerSearch.getText().toString().isEmpty()) {
                 hideKeyboard();
                 findBuyer();
+            }
+        }else if(v == btnBuyerDelete){
+            if(!txtBuyerDelete.getText().toString().isEmpty()){
+                hideKeyboard();
+                delBuyer();
             }
         }
     }

@@ -15,7 +15,7 @@
 		$sql = "DELETE FROM penjual WHERE id=$id;";
 
 		if(mysqli_query($con,$sql)){
-			echo "Sayur Deleted Successfully: $nm";
+			echo "Seller Deleted Successfully: $nm";
 		}else{
 			echo "Could Not Delete Sayur: $nm";
 		}
