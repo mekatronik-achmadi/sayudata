@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Sayu-Run Admin App</string>
+
     <string name="btnComoEntry">Tambahkan</string>
     <string name="btnComoSearch">Cari Sayur</string>
     <string name="btnComoDelete">Hapus ID</string>
-    <string name="btnComoList">Lihat Semua</string>
     <string name="lblComoList">Daftar Komoditas</string>
     <string name="lblComoSearch">Pencarian Komoditas</string>
+
+    <string name="btnSellerEntry">Tambahkan</string>
+    <string name="btnSellerSearch">Cari Penjual</string>
+    <string name="btnSellerDelete">Hapus ID</string>
+    <string name="lblSellerList">Daftar Penjual</string>
+    <string name="lblSellerSearch">Pencarian Penjual</string>
 </resources>

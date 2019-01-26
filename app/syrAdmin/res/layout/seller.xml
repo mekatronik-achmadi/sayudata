@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="fill_parent"
+              android:layout_height="fill_parent"
+              android:weightSum="100">
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:weightSum="100"
+            android:layout_weight="5">
+
+        <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtSellerEntry"
+                android:layout_weight="45"
+                android:textColor="@android:color/background_dark"
+                android:background="@android:color/background_light"
+                android:inputType="text"/>
+        <Space
+                android:layout_width="0dp"
+                android:layout_weight="15"
+                android:layout_height="match_parent"
+        />
+        <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/btnSellerEntry"
+                android:id="@+id/btnSellerEntry"
+                android:layout_weight="40" style="@android:style/Holo.ButtonBar"/>
+    </LinearLayout>
+
+    <Space
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+    />
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:weightSum="100"
+            android:layout_weight="5">
+
+        <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtSellerSearch"
+                android:layout_weight="45"
+                android:textColor="@android:color/background_dark"
+                android:background="@android:color/background_light"
+                android:inputType="text"/>
+        <Space
+                android:layout_width="0dp"
+                android:layout_weight="15"
+                android:layout_height="match_parent"
+        />
+        <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/btnSellerSearch"
+                android:id="@+id/btnSellerSearch"
+                android:layout_weight="40" style="@android:style/Holo.ButtonBar"/>
+    </LinearLayout>
+
+    <Space
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+    />
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:weightSum="100"
+            android:layout_weight="5">
+
+        <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtSellerDelete"
+                android:layout_weight="45"
+                android:textColor="@android:color/background_dark"
+                android:background="@android:color/background_light"
+                android:inputType="number"/>
+        <Space
+                android:layout_width="0dp"
+                android:layout_weight="15"
+                android:layout_height="match_parent"
+        />
+        <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="@string/btnSellerDelete"
+                android:id="@+id/btnSellerDelete"
+                android:layout_weight="40" style="@android:style/Holo.ButtonBar"/>
+    </LinearLayout>
+
+    <Space
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+    />
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:weightSum="100"
+            android:layout_weight="75">
+
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:text="@string/lblSellerList"
+                android:id="@+id/lblSellerList"
+                android:gravity="center_horizontal"/>
+        <ListView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/lstSeller"
+                android:layout_weight="55"/>
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="5"
+                android:text="@string/lblSellerSearch"
+                android:id="@+id/lblSearch"
+                android:gravity="center_horizontal"/>
+        <ListView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:id="@+id/lstSearch"
+                android:layout_weight="35"/>
+    </LinearLayout>
+
+</LinearLayout>

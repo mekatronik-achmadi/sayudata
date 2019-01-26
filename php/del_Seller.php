@@ -1,20 +1,25 @@
 <?php
-	//Getting Id
-	$id = $_GET['id'];
+	if($_SERVER['REQUEST_METHOD']=='POST'){
 
-	//Importing database
-	require_once('db_Connect.php');
+		$id = $_POST['id'];
 
-	//Creating sql query
-	$sql = "DELETE FROM penjual WHERE id=$id;";
+		require_once('db_Connect.php');
 
-	//Deleting record in database
-	if(mysqli_query($con,$sql)){
-		echo 'Seller Deleted Successfully';
-	}else{
-		echo 'Could Not Delete Seller Try Again';
+		$sql0 = "SELECT * FROM penjual WHERE id=$id;";
+
+		$r0 = mysqli_query($con,$sql0);
+
+		$row0 = mysqli_fetch_array($r0);
+		$nm = $row0['name'];
+
+		$sql = "DELETE FROM penjual WHERE id=$id;";
+
+		if(mysqli_query($con,$sql)){
+			echo "Sayur Deleted Successfully: $nm";
+		}else{
+			echo "Could Not Delete Sayur: $nm";
+		}
+
+		mysqli_close($con);
 	}
-
-	//closing connection
-	mysqli_close($con);
 ?>
