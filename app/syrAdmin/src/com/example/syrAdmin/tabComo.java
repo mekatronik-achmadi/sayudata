@@ -29,6 +29,8 @@ public class tabComo extends Activity implements View.OnClickListener {
     ListView lstComo;
     String JSON_COMO;
 
+    TextView txtJSON;
+
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -44,6 +46,8 @@ public class tabComo extends Activity implements View.OnClickListener {
         btnComoDelete = (Button) findViewById(R.id.btnComoDelete);
         btnComoList = (Button) findViewById(R.id.btnComoList);
 
+        txtJSON = (TextView) findViewById(R.id.txtJSON);
+
         lstComo = (ListView) findViewById(R.id.lstComo);
         lstComo.setAdapter(null);
 
@@ -53,6 +57,7 @@ public class tabComo extends Activity implements View.OnClickListener {
 
     private void addComo(){
         final String sayur = txtComoEntry.getText().toString().trim();
+        txtComoEntry.setText("");
 
         class addComo extends AsyncTask<Void,Void,String>{
             ProgressDialog loading;
@@ -91,11 +96,13 @@ public class tabComo extends Activity implements View.OnClickListener {
         try{
             jsonObject = new JSONObject(JSON_COMO);
             JSONArray result = jsonObject.getJSONArray(ServerConst.TAG_COMO_JSON);
+            String id;
+            String sayur;
 
             for(int i=0;i<result.length();i++){
                 JSONObject jo = result.getJSONObject(i);
-                String id = jo.getString(ServerConst.TAG_COMO_ID);
-                String sayur = jo.getString(ServerConst.TAG_COMO_SAYUR);
+                id = jo.getString(ServerConst.TAG_COMO_ID);
+                sayur = jo.getString(ServerConst.TAG_COMO_SAYUR);
 
                 HashMap<String,String> comodity = new HashMap();
                 comodity.put(ServerConst.TAG_COMO_ID,id);
@@ -115,7 +122,7 @@ public class tabComo extends Activity implements View.OnClickListener {
     }
 
     private void listComo(){
-        class ListComo extends AsyncTask<Void,Void,String>{
+        class listComo extends AsyncTask<Void,Void,String>{
             ProgressDialog loading;
             @Override
             protected void onPreExecute() {
@@ -128,6 +135,7 @@ public class tabComo extends Activity implements View.OnClickListener {
                 super.onPostExecute(s);
                 loading.dismiss();
                 JSON_COMO = s;
+                txtJSON.setText(s);
                 viewListComo();
             }
 
@@ -139,7 +147,7 @@ public class tabComo extends Activity implements View.OnClickListener {
             }
         }
 
-        ListComo lc = new ListComo();
+        listComo lc = new listComo();
         lc.execute();
     }
 

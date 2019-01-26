@@ -18,4 +18,6 @@
 	mysqli_query($con,$tbl_provide);
 	
 	mysqli_close($con);
+	
+	echo "<p>Seluruh Tabel telah di-reset.</p>";
 ?>
