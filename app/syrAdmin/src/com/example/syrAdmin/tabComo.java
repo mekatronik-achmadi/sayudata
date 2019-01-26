@@ -53,6 +53,7 @@ public class tabComo extends Activity implements View.OnClickListener {
 
         btnComoEntry.setOnClickListener(this);
         btnComoSearch.setOnClickListener(this);
+        btnComoDelete.setOnClickListener(this);
 
         listComoHndl = new Handler();
         listComoReq = new Runnable() {
@@ -112,6 +113,7 @@ public class tabComo extends Activity implements View.OnClickListener {
                 sayur = jo.getString(ServerConst.TAG_COMO_SAYUR);
 
                 HashMap<String,String> comodity = new HashMap();
+                comodity.put("no",Integer.toString(i+1));
                 comodity.put(ServerConst.TAG_COMO_ID,id);
                 comodity.put(ServerConst.TAG_COMO_SAYUR,sayur);
                 arrayList.add(comodity);
@@ -122,8 +124,8 @@ public class tabComo extends Activity implements View.OnClickListener {
 
         ListAdapter listAdapter = new SimpleAdapter(
                 tabComo.this, arrayList,R.layout.list_comodity,
-                new String[]{ServerConst.TAG_COMO_ID,ServerConst.TAG_COMO_SAYUR},
-                new int[]{R.id.id,R.id.sayur});
+                new String[]{"no",ServerConst.TAG_COMO_ID,ServerConst.TAG_COMO_SAYUR},
+                new int[]{R.id.no,R.id.id,R.id.sayur});
 
         lstComo.setAdapter(listAdapter);
     }
@@ -168,6 +170,7 @@ public class tabComo extends Activity implements View.OnClickListener {
                 sayur = jo.getString(ServerConst.TAG_COMO_SAYUR);
 
                 HashMap<String,String> comodity = new HashMap();
+                comodity.put("no",Integer.toString(i+1));
                 comodity.put(ServerConst.TAG_COMO_ID,id);
                 comodity.put(ServerConst.TAG_COMO_SAYUR,sayur);
                 arrayList.add(comodity);
@@ -178,8 +181,8 @@ public class tabComo extends Activity implements View.OnClickListener {
 
         ListAdapter listAdapter = new SimpleAdapter(
                 tabComo.this, arrayList,R.layout.list_comodity,
-                new String[]{ServerConst.TAG_COMO_ID,ServerConst.TAG_COMO_SAYUR},
-                new int[]{R.id.id,R.id.sayur});
+                new String[]{"no",ServerConst.TAG_COMO_ID,ServerConst.TAG_COMO_SAYUR},
+                new int[]{R.id.no,R.id.id,R.id.sayur});
 
         lstSearch.setAdapter(listAdapter);
     }
@@ -212,6 +215,38 @@ public class tabComo extends Activity implements View.OnClickListener {
         fc.execute();
     }
 
+    private void delComo(){
+        final String id = txtComoDelete.getText().toString().trim();
+        txtComoDelete.setText("");
+
+        class delComo extends AsyncTask<Void,Void,String>{
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+            }
+
+            @Override
+            protected void onPostExecute(String s) {
+                super.onPostExecute(s);
+                Toast.makeText(tabComo.this,s,Toast.LENGTH_LONG).show();
+            }
+
+            @Override
+            protected String doInBackground(Void... v) {
+                HashMap<String,String> params = new HashMap();
+                params.put(ServerConst.KEY_COMO_ID,id);
+
+                ReqHandler rh = new ReqHandler();
+                String res = rh.sendPostReq(ServerConst.SERVER_URL + ServerConst.URL_COMO_DEL, params);
+                return res;
+            }
+        }
+
+        delComo dc = new delComo();
+        dc.execute();
+    }
+
     @Override
     public void onClick(View v) {
         if(v == btnComoEntry){
@@ -221,6 +256,10 @@ public class tabComo extends Activity implements View.OnClickListener {
         }else if(v == btnComoSearch){
             if(!txtComoSearch.getText().toString().isEmpty()) {
                 findComo();
+            }
+        }else if(v == btnComoDelete){
+            if(!txtComoDelete.getText().toString().isEmpty()){
+                delComo();
             }
         }
     }

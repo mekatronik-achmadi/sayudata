@@ -6,6 +6,11 @@
               android:weightSum="100">
 
     <TextView
+            android:id="@+id/no"
+            android:layout_width="0dp"
+            android:layout_weight="10"
+            android:layout_height="match_parent" />
+    <TextView
             android:id="@+id/id"
             android:layout_width="0dp"
             android:layout_weight="10"
@@ -14,7 +19,7 @@
     <TextView
             android:id="@+id/sayur"
             android:layout_width="0dp"
-            android:layout_weight="90"
+            android:layout_weight="80"
             android:layout_height="match_parent" />
 
 </LinearLayout>
