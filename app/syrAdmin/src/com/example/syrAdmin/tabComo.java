@@ -5,6 +5,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -247,18 +248,26 @@ public class tabComo extends Activity implements View.OnClickListener {
         dc.execute();
     }
 
+    private void hideKeyboard(){
+        InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
+    }
+
     @Override
     public void onClick(View v) {
         if(v == btnComoEntry){
             if(!txtComoEntry.getText().toString().isEmpty()) {
+                hideKeyboard();
                 addComo();
             }
         }else if(v == btnComoSearch){
             if(!txtComoSearch.getText().toString().isEmpty()) {
+                hideKeyboard();
                 findComo();
             }
         }else if(v == btnComoDelete){
             if(!txtComoDelete.getText().toString().isEmpty()){
+                hideKeyboard();
                 delComo();
             }
         }

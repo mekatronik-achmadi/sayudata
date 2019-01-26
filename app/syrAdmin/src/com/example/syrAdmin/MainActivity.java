@@ -16,22 +16,31 @@ public class MainActivity extends TabActivity {
 
         TabHost tabHost = (TabHost)findViewById(android.R.id.tabhost);
 
-
         TabHost.TabSpec tabComo = tabHost.newTabSpec("Comodity");
         TabHost.TabSpec tabSeller = tabHost.newTabSpec("Seller");
         TabHost.TabSpec tabBuyer = tabHost.newTabSpec("Buyer");
+        TabHost.TabSpec tabOrder = tabHost.newTabSpec("Order");
+        TabHost.TabSpec tabProvide = tabHost.newTabSpec("Provide");
 
-        tabComo.setIndicator("Comodity");
+        tabComo.setIndicator("Sayur");
         tabComo.setContent(new Intent(this,tabComo.class));
 
-        tabSeller.setIndicator("Seller");
+        tabSeller.setIndicator("Jual");
         tabSeller.setContent(new Intent(this,tabSeller.class));
 
-        tabBuyer.setIndicator("Buyer");
+        tabBuyer.setIndicator("Beli");
         tabBuyer.setContent(new Intent(this,tabBuyer.class));
+
+        tabOrder.setIndicator("Pesan");
+        tabOrder.setContent(new Intent(this,tabOrder.class));
+
+        tabProvide.setIndicator("Sedia");
+        tabProvide.setContent(new Intent(this,tabProvide.class));
 
         tabHost.addTab(tabComo);
         tabHost.addTab(tabSeller);
         tabHost.addTab(tabBuyer);
+        tabHost.addTab(tabOrder);
+        tabHost.addTab(tabProvide);
     }
 }
