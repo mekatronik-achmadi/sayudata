@@ -1,24 +1,18 @@
 <?php
 	if($_SERVER['REQUEST_METHOD']=='POST'){
 
-		//Getting values
 		$name = $_POST['name'];
-		$wa = $_POST['wa'];
 
-		//Creating an sql query
-		$sql = "INSERT INTO pembeli (name,wa) VALUES ('$name','$wa')";
+		$sql = "INSERT INTO pembeli (name) VALUES ('$name')";
 
-		//Importing our db connection script
 		require_once('db_Connect.php');
 
-		//Executing query to database
 		if(mysqli_query($con,$sql)){
-			echo 'Buyer Added Successfully';
+			echo "Buyer Added Successfully: $name";
 		}else{
-			echo 'Could Not Add Buyer';
+			echo "Could Not Add Buyer: $name";
 		}
 
-		//Closing the database
 		mysqli_close($con);
 	}
 ?>

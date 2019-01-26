@@ -13,4 +13,10 @@
     <string name="btnSellerDelete">Hapus ID</string>
     <string name="lblSellerList">Daftar Penjual</string>
     <string name="lblSellerSearch">Pencarian Penjual</string>
+
+    <string name="btnBuyerEntry">Tambahkan</string>
+    <string name="btnBuyerSearch">Cari Penjual</string>
+    <string name="btnBuyerDelete">Hapus ID</string>
+    <string name="lblBuyerList">Daftar Pembeli</string>
+    <string name="lblBuyerSearch">Pencarian Pembeli</string>
 </resources>
