@@ -45,6 +45,7 @@ public class tabComo extends Activity implements View.OnClickListener {
         btnComoList = (Button) findViewById(R.id.btnComoList);
 
         lstComo = (ListView) findViewById(R.id.lstComo);
+        lstComo.setAdapter(null);
 
         btnComoEntry.setOnClickListener(this);
         btnComoList.setOnClickListener(this);
@@ -149,6 +150,7 @@ public class tabComo extends Activity implements View.OnClickListener {
                 addComo();
             }
         }else if(v == btnComoList){
+            lstComo.setAdapter(null);
             listComo();
         }
     }
