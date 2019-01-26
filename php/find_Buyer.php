@@ -4,7 +4,7 @@
 
 	require_once('db_Connect.php');
 
-	$sql = "SELECT * FROM penjual WHERE name LIKE '%$name%'";
+	$sql = "SELECT * FROM pembeli WHERE name LIKE '%$name%'";
 
 	$r = mysqli_query($con,$sql);
 

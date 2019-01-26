@@ -95,8 +95,8 @@ public class tabComo extends Activity implements View.OnClickListener {
             }
         }
 
-        addComo ac = new addComo();
-        ac.execute();
+        addComo objAdd = new addComo();
+        objAdd.execute();
     }
 
     private void viewListComo(String str_input){
@@ -152,8 +152,8 @@ public class tabComo extends Activity implements View.OnClickListener {
             }
         }
 
-        listComo lc = new listComo();
-        lc.execute();
+        listComo objList = new listComo();
+        objList.execute();
     }
 
     private void viewFindComo(String str_input){
@@ -212,8 +212,8 @@ public class tabComo extends Activity implements View.OnClickListener {
             }
         }
 
-        findComo fc = new findComo();
-        fc.execute();
+        findComo objFind = new findComo();
+        objFind.execute();
     }
 
     private void delComo(){
@@ -244,8 +244,8 @@ public class tabComo extends Activity implements View.OnClickListener {
             }
         }
 
-        delComo dc = new delComo();
-        dc.execute();
+        delComo objDel = new delComo();
+        objDel.execute();
     }
 
     private void hideKeyboard(){

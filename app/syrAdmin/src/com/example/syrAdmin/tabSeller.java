@@ -71,7 +71,7 @@ public class tabSeller extends Activity implements View.OnClickListener{
         final String name = txtSellerEntry.getText().toString().trim();
         txtSellerEntry.setText("");
 
-        class addComo extends AsyncTask<Void,Void,String> {
+        class addSeller extends AsyncTask<Void,Void,String> {
 
             @Override
             protected void onPreExecute() {
@@ -95,8 +95,8 @@ public class tabSeller extends Activity implements View.OnClickListener{
             }
         }
 
-        addComo ac = new addComo();
-        ac.execute();
+        addSeller objAdd = new addSeller();
+        objAdd.execute();
     }
 
     private void viewListSeller(String str_input){
@@ -113,11 +113,11 @@ public class tabSeller extends Activity implements View.OnClickListener{
                 id = jo.getString(ServerConst.TAG_SELLER_ID);
                 name = jo.getString(ServerConst.TAG_SELLER_NAME);
 
-                HashMap<String,String> comodity = new HashMap();
-                comodity.put("no",Integer.toString(i+1));
-                comodity.put(ServerConst.TAG_SELLER_ID,id);
-                comodity.put(ServerConst.TAG_SELLER_NAME,name);
-                arrayList.add(comodity);
+                HashMap<String,String> seller = new HashMap();
+                seller.put("no",Integer.toString(i+1));
+                seller.put(ServerConst.TAG_SELLER_ID,id);
+                seller.put(ServerConst.TAG_SELLER_NAME,name);
+                arrayList.add(seller);
             }
         } catch(JSONException e){
             e.printStackTrace();
@@ -132,7 +132,7 @@ public class tabSeller extends Activity implements View.OnClickListener{
     }
 
     private void listSeller(){
-        class listComo extends AsyncTask<Void,Void,String>{
+        class listSeller extends AsyncTask<Void,Void,String>{
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
@@ -152,11 +152,11 @@ public class tabSeller extends Activity implements View.OnClickListener{
             }
         }
 
-        listComo lc = new listComo();
-        lc.execute();
+        listSeller objList = new listSeller();
+        objList.execute();
     }
 
-    private void viewFindComo(String str_input){
+    private void viewFindSeller(String str_input){
         JSONObject jsonObject;
         ArrayList<HashMap<String,String>> arrayList= new ArrayList<HashMap<String, String>>();
         try{
@@ -170,11 +170,11 @@ public class tabSeller extends Activity implements View.OnClickListener{
                 id = jo.getString(ServerConst.TAG_SELLER_ID);
                 name = jo.getString(ServerConst.TAG_SELLER_NAME);
 
-                HashMap<String,String> comodity = new HashMap();
-                comodity.put("no",Integer.toString(i+1));
-                comodity.put(ServerConst.TAG_SELLER_ID,id);
-                comodity.put(ServerConst.TAG_SELLER_NAME,name);
-                arrayList.add(comodity);
+                HashMap<String,String> seller = new HashMap();
+                seller.put("no",Integer.toString(i+1));
+                seller.put(ServerConst.TAG_SELLER_ID,id);
+                seller.put(ServerConst.TAG_SELLER_NAME,name);
+                arrayList.add(seller);
             }
         } catch(JSONException e){
             e.printStackTrace();
@@ -201,7 +201,7 @@ public class tabSeller extends Activity implements View.OnClickListener{
             @Override
             protected void onPostExecute(String s) {
                 super.onPostExecute(s);
-                viewFindComo(s);
+                viewFindSeller(s);
             }
 
             @Override
@@ -212,8 +212,8 @@ public class tabSeller extends Activity implements View.OnClickListener{
             }
         }
 
-        findSeller fc = new findSeller();
-        fc.execute();
+        findSeller objFind = new findSeller();
+        objFind.execute();
     }
 
     private void delSeller(){
@@ -244,8 +244,8 @@ public class tabSeller extends Activity implements View.OnClickListener{
             }
         }
 
-        delSeller dc = new delSeller();
-        dc.execute();
+        delSeller objDel = new delSeller();
+        objDel.execute();
     }
 
     private void hideKeyboard(){

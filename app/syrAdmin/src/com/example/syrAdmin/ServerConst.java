@@ -18,6 +18,11 @@ public class ServerConst {
     public static final String URL_SELLER_LIST="list_Seller.php";
     public static final String URL_SELLER_FIND="find_Seller.php?name=";
 
+    public static final String URL_BUYER_ADD="add_Buyer.php";
+    public static final String URL_BUYER_DEL="del_Buyer.php?id=";
+    public static final String URL_BUYER_LIST="list_Buyer.php";
+    public static final String URL_BUYER_FIND="find_Buyer.php?name=";
+
     ////////////////////////////////////////////////////////////////////////////////////
 
     public static final String KEY_COMO_ID = "id";
@@ -25,6 +30,9 @@ public class ServerConst {
 
     public static final String KEY_SELLER_ID = "id";
     public static final String KEY_SELLER_NAME = "name";
+
+    public static final String KEY_BUYER_ID = "id";
+    public static final String KEY_BUYER_NAME = "name";
 
     ////////////////////////////////////////////////////////////////////////////////////
 
@@ -35,6 +43,10 @@ public class ServerConst {
     public static final String TAG_SELLER_RESULT="result";
     public static final String TAG_SELLER_ID="id";
     public static final String TAG_SELLER_NAME="name";
+
+    public static final String TAG_BUYER_RESULT="result";
+    public static final String TAG_BUYER_ID="id";
+    public static final String TAG_BUYER_NAME="name";
 
     ////////////////////////////////////////////////////////////////////////////////////
 }
