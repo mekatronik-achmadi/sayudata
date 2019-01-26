@@ -36,7 +36,7 @@ public class tabSeller extends Activity implements View.OnClickListener{
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.seller);
+        setContentView(R.layout.gui_seller);
 
         txtSellerEntry = (EditText) findViewById(R.id.txtSellerEntry);
         txtSellerSearch = (EditText) findViewById(R.id.txtSellerSearch);

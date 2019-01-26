@@ -30,7 +30,7 @@ public class tabBuyer extends Activity implements View.OnClickListener{
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.buyer);
+        setContentView(R.layout.gui_buyer);
 
         txtBuyerEntry = (EditText) findViewById(R.id.txtBuyerEntry);
         txtBuyerSearch = (EditText) findViewById(R.id.txtBuyerSearch);

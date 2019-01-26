@@ -36,7 +36,7 @@ public class tabComo extends Activity implements View.OnClickListener {
     public void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.comodity);
+        setContentView(R.layout.gui_comodity);
 
         txtComoEntry = (EditText) findViewById(R.id.txtComoEntry);
         txtComoSearch = (EditText) findViewById(R.id.txtComoSearch);
