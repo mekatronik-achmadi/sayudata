@@ -26,11 +26,11 @@ public class tabComo extends Activity implements View.OnClickListener {
     Button btnComoSearch;
     Button btnComoDelete;
 
-    ListView lstComo;
+    GridView lstComo;
     Runnable listComoReq;
     Handler listComoHndl;
 
-    ListView lstSearch;
+    GridView lstSearch;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -46,10 +46,10 @@ public class tabComo extends Activity implements View.OnClickListener {
         btnComoSearch = (Button) findViewById(R.id.btnComoSearch);
         btnComoDelete = (Button) findViewById(R.id.btnComoDelete);
 
-        lstComo = (ListView) findViewById(R.id.lstComo);
+        lstComo = (GridView) findViewById(R.id.lstComo);
         lstComo.setAdapter(null);
 
-        lstSearch = (ListView) findViewById(R.id.lstSearch);
+        lstSearch = (GridView) findViewById(R.id.lstSearch);
         lstSearch.setAdapter(null);
 
         btnComoEntry.setOnClickListener(this);
