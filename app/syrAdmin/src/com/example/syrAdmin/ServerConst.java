@@ -27,6 +27,7 @@ public class ServerConst {
 
     public static final String KEY_COMO_ID = "id";
     public static final String KEY_COMO_SAYUR = "sayur";
+    public static final String KEY_COMO_IMG = "img";
 
     public static final String KEY_SELLER_ID = "id";
     public static final String KEY_SELLER_NAME = "name";
@@ -39,6 +40,7 @@ public class ServerConst {
     public static final String TAG_COMO_RESULT="result";
     public static final String TAG_COMO_ID="id";
     public static final String TAG_COMO_SAYUR="sayur";
+    public static final String TAG_COMO_IMG="img";
 
     public static final String TAG_SELLER_RESULT="result";
     public static final String TAG_SELLER_ID="id";

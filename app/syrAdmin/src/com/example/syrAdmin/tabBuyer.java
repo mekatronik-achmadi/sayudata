@@ -85,7 +85,7 @@ public class tabBuyer extends Activity implements View.OnClickListener{
 
             @Override
             protected String doInBackground(Void... v) {
-                HashMap<String,String> params = new HashMap();
+                HashMap<String,String> params = new HashMap<String, String>();
                 params.put(ServerConst.KEY_BUYER_NAME,name);
 
                 ReqHandler rh = new ReqHandler();
@@ -112,7 +112,7 @@ public class tabBuyer extends Activity implements View.OnClickListener{
                 id = jo.getString(ServerConst.TAG_BUYER_ID);
                 name = jo.getString(ServerConst.TAG_BUYER_NAME);
 
-                HashMap<String,String> buyer = new HashMap();
+                HashMap<String,String> buyer = new HashMap<String, String>();
                 buyer.put(ServerConst.TAG_BUYER_ID,id);
                 buyer.put(ServerConst.TAG_BUYER_NAME,name);
                 arrayList.add(buyer);
@@ -168,7 +168,7 @@ public class tabBuyer extends Activity implements View.OnClickListener{
                 id = jo.getString(ServerConst.TAG_BUYER_ID);
                 name = jo.getString(ServerConst.TAG_BUYER_NAME);
 
-                HashMap<String,String> buyer = new HashMap();
+                HashMap<String,String> buyer = new HashMap<String, String>();
                 buyer.put(ServerConst.TAG_BUYER_ID,id);
                 buyer.put(ServerConst.TAG_BUYER_NAME,name);
                 arrayList.add(buyer);
@@ -232,7 +232,7 @@ public class tabBuyer extends Activity implements View.OnClickListener{
 
             @Override
             protected String doInBackground(Void... v) {
-                HashMap<String,String> params = new HashMap();
+                HashMap<String,String> params = new HashMap<String, String>();
                 params.put(ServerConst.KEY_BUYER_ID,id);
 
                 ReqHandler rh = new ReqHandler();

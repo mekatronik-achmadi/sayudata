@@ -93,7 +93,7 @@ public class tabComo extends Activity implements View.OnClickListener {
 
             @Override
             protected String doInBackground(Void... v) {
-                HashMap<String,String> params = new HashMap();
+                HashMap<String,String> params = new HashMap<String, String>();
                 params.put(ServerConst.KEY_COMO_SAYUR,sayur);
 
                 ReqHandler rh = new ReqHandler();
@@ -122,7 +122,8 @@ public class tabComo extends Activity implements View.OnClickListener {
                 id = jo.getString(ServerConst.TAG_COMO_ID);
                 sayur = jo.getString(ServerConst.TAG_COMO_SAYUR);
 
-                HashMap<String,String> comodity = new HashMap();
+                HashMap<String,String> comodity = new HashMap<String, String>();
+                comodity.put("img",Integer.toString(R.drawable.sawi_putih));
                 comodity.put(ServerConst.TAG_COMO_ID,id);
                 comodity.put(ServerConst.TAG_COMO_SAYUR,sayur);
                 arrayList.add(comodity);
@@ -132,9 +133,9 @@ public class tabComo extends Activity implements View.OnClickListener {
         }
 
         ListAdapter listAdapter = new SimpleAdapter(
-                tabComo.this, arrayList,R.layout.list_comodity,
-                new String[]{ServerConst.TAG_COMO_ID,ServerConst.TAG_COMO_SAYUR},
-                new int[]{R.id.id,R.id.sayur});
+                getBaseContext(), arrayList,R.layout.list_comodity,
+                new String[]{ServerConst.TAG_COMO_IMG,ServerConst.TAG_COMO_ID,ServerConst.TAG_COMO_SAYUR},
+                new int[]{R.id.img,R.id.id,R.id.sayur});
 
         lstComo.setAdapter(listAdapter);
     }
@@ -181,7 +182,7 @@ public class tabComo extends Activity implements View.OnClickListener {
                 id = jo.getString(ServerConst.TAG_COMO_ID);
                 sayur = jo.getString(ServerConst.TAG_COMO_SAYUR);
 
-                HashMap<String,String> comodity = new HashMap();
+                HashMap<String,String> comodity = new HashMap<String, String>();
                 comodity.put(ServerConst.TAG_COMO_ID,id);
                 comodity.put(ServerConst.TAG_COMO_SAYUR,sayur);
                 arrayList.add(comodity);
@@ -245,7 +246,7 @@ public class tabComo extends Activity implements View.OnClickListener {
 
             @Override
             protected String doInBackground(Void... v) {
-                HashMap<String,String> params = new HashMap();
+                HashMap<String,String> params = new HashMap<String, String>();
                 params.put(ServerConst.KEY_COMO_ID,id);
 
                 ReqHandler rh = new ReqHandler();
@@ -256,32 +257,6 @@ public class tabComo extends Activity implements View.OnClickListener {
 
         delComo objDel = new delComo();
         objDel.execute();
-    }
-
-    private void imgComo(final String reqURL){
-
-        class imgComo extends AsyncTask<Void,Void,Drawable>{
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-            }
-
-            @Override
-            protected void onPostExecute(Drawable img) {
-                super.onPostExecute(img);
-                resImage = img;
-            }
-
-            @Override
-            protected Drawable doInBackground(Void... v) {
-                ReqHandler rh = new ReqHandler();
-                Drawable res = rh.getImageReq(reqURL);
-                return res;
-            }
-        }
-
-        imgComo objImg = new imgComo();
-        objImg.execute();
     }
 
     private void hideKeyboard(){

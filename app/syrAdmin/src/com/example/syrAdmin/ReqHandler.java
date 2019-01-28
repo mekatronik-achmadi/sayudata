@@ -15,21 +15,6 @@ import java.util.Map;
  */
 public class ReqHandler {
 
-    public Drawable getImageReq(String reqURL){
-        Drawable img;
-        try{
-            URL url = new URL(reqURL);
-            InputStream is = (InputStream)url.getContent();
-            img = Drawable.createFromStream(is, "src");
-        }catch (MalformedURLException e) {
-            img = null;
-        } catch (IOException e) {
-            img = null;
-        }
-
-        return img;
-    }
-
     public String sendPostReq(String reqURL, HashMap<String,String> PostDataParam){
         URL url;
 
