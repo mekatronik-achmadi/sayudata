@@ -5,21 +5,26 @@
               android:layout_height="match_parent"
               android:weightSum="100">
 
-    <TextView
-            android:id="@+id/no"
+    <ImageView
             android:layout_width="match_parent"
-            android:layout_weight="30"
-            android:layout_height="0dp" />
+            android:layout_height="0dp"
+            android:layout_weight="80"
+            android:id="@+id/imgView"
+            android:contentDescription="@string/imgView"
+            android:src="@drawable/ic_launcher"/>
+
     <TextView
             android:id="@+id/id"
             android:layout_width="match_parent"
-            android:layout_weight="30"
-            android:layout_height="0dp" />
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:textColor="@android:color/background_dark"/>
 
     <TextView
             android:id="@+id/sayur"
             android:layout_width="match_parent"
-            android:layout_weight="40"
-            android:layout_height="0dp" />
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:textColor="@android:color/background_dark"/>
 
 </LinearLayout>

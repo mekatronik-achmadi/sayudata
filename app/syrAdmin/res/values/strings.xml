@@ -19,4 +19,6 @@
     <string name="btnBuyerDelete">Hapus ID</string>
     <string name="lblBuyerList">Daftar Pembeli</string>
     <string name="lblBuyerSearch">Pencarian Pembeli</string>
+
+    <string name="imgView">Representation Images</string>
 </resources>

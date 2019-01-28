@@ -26,11 +26,11 @@ public class tabSeller extends Activity implements View.OnClickListener{
     Button btnSellerSearch;
     Button btnSellerDelete;
 
-    ListView lstSeller;
+    GridView lstSeller;
     Runnable listSellerReq;
     Handler listSellerHndl;
 
-    ListView lstSearch;
+    GridView lstSearch;
 
     @Override
     public void onCreate(Bundle savedInstanceState)
@@ -46,10 +46,10 @@ public class tabSeller extends Activity implements View.OnClickListener{
         btnSellerSearch = (Button) findViewById(R.id.btnSellerSearch);
         btnSellerDelete = (Button) findViewById(R.id.btnSellerDelete);
 
-        lstSeller = (ListView) findViewById(R.id.lstSeller);
+        lstSeller = (GridView) findViewById(R.id.lstSeller);
         lstSeller.setAdapter(null);
 
-        lstSearch = (ListView) findViewById(R.id.lstSearch);
+        lstSearch = (GridView) findViewById(R.id.lstSearch);
         lstSearch.setAdapter(null);
 
         btnSellerEntry.setOnClickListener(this);
@@ -61,10 +61,10 @@ public class tabSeller extends Activity implements View.OnClickListener{
             @Override
             public void run() {
                 listSeller();
-                listSellerHndl.postDelayed(this,500);
             }
         };
-        listSellerHndl.post(listSellerReq);
+
+        listSellerHndl.postAtTime(listSellerReq,500);
     }
 
     private void addSeller(){
@@ -114,7 +114,6 @@ public class tabSeller extends Activity implements View.OnClickListener{
                 name = jo.getString(ServerConst.TAG_SELLER_NAME);
 
                 HashMap<String,String> seller = new HashMap();
-                seller.put("no",Integer.toString(i+1));
                 seller.put(ServerConst.TAG_SELLER_ID,id);
                 seller.put(ServerConst.TAG_SELLER_NAME,name);
                 arrayList.add(seller);
@@ -125,8 +124,8 @@ public class tabSeller extends Activity implements View.OnClickListener{
 
         ListAdapter listAdapter = new SimpleAdapter(
                 tabSeller.this, arrayList,R.layout.list_seller,
-                new String[]{"no",ServerConst.TAG_SELLER_ID,ServerConst.TAG_SELLER_NAME},
-                new int[]{R.id.no,R.id.id,R.id.name});
+                new String[]{ServerConst.TAG_SELLER_ID,ServerConst.TAG_SELLER_NAME},
+                new int[]{R.id.id,R.id.name});
 
         lstSeller.setAdapter(listAdapter);
     }
@@ -171,7 +170,6 @@ public class tabSeller extends Activity implements View.OnClickListener{
                 name = jo.getString(ServerConst.TAG_SELLER_NAME);
 
                 HashMap<String,String> seller = new HashMap();
-                seller.put("no",Integer.toString(i+1));
                 seller.put(ServerConst.TAG_SELLER_ID,id);
                 seller.put(ServerConst.TAG_SELLER_NAME,name);
                 arrayList.add(seller);
@@ -182,8 +180,8 @@ public class tabSeller extends Activity implements View.OnClickListener{
 
         ListAdapter listAdapter = new SimpleAdapter(
                 tabSeller.this, arrayList,R.layout.list_seller,
-                new String[]{"no",ServerConst.TAG_SELLER_ID,ServerConst.TAG_SELLER_NAME},
-                new int[]{R.id.no,R.id.id,R.id.name});
+                new String[]{ServerConst.TAG_SELLER_ID,ServerConst.TAG_SELLER_NAME},
+                new int[]{R.id.id,R.id.name});
 
         lstSearch.setAdapter(listAdapter);
     }
@@ -259,16 +257,19 @@ public class tabSeller extends Activity implements View.OnClickListener{
             if(!txtSellerEntry.getText().toString().isEmpty()){
                 hideKeyboard();
                 addSeller();
+                listSellerHndl.postAtTime(listSellerReq,500);
             }
         }else if(v == btnSellerSearch){
             if(!txtSellerSearch.getText().toString().isEmpty()){
                 hideKeyboard();
                 findSeller();
+                listSellerHndl.postAtTime(listSellerReq,500);
             }
         }else if(v == btnSellerDelete){
             if(!txtSellerDelete.getText().toString().isEmpty()){
                 hideKeyboard();
                 delSeller();
+                listSellerHndl.postAtTime(listSellerReq,500);
             }
         }
     }

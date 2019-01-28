@@ -26,11 +26,11 @@ public class tabBuyer extends Activity implements View.OnClickListener{
     Button btnBuyerSearch;
     Button btnBuyerDelete;
 
-    ListView lstBuyer;
+    GridView lstBuyer;
     Runnable listBuyerReq;
     Handler listBuyerHndl;
 
-    ListView lstSearch;
+    GridView lstSearch;
     @Override
     public void onCreate(Bundle savedInstanceState)
     {
@@ -45,10 +45,10 @@ public class tabBuyer extends Activity implements View.OnClickListener{
         btnBuyerSearch = (Button) findViewById(R.id.btnBuyerSearch);
         btnBuyerDelete = (Button) findViewById(R.id.btnBuyerDelete);
 
-        lstBuyer = (ListView) findViewById(R.id.lstBuyer);
+        lstBuyer = (GridView) findViewById(R.id.lstBuyer);
         lstBuyer.setAdapter(null);
 
-        lstSearch = (ListView) findViewById(R.id.lstSearch);
+        lstSearch = (GridView) findViewById(R.id.lstSearch);
         lstSearch.setAdapter(null);
 
         btnBuyerEntry.setOnClickListener(this);
@@ -60,10 +60,10 @@ public class tabBuyer extends Activity implements View.OnClickListener{
             @Override
             public void run() {
                 listBuyer();
-                listBuyerHndl.postDelayed(this,500);
             }
         };
-        listBuyerHndl.post(listBuyerReq);
+
+        listBuyerHndl.postAtTime(listBuyerReq,500);
     }
 
     private void addBuyer(){
@@ -113,7 +113,6 @@ public class tabBuyer extends Activity implements View.OnClickListener{
                 name = jo.getString(ServerConst.TAG_BUYER_NAME);
 
                 HashMap<String,String> buyer = new HashMap();
-                buyer.put("no",Integer.toString(i+1));
                 buyer.put(ServerConst.TAG_BUYER_ID,id);
                 buyer.put(ServerConst.TAG_BUYER_NAME,name);
                 arrayList.add(buyer);
@@ -124,8 +123,8 @@ public class tabBuyer extends Activity implements View.OnClickListener{
 
         ListAdapter listAdapter = new SimpleAdapter(
                 tabBuyer.this, arrayList,R.layout.list_buyer,
-                new String[]{"no",ServerConst.TAG_BUYER_ID,ServerConst.TAG_BUYER_NAME},
-                new int[]{R.id.no,R.id.id,R.id.name});
+                new String[]{ServerConst.TAG_BUYER_ID,ServerConst.TAG_BUYER_NAME},
+                new int[]{R.id.id,R.id.name});
 
         lstBuyer.setAdapter(listAdapter);
     }
@@ -170,7 +169,6 @@ public class tabBuyer extends Activity implements View.OnClickListener{
                 name = jo.getString(ServerConst.TAG_BUYER_NAME);
 
                 HashMap<String,String> buyer = new HashMap();
-                buyer.put("no",Integer.toString(i+1));
                 buyer.put(ServerConst.TAG_BUYER_ID,id);
                 buyer.put(ServerConst.TAG_BUYER_NAME,name);
                 arrayList.add(buyer);
@@ -181,8 +179,8 @@ public class tabBuyer extends Activity implements View.OnClickListener{
 
         ListAdapter listAdapter = new SimpleAdapter(
                 tabBuyer.this, arrayList,R.layout.list_buyer,
-                new String[]{"no",ServerConst.TAG_BUYER_ID,ServerConst.TAG_BUYER_NAME},
-                new int[]{R.id.no,R.id.id,R.id.name});
+                new String[]{ServerConst.TAG_BUYER_ID,ServerConst.TAG_BUYER_NAME},
+                new int[]{R.id.id,R.id.name});
 
         lstSearch.setAdapter(listAdapter);
     }
@@ -258,16 +256,19 @@ public class tabBuyer extends Activity implements View.OnClickListener{
             if(!txtBuyerEntry.getText().toString().isEmpty()){
                 hideKeyboard();
                 addBuyer();
+                listBuyerHndl.postAtTime(listBuyerReq,500);
             }
         }else if(v == btnBuyerSearch) {
             if (!txtBuyerSearch.getText().toString().isEmpty()) {
                 hideKeyboard();
                 findBuyer();
+                listBuyerHndl.postAtTime(listBuyerReq,500);
             }
         }else if(v == btnBuyerDelete){
             if(!txtBuyerDelete.getText().toString().isEmpty()){
                 hideKeyboard();
                 delBuyer();
+                listBuyerHndl.postAtTime(listBuyerReq,500);
             }
         }
     }

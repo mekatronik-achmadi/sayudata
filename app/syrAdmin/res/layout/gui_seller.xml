@@ -120,11 +120,18 @@
                 android:text="@string/lblSellerList"
                 android:id="@+id/lblSellerList"
                 android:gravity="center_horizontal"/>
-        <ListView
+        <GridView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:id="@+id/lstSeller"
-                android:layout_weight="55"/>
+                android:layout_weight="55"
+                android:gravity="center"
+                android:columnWidth="100dp"
+                android:numColumns="auto_fit"
+                android:verticalSpacing="20dp"
+                android:horizontalSpacing="10dp"
+                android:stretchMode="spacingWidthUniform"
+                android:background="@android:color/background_light"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -132,11 +139,18 @@
                 android:text="@string/lblSellerSearch"
                 android:id="@+id/lblSearch"
                 android:gravity="center_horizontal"/>
-        <ListView
+        <GridView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:id="@+id/lstSearch"
-                android:layout_weight="35"/>
+                android:layout_weight="35"
+                android:gravity="center"
+                android:columnWidth="100dp"
+                android:numColumns="auto_fit"
+                android:verticalSpacing="24dp"
+                android:horizontalSpacing="10dp"
+                android:stretchMode="spacingWidthUniform"
+                android:background="@android:color/background_light"/>
     </LinearLayout>
 
 </LinearLayout>
