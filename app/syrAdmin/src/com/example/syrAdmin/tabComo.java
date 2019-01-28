@@ -1,6 +1,7 @@
 package com.example.syrAdmin;
 
 import android.app.Activity;
+import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,6 +12,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -25,6 +30,8 @@ public class tabComo extends Activity implements View.OnClickListener {
     Button btnComoEntry;
     Button btnComoSearch;
     Button btnComoDelete;
+
+    Drawable resImage;
 
     GridView lstComo;
     Runnable listComoReq;
@@ -101,14 +108,16 @@ public class tabComo extends Activity implements View.OnClickListener {
 
     private void viewListComo(String str_input){
         JSONObject jsonObject;
+        int resLength=0;
         ArrayList<HashMap<String,String>> arrayList= new ArrayList<HashMap<String, String>>();
         try{
             jsonObject = new JSONObject(str_input);
             JSONArray result = jsonObject.getJSONArray(ServerConst.TAG_COMO_RESULT);
             String id;
             String sayur;
+            resLength = result.length();
 
-            for(int i=0;i<result.length();i++){
+            for(int i=0;i<resLength;i++){
                 JSONObject jo = result.getJSONObject(i);
                 id = jo.getString(ServerConst.TAG_COMO_ID);
                 sayur = jo.getString(ServerConst.TAG_COMO_SAYUR);
@@ -157,6 +166,7 @@ public class tabComo extends Activity implements View.OnClickListener {
 
     private void viewFindComo(String str_input){
         JSONObject jsonObject;
+        int resLength=0;
         ArrayList<HashMap<String,String>> arrayList= new ArrayList<HashMap<String, String>>();
         try{
             jsonObject = new JSONObject(str_input);
@@ -164,7 +174,9 @@ public class tabComo extends Activity implements View.OnClickListener {
             String id;
             String sayur;
 
-            for(int i=0;i<result.length();i++){
+            resLength = result.length();
+
+            for(int i=0;i<resLength;i++){
                 JSONObject jo = result.getJSONObject(i);
                 id = jo.getString(ServerConst.TAG_COMO_ID);
                 sayur = jo.getString(ServerConst.TAG_COMO_SAYUR);
@@ -244,6 +256,32 @@ public class tabComo extends Activity implements View.OnClickListener {
 
         delComo objDel = new delComo();
         objDel.execute();
+    }
+
+    private void imgComo(final String reqURL){
+
+        class imgComo extends AsyncTask<Void,Void,Drawable>{
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+            }
+
+            @Override
+            protected void onPostExecute(Drawable img) {
+                super.onPostExecute(img);
+                resImage = img;
+            }
+
+            @Override
+            protected Drawable doInBackground(Void... v) {
+                ReqHandler rh = new ReqHandler();
+                Drawable res = rh.getImageReq(reqURL);
+                return res;
+            }
+        }
+
+        imgComo objImg = new imgComo();
+        objImg.execute();
     }
 
     private void hideKeyboard(){

@@ -1,7 +1,10 @@
 package com.example.syrAdmin;
 
+import android.graphics.drawable.Drawable;
+
 import java.io.*;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.HashMap;
@@ -11,6 +14,21 @@ import java.util.Map;
  * Created by farm on 1/25/19.
  */
 public class ReqHandler {
+
+    public Drawable getImageReq(String reqURL){
+        Drawable img;
+        try{
+            URL url = new URL(reqURL);
+            InputStream is = (InputStream)url.getContent();
+            img = Drawable.createFromStream(is, "src");
+        }catch (MalformedURLException e) {
+            img = null;
+        } catch (IOException e) {
+            img = null;
+        }
+
+        return img;
+    }
 
     public String sendPostReq(String reqURL, HashMap<String,String> PostDataParam){
         URL url;
