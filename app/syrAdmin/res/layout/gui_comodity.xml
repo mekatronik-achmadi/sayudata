@@ -32,12 +32,6 @@
                 android:layout_weight="40" style="@android:style/Holo.ButtonBar"/>
     </LinearLayout>
 
-    <Space
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:layout_height="0dp"
-    />
-
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
@@ -65,12 +59,6 @@
                 android:id="@+id/btnComoSearch"
                 android:layout_weight="40" style="@android:style/Holo.ButtonBar"/>
     </LinearLayout>
-
-    <Space
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:layout_height="0dp"
-    />
 
     <LinearLayout
             android:orientation="horizontal"
@@ -100,12 +88,6 @@
                 android:layout_weight="40" style="@android:style/Holo.ButtonBar"/>
     </LinearLayout>
 
-    <Space
-            android:layout_width="match_parent"
-            android:layout_weight="1"
-            android:layout_height="0dp"
-    />
-
     <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
@@ -125,7 +107,12 @@
                 android:layout_height="0dp"
                 android:id="@+id/lstComo"
                 android:layout_weight="55"
-                android:numColumns="3"/>
+                android:gravity="center"
+                android:columnWidth="100dp"
+                android:numColumns="auto_fit"
+                android:verticalSpacing="20dp"
+                android:horizontalSpacing="10dp"
+                android:stretchMode="spacingWidthUniform"/>
         <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
@@ -138,7 +125,12 @@
                 android:layout_height="0dp"
                 android:id="@+id/lstSearch"
                 android:layout_weight="35"
-                android:numColumns="3"/>
+                android:gravity="center"
+                android:columnWidth="100dp"
+                android:numColumns="auto_fit"
+                android:verticalSpacing="24dp"
+                android:horizontalSpacing="10dp"
+                android:stretchMode="spacingWidthUniform"/>
     </LinearLayout>
 
 </LinearLayout>
