@@ -2,8 +2,9 @@
 	if($_SERVER['REQUEST_METHOD']=='POST'){
 
 		$sayur = $_POST['sayur'];
+		$img = $_POST['img'];
 
-		$sql = "INSERT INTO komoditi (sayur) VALUES ('$sayur')";
+		$sql = "INSERT INTO komoditi (sayur,img) VALUES ('$sayur','$img')";
 
 		require_once('db_Connect.php');
 

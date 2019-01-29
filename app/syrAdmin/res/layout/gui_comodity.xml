@@ -15,21 +15,31 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:id="@+id/txtComoEntry"
-                android:layout_weight="45"
+                android:layout_weight="30"
                 android:textColor="@android:color/background_dark"
                 android:background="@android:color/background_light"
                 android:inputType="text"/>
         <Space
                 android:layout_width="0dp"
-                android:layout_weight="15"
+                android:layout_weight="5"
                 android:layout_height="match_parent"
         />
+        <EditText
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/txtComoImgEntry"
+                android:layout_weight="30"
+                android:textColor="@android:color/background_dark"
+                android:background="@android:color/background_light"
+                android:inputType="text"/>
+
         <Button
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:text="@string/btnComoEntry"
                 android:id="@+id/btnComoEntry"
-                android:layout_weight="40" style="@android:style/Holo.ButtonBar"/>
+                android:layout_weight="35"
+                style="@android:style/Holo.ButtonBar"/>
     </LinearLayout>
 
     <LinearLayout

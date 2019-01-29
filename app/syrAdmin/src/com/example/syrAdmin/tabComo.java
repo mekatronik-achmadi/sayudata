@@ -19,6 +19,7 @@ import java.util.HashMap;
  */
 public class tabComo extends Activity implements View.OnClickListener {
     EditText txtComoEntry;
+    EditText txtComoImgEntry;
     EditText txtComoSearch;
     EditText txtComoDelete;
 
@@ -39,6 +40,7 @@ public class tabComo extends Activity implements View.OnClickListener {
         setContentView(R.layout.gui_comodity);
 
         txtComoEntry = (EditText) findViewById(R.id.txtComoEntry);
+        txtComoImgEntry = (EditText) findViewById(R.id.txtComoImgEntry);
         txtComoSearch = (EditText) findViewById(R.id.txtComoSearch);
         txtComoDelete = (EditText) findViewById(R.id.txtComoDelete);
 
@@ -66,7 +68,9 @@ public class tabComo extends Activity implements View.OnClickListener {
 
     private void addComo(){
         final String sayur = txtComoEntry.getText().toString().trim();
+        final String img = txtComoImgEntry.getText().toString().trim();
         txtComoEntry.setText("");
+        txtComoImgEntry.setText("");
 
         class addComo extends AsyncTask<Void,Void,String>{
 
@@ -85,6 +89,7 @@ public class tabComo extends Activity implements View.OnClickListener {
             protected String doInBackground(Void... v) {
                 HashMap<String,String> params = new HashMap<String, String>();
                 params.put(ServerConst.KEY_COMO_SAYUR,sayur);
+                params.put(ServerConst.KEY_COMO_IMG,img+".bmp");
 
                 ReqHandler rh = new ReqHandler();
                 String res = rh.sendPostReq(ServerConst.SERVER_URL + ServerConst.URL_COMO_ADD, params);
@@ -105,14 +110,16 @@ public class tabComo extends Activity implements View.OnClickListener {
             JSONArray result = jsonObject.getJSONArray(ServerConst.TAG_COMO_RESULT);
             String id;
             String sayur;
+            String img;
 
             for(int i=0;i<result.length();i++){
                 JSONObject jo = result.getJSONObject(i);
                 id = jo.getString(ServerConst.TAG_COMO_ID);
                 sayur = jo.getString(ServerConst.TAG_COMO_SAYUR);
+                img = jo.getString(ServerConst.TAG_COMO_IMG);
 
                 txtList.add(id+":"+sayur);
-                imgList.add("http://www.sayu-run.com/imagesayur/sawiputih.bmp");
+                imgList.add(ServerConst.IMAGES_URL+img);
             }
         }catch (JSONException e){
             e.printStackTrace();
@@ -155,20 +162,22 @@ public class tabComo extends Activity implements View.OnClickListener {
             JSONArray result = jsonObject.getJSONArray(ServerConst.TAG_COMO_RESULT);
             String id;
             String sayur;
+            String img;
 
             for(int i=0;i<result.length();i++){
                 JSONObject jo = result.getJSONObject(i);
                 id = jo.getString(ServerConst.TAG_COMO_ID);
                 sayur = jo.getString(ServerConst.TAG_COMO_SAYUR);
+                img = jo.getString(ServerConst.TAG_COMO_IMG);
 
                 txtList.add(id+":"+sayur);
-                imgList.add("http://www.sayu-run.com/imagesayur/sawiputih.bmp");
+                imgList.add(ServerConst.IMAGES_URL+img);
             }
         }catch (JSONException e){
             e.printStackTrace();
         }
 
-        lstComo.setAdapter(new CustomAdapter(getBaseContext(), txtList, imgList));
+        lstSearch.setAdapter(new CustomAdapter(getBaseContext(), txtList, imgList));
     }
 
     private void findComo(){

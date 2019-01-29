@@ -40,6 +40,18 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="tabBuyer.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/syrAdmin/tabBuyer.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="234" column="75" selection-start-line="234" selection-start-column="75" selection-end-line="234" selection-end-column="75" />
+              <folding>
+                <element signature="e#7650#7666#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="list_seller.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/list_seller.xml">
           <provider editor-type-id="android-designer">
@@ -66,21 +78,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tabComo.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tabComo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/example/syrAdmin/tabComo.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="114" column="78" selection-start-line="114" selection-start-column="78" selection-end-line="114" selection-end-column="78" />
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#2489#2505#0" expanded="true" />
-                <element signature="e#2981#2989#0" expanded="true" />
-                <element signature="e#3042#3050#0" expanded="true" />
-                <element signature="e#3945#3946#0" expanded="true" />
-                <element signature="e#3997#3998#0" expanded="true" />
-                <element signature="e#4643#4651#0" expanded="true" />
-                <element signature="e#4704#4712#0" expanded="true" />
-                <element signature="e#6952#6968#0" expanded="true" />
+                <element signature="e#1756#1878#0" expanded="true" />
+                <element signature="e#1877#1878#0" expanded="true" />
+                <element signature="e#2305#2306#0" expanded="true" />
+                <element signature="e#2357#2358#0" expanded="true" />
+                <element signature="e#2701#2717#0" expanded="true" />
+                <element signature="e#3258#3266#0" expanded="true" />
+                <element signature="e#3319#3327#0" expanded="true" />
+                <element signature="e#4284#4285#0" expanded="true" />
+                <element signature="e#4336#4337#0" expanded="true" />
+                <element signature="e#4982#4990#0" expanded="true" />
+                <element signature="e#5043#5051#0" expanded="true" />
+                <element signature="e#7355#7371#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -98,23 +114,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gui_seller.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/gui_seller.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.66">
-              <caret line="149" column="43" selection-start-line="149" selection-start-column="43" selection-end-line="149" selection-end-column="43" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomAdapter.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="CustomAdapter.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/example/syrAdmin/CustomAdapter.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.49044585">
+            <state vertical-scroll-proportion="0.0">
               <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -143,14 +146,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list_grid.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/layout/list_grid.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
+      <file leaf-file-name="ServerConst.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/example/syrAdmin/ServerConst.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.88">
-              <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="89" selection-start-line="7" selection-start-column="89" selection-end-line="7" selection-end-column="89" />
               <folding />
             </state>
           </provider>
@@ -162,9 +162,15 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-5.12">
-              <caret line="114" column="37" selection-start-line="114" selection-start-column="37" selection-end-line="114" selection-end-column="56" />
-              <folding />
+            <state vertical-scroll-proportion="-9.88">
+              <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+              <folding>
+                <element signature="e#1597#1619#0" expanded="true" />
+                <element signature="e#2704#2727#0" expanded="true" />
+                <element signature="e#3799#3822#0" expanded="true" />
+                <element signature="e#4386#4407#0" expanded="true" />
+                <element signature="e#5248#5271#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -201,15 +207,15 @@
         <option value="$PROJECT_DIR$/src/com/example/syrAdmin/tabBuyer.java" />
         <option value="$PROJECT_DIR$/res/layout/list_buyer.xml" />
         <option value="$PROJECT_DIR$/res/layout/list_seller.xml" />
-        <option value="$PROJECT_DIR$/src/com/example/syrAdmin/ServerConst.java" />
         <option value="$PROJECT_DIR$/src/com/example/syrAdmin/ReqHandler.java" />
         <option value="$PROJECT_DIR$/src/com/example/syrAdmin/ImageAdapter.java" />
         <option value="$PROJECT_DIR$/res/layout/list_grid.xml" />
         <option value="$PROJECT_DIR$/res/layout/list_comodity.xml" />
         <option value="$PROJECT_DIR$/res/layout/gui_seller.xml" />
+        <option value="$PROJECT_DIR$/src/com/example/syrAdmin/CustomAdapter.java" />
+        <option value="$PROJECT_DIR$/src/com/example/syrAdmin/ServerConst.java" />
         <option value="$PROJECT_DIR$/res/layout/gui_comodity.xml" />
         <option value="$PROJECT_DIR$/src/com/example/syrAdmin/tabComo.java" />
-        <option value="$PROJECT_DIR$/src/com/example/syrAdmin/CustomAdapter.java" />
       </list>
     </option>
   </component>
@@ -765,7 +771,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32568806" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6605505" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.6605505" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20790629" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -835,14 +841,18 @@
           <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2489#2505#0" expanded="true" />
-            <element signature="e#2981#2989#0" expanded="true" />
-            <element signature="e#3042#3050#0" expanded="true" />
-            <element signature="e#3945#3946#0" expanded="true" />
-            <element signature="e#3997#3998#0" expanded="true" />
-            <element signature="e#4643#4651#0" expanded="true" />
-            <element signature="e#4704#4712#0" expanded="true" />
-            <element signature="e#6952#6968#0" expanded="true" />
+            <element signature="e#1756#1878#0" expanded="true" />
+            <element signature="e#1877#1878#0" expanded="true" />
+            <element signature="e#2305#2306#0" expanded="true" />
+            <element signature="e#2357#2358#0" expanded="true" />
+            <element signature="e#2701#2717#0" expanded="true" />
+            <element signature="e#3258#3266#0" expanded="true" />
+            <element signature="e#3319#3327#0" expanded="true" />
+            <element signature="e#4284#4285#0" expanded="true" />
+            <element signature="e#4336#4337#0" expanded="true" />
+            <element signature="e#4982#4990#0" expanded="true" />
+            <element signature="e#5043#5051#0" expanded="true" />
+            <element signature="e#7355#7371#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -917,14 +927,18 @@
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2489#2505#0" expanded="true" />
-            <element signature="e#2981#2989#0" expanded="true" />
-            <element signature="e#3042#3050#0" expanded="true" />
-            <element signature="e#3945#3946#0" expanded="true" />
-            <element signature="e#3997#3998#0" expanded="true" />
-            <element signature="e#4643#4651#0" expanded="true" />
-            <element signature="e#4704#4712#0" expanded="true" />
-            <element signature="e#6952#6968#0" expanded="true" />
+            <element signature="e#1756#1878#0" expanded="true" />
+            <element signature="e#1877#1878#0" expanded="true" />
+            <element signature="e#2305#2306#0" expanded="true" />
+            <element signature="e#2357#2358#0" expanded="true" />
+            <element signature="e#2701#2717#0" expanded="true" />
+            <element signature="e#3258#3266#0" expanded="true" />
+            <element signature="e#3319#3327#0" expanded="true" />
+            <element signature="e#4284#4285#0" expanded="true" />
+            <element signature="e#4336#4337#0" expanded="true" />
+            <element signature="e#4982#4990#0" expanded="true" />
+            <element signature="e#5043#5051#0" expanded="true" />
+            <element signature="e#7355#7371#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -999,14 +1013,18 @@
           <caret line="15" column="40" selection-start-line="15" selection-start-column="40" selection-end-line="15" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#2489#2505#0" expanded="true" />
-            <element signature="e#2981#2989#0" expanded="true" />
-            <element signature="e#3042#3050#0" expanded="true" />
-            <element signature="e#3945#3946#0" expanded="true" />
-            <element signature="e#3997#3998#0" expanded="true" />
-            <element signature="e#4643#4651#0" expanded="true" />
-            <element signature="e#4704#4712#0" expanded="true" />
-            <element signature="e#6952#6968#0" expanded="true" />
+            <element signature="e#1756#1878#0" expanded="true" />
+            <element signature="e#1877#1878#0" expanded="true" />
+            <element signature="e#2305#2306#0" expanded="true" />
+            <element signature="e#2357#2358#0" expanded="true" />
+            <element signature="e#2701#2717#0" expanded="true" />
+            <element signature="e#3258#3266#0" expanded="true" />
+            <element signature="e#3319#3327#0" expanded="true" />
+            <element signature="e#4284#4285#0" expanded="true" />
+            <element signature="e#4336#4337#0" expanded="true" />
+            <element signature="e#4982#4990#0" expanded="true" />
+            <element signature="e#5043#5051#0" expanded="true" />
+            <element signature="e#7355#7371#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1139,22 +1157,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/syrAdmin/ServerConst.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="50" selection-start-line="42" selection-start-column="50" selection-end-line="42" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/syrAdmin/tabBuyer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="234" column="75" selection-start-line="234" selection-start-column="75" selection-end-line="234" selection-end-column="75" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1189,17 +1191,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-8.66">
           <caret line="149" column="43" selection-start-line="149" selection-start-column="43" selection-end-line="149" selection-end-column="43" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/gui_comodity.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-5.12">
-          <caret line="114" column="37" selection-start-line="114" selection-start-column="37" selection-end-line="114" selection-end-column="56" />
           <folding />
         </state>
       </provider>
@@ -1244,24 +1235,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/example/syrAdmin/tabComo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="114" column="78" selection-start-line="114" selection-start-column="78" selection-end-line="114" selection-end-column="78" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#2489#2505#0" expanded="true" />
-            <element signature="e#2981#2989#0" expanded="true" />
-            <element signature="e#3042#3050#0" expanded="true" />
-            <element signature="e#3945#3946#0" expanded="true" />
-            <element signature="e#3997#3998#0" expanded="true" />
-            <element signature="e#4643#4651#0" expanded="true" />
-            <element signature="e#4704#4712#0" expanded="true" />
-            <element signature="e#6952#6968#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/syrAdmin/ReqHandler.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1270,9 +1243,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/syrAdmin/tabBuyer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="234" column="75" selection-start-line="234" selection-start-column="75" selection-end-line="234" selection-end-column="75" />
+          <folding>
+            <element signature="e#7650#7666#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/example/syrAdmin/CustomAdapter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49044585">
+        <state vertical-scroll-proportion="0.0">
           <caret line="97" column="0" selection-start-line="97" selection-start-column="0" selection-end-line="97" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1286,6 +1269,53 @@
             <element signature="e#3108#3109#0" expanded="true" />
             <element signature="e#3164#3165#0" expanded="true" />
             <element signature="e#3188#3189#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/gui_comodity.xml">
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.88">
+          <caret line="41" column="16" selection-start-line="41" selection-start-column="16" selection-end-line="41" selection-end-column="16" />
+          <folding>
+            <element signature="e#1597#1619#0" expanded="true" />
+            <element signature="e#2704#2727#0" expanded="true" />
+            <element signature="e#3799#3822#0" expanded="true" />
+            <element signature="e#4386#4407#0" expanded="true" />
+            <element signature="e#5248#5271#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/syrAdmin/ServerConst.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="89" selection-start-line="7" selection-start-column="89" selection-end-line="7" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/example/syrAdmin/tabComo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1756#1878#0" expanded="true" />
+            <element signature="e#1877#1878#0" expanded="true" />
+            <element signature="e#2305#2306#0" expanded="true" />
+            <element signature="e#2357#2358#0" expanded="true" />
+            <element signature="e#2701#2717#0" expanded="true" />
+            <element signature="e#3258#3266#0" expanded="true" />
+            <element signature="e#3319#3327#0" expanded="true" />
+            <element signature="e#4284#4285#0" expanded="true" />
+            <element signature="e#4336#4337#0" expanded="true" />
+            <element signature="e#4982#4990#0" expanded="true" />
+            <element signature="e#5043#5051#0" expanded="true" />
+            <element signature="e#7355#7371#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -5,6 +5,7 @@ package com.example.syrAdmin;
  */
 public class ServerConst {
     public static final String SERVER_URL="http://www.sayu-run.com/sayudata/php/";
+    public static final String IMAGES_URL="http://www.sayu-run.com/sayudata/imagesayur/";
 
     /////////////////////////////////////////////////////////////////////////////////////
 

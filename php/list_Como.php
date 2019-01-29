@@ -12,6 +12,7 @@
 		array_push($result,array(
 			"id"=>$row['id'],
 			"sayur"=>$row['sayur']
+			"img"=>$row['img']
 		));
 	}
 

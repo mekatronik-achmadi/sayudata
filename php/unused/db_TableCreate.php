@@ -6,6 +6,7 @@
 	$tbl_como = "CREATE TABLE komoditi (
 	 `id` INT(4) NOT NULL AUTO_INCREMENT ,
 	 `sayur` TEXT NOT NULL ,
+	 `img` TEXT NOT NULL ,
 	  PRIMARY KEY (`id`)
 	  ) ENGINE = InnoDB;";
 
