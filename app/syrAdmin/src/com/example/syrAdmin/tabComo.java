@@ -98,7 +98,8 @@ public class tabComo extends Activity implements View.OnClickListener {
 
     private void viewListComo(String str_input){
         JSONObject jsonObject;
-        ArrayList<String> arrayList = new ArrayList<String>();
+        ArrayList<String> txtList = new ArrayList<String>();
+        ArrayList<String> imgList = new ArrayList<String>();
         try{
             jsonObject = new JSONObject(str_input);
             JSONArray result = jsonObject.getJSONArray(ServerConst.TAG_COMO_RESULT);
@@ -110,13 +111,14 @@ public class tabComo extends Activity implements View.OnClickListener {
                 id = jo.getString(ServerConst.TAG_COMO_ID);
                 sayur = jo.getString(ServerConst.TAG_COMO_SAYUR);
 
-                arrayList.add(id+":"+sayur);
+                txtList.add(id+":"+sayur);
+                imgList.add("http://www.sayu-run.com/imagesayur/sawi-putih.jpg");
             }
         }catch (JSONException e){
             e.printStackTrace();
         }
 
-        lstComo.setAdapter(new CustomAdapter(tabComo.this, arrayList));
+        lstComo.setAdapter(new CustomAdapter(getBaseContext(), txtList, imgList));
     }
 
     private void listComo(){
@@ -146,7 +148,8 @@ public class tabComo extends Activity implements View.OnClickListener {
 
     private void viewFindComo(String str_input){
         JSONObject jsonObject;
-        ArrayList<String> arrayList = new ArrayList<String>();
+        ArrayList<String> txtList = new ArrayList<String>();
+        ArrayList<String> imgList = new ArrayList<String>();
         try{
             jsonObject = new JSONObject(str_input);
             JSONArray result = jsonObject.getJSONArray(ServerConst.TAG_COMO_RESULT);
@@ -158,13 +161,14 @@ public class tabComo extends Activity implements View.OnClickListener {
                 id = jo.getString(ServerConst.TAG_COMO_ID);
                 sayur = jo.getString(ServerConst.TAG_COMO_SAYUR);
 
-                arrayList.add(id+":"+sayur);
+                txtList.add(id+":"+sayur);
+                imgList.add("http://www.sayu-run.com/imagesayur/sawi-putih.jpg");
             }
         }catch (JSONException e){
             e.printStackTrace();
         }
 
-        lstSearch.setAdapter(new CustomAdapter(tabComo.this, arrayList));
+        lstComo.setAdapter(new CustomAdapter(getBaseContext(), txtList, imgList));
     }
 
     private void findComo(){
