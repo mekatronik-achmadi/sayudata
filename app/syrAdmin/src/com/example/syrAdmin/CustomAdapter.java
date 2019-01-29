@@ -95,6 +95,7 @@ public class CustomAdapter extends BaseAdapter{
 
         cell.txtVw.setText(itemString.get(position));
         new GetImgURL(cell.imgVw).execute(imgStrURL.get(position));
+        cell.imgVw.getLayoutParams().height = 150;
 
         return convertView;
     }
