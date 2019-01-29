@@ -18,6 +18,7 @@ public class ReqHandler {
         StringBuilder sb = new StringBuilder();
         try{
             url = new URL(reqURL);
+            HttpURLConnection.setFollowRedirects(false);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
             conn.setReadTimeout(5000);
@@ -55,6 +56,7 @@ public class ReqHandler {
         StringBuilder sb =new StringBuilder();
         try {
             URL url = new URL(requestURL);
+            HttpURLConnection.setFollowRedirects(false);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
             con.setReadTimeout(5000);
@@ -79,6 +81,7 @@ public class ReqHandler {
         StringBuilder sb =new StringBuilder();
         try {
             URL url = new URL(requestURL+id);
+            HttpURLConnection.setFollowRedirects(false);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
             con.setReadTimeout(5000);
             con.setConnectTimeout(5000);

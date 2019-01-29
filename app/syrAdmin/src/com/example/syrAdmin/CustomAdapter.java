@@ -60,6 +60,7 @@ public class CustomAdapter extends BaseAdapter{
 
             try{
                 URL url = new URL(imgurl);
+                HttpURLConnection.setFollowRedirects(false);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                 conn.setReadTimeout(5000);
                 conn.setConnectTimeout(5000);
@@ -67,9 +68,12 @@ public class CustomAdapter extends BaseAdapter{
                 conn.setDoInput(true);
                 conn.setDoOutput(true);
 
-                InputStream in = conn.getInputStream();
-                bmp = BitmapFactory.decodeStream(in);
-
+                if(conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
+                    InputStream in = conn.getInputStream();
+                    bmp = BitmapFactory.decodeStream(in);
+                }else{
+                    bmp = BitmapFactory.decodeResource(mContext.getResources(),R.drawable.ic_launcher);
+                }
             }catch (Exception e){
                 e.printStackTrace();
             }
