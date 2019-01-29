@@ -8,23 +8,15 @@
     <ImageView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="80"
+            android:layout_weight="90"
             android:id="@+id/img"
             android:contentDescription="@string/imgView"
             android:src="@drawable/ic_launcher"/>
 
     <TextView
-            android:id="@+id/id"
+            android:id="@+id/txt"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="10"
             android:textColor="@android:color/background_dark"/>
-
-    <TextView
-            android:id="@+id/sayur"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="10"
-            android:textColor="@android:color/background_dark"/>
-
 </LinearLayout>

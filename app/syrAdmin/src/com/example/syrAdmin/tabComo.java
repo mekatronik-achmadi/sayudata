@@ -1,7 +1,6 @@
 package com.example.syrAdmin;
 
 import android.app.Activity;
-import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
@@ -12,10 +11,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 
@@ -30,8 +25,6 @@ public class tabComo extends Activity implements View.OnClickListener {
     Button btnComoEntry;
     Button btnComoSearch;
     Button btnComoDelete;
-
-    Drawable resImage;
 
     GridView lstComo;
     Runnable listComoReq;
@@ -54,10 +47,7 @@ public class tabComo extends Activity implements View.OnClickListener {
         btnComoDelete = (Button) findViewById(R.id.btnComoDelete);
 
         lstComo = (GridView) findViewById(R.id.lstComo);
-        lstComo.setAdapter(null);
-
         lstSearch = (GridView) findViewById(R.id.lstSearch);
-        lstSearch.setAdapter(null);
 
         btnComoEntry.setOnClickListener(this);
         btnComoSearch.setOnClickListener(this);
@@ -108,36 +98,25 @@ public class tabComo extends Activity implements View.OnClickListener {
 
     private void viewListComo(String str_input){
         JSONObject jsonObject;
-        int resLength=0;
-        ArrayList<HashMap<String,String>> arrayList= new ArrayList<HashMap<String, String>>();
+        ArrayList<String> arrayList = new ArrayList<String>();
         try{
             jsonObject = new JSONObject(str_input);
             JSONArray result = jsonObject.getJSONArray(ServerConst.TAG_COMO_RESULT);
             String id;
             String sayur;
-            resLength = result.length();
 
-            for(int i=0;i<resLength;i++){
+            for(int i=0;i<result.length();i++){
                 JSONObject jo = result.getJSONObject(i);
                 id = jo.getString(ServerConst.TAG_COMO_ID);
                 sayur = jo.getString(ServerConst.TAG_COMO_SAYUR);
 
-                HashMap<String,String> comodity = new HashMap<String, String>();
-                comodity.put("img",Integer.toString(R.drawable.sawi_putih));
-                comodity.put(ServerConst.TAG_COMO_ID,id);
-                comodity.put(ServerConst.TAG_COMO_SAYUR,sayur);
-                arrayList.add(comodity);
+                arrayList.add(id+":"+sayur);
             }
-        } catch(JSONException e){
+        }catch (JSONException e){
             e.printStackTrace();
         }
 
-        ListAdapter listAdapter = new SimpleAdapter(
-                getBaseContext(), arrayList,R.layout.list_comodity,
-                new String[]{ServerConst.TAG_COMO_IMG,ServerConst.TAG_COMO_ID,ServerConst.TAG_COMO_SAYUR},
-                new int[]{R.id.img,R.id.id,R.id.sayur});
-
-        lstComo.setAdapter(listAdapter);
+        lstComo.setAdapter(new CustomAdapter(tabComo.this, arrayList));
     }
 
     private void listComo(){
@@ -167,36 +146,25 @@ public class tabComo extends Activity implements View.OnClickListener {
 
     private void viewFindComo(String str_input){
         JSONObject jsonObject;
-        int resLength=0;
-        ArrayList<HashMap<String,String>> arrayList= new ArrayList<HashMap<String, String>>();
+        ArrayList<String> arrayList = new ArrayList<String>();
         try{
             jsonObject = new JSONObject(str_input);
             JSONArray result = jsonObject.getJSONArray(ServerConst.TAG_COMO_RESULT);
             String id;
             String sayur;
 
-            resLength = result.length();
-
-            for(int i=0;i<resLength;i++){
+            for(int i=0;i<result.length();i++){
                 JSONObject jo = result.getJSONObject(i);
                 id = jo.getString(ServerConst.TAG_COMO_ID);
                 sayur = jo.getString(ServerConst.TAG_COMO_SAYUR);
 
-                HashMap<String,String> comodity = new HashMap<String, String>();
-                comodity.put(ServerConst.TAG_COMO_ID,id);
-                comodity.put(ServerConst.TAG_COMO_SAYUR,sayur);
-                arrayList.add(comodity);
+                arrayList.add(id+":"+sayur);
             }
-        } catch(JSONException e){
+        }catch (JSONException e){
             e.printStackTrace();
         }
 
-        ListAdapter listAdapter = new SimpleAdapter(
-                tabComo.this, arrayList,R.layout.list_comodity,
-                new String[]{ServerConst.TAG_COMO_ID,ServerConst.TAG_COMO_SAYUR},
-                new int[]{R.id.id,R.id.sayur});
-
-        lstSearch.setAdapter(listAdapter);
+        lstSearch.setAdapter(new CustomAdapter(tabComo.this, arrayList));
     }
 
     private void findComo(){

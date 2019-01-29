@@ -112,7 +112,7 @@
                 android:numColumns="auto_fit"
                 android:verticalSpacing="20dp"
                 android:horizontalSpacing="10dp"
-                android:stretchMode="spacingWidthUniform"
+                android:stretchMode="columnWidth"
                 android:background="@android:color/background_light"/>
         <TextView
                 android:layout_width="match_parent"
@@ -131,7 +131,7 @@
                 android:numColumns="auto_fit"
                 android:verticalSpacing="24dp"
                 android:horizontalSpacing="10dp"
-                android:stretchMode="spacingWidthUniform"
+                android:stretchMode="columnWidth"
                 android:background="@android:color/background_light"/>
     </LinearLayout>
 
