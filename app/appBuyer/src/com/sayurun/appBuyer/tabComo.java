@@ -3,7 +3,6 @@ package com.sayurun.appBuyer;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
@@ -43,7 +42,7 @@ public class tabComo extends Activity{
             }
         });
 
-        findData();
+        listData();
     }
 
     private void viewList(String str_input){
@@ -126,8 +125,7 @@ public class tabComo extends Activity{
     }
 
     private void findData(){
-//        final String sayur = txtSearch.getText().toString().trim();
-        final String sayur = "bayam";
+        final String sayur = txtSearch.getText().toString().trim();
 
         class findData extends AsyncTask<Void,Void,String>{
             @Override
