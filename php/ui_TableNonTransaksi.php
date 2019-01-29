@@ -31,7 +31,7 @@
 		echo "<td>" . $i . "</td>";
 		echo "<td>" . $row0['id'] . "</td>";
 		echo "<td>" . $row0['sayur'] . "</td>";
-        echo "<td>" . $row0['img'] . "</td>";
+        echo "<td>" . $row0['image'] . "</td>";
 		echo "</tr>";
 	}
 	echo "</table>";
