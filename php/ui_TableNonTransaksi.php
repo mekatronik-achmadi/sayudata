@@ -20,6 +20,7 @@
 	<th>No</th>
 	<th>ID</th>
 	<th>Sayur</th>
+    <th>Image</th>
 	</tr>";
 
 	$i = 0;
