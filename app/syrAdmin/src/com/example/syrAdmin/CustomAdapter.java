@@ -24,8 +24,6 @@ public class CustomAdapter extends BaseAdapter{
     private ArrayList<String> itemString;
     private ArrayList<String> imgStrURL;
 
-    Bitmap itemImage;
-
     public CustomAdapter(Context context, ArrayList<String> itemString, ArrayList<String> imgStrURL){
         this.mContext = context;
         this.itemString = itemString;
@@ -37,44 +35,46 @@ public class CustomAdapter extends BaseAdapter{
         ImageView imgVw;
     }
 
-    private void getImgURL(final String strURL){
-        itemImage = null;
+    private class GetImgURL extends AsyncTask<String,Void,Bitmap>{
+        ImageView imgView;
 
-        class getImgURL extends AsyncTask<Void, Void, Bitmap>{
-            @Override
-            protected void onPreExecute() {
-                super.onPreExecute();
-            }
-
-            @Override
-            protected void onPostExecute(Bitmap bmp) {
-                super.onPostExecute(bmp);
-                itemImage = BitmapFactory.decodeResource(mContext.getResources(),R.drawable.ic_launcher);
-            }
-
-            @Override
-            protected Bitmap doInBackground(Void... v) {
-                Bitmap itemImg = null;
-                try{
-                    URL url = new URL(strURL);
-                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                    conn.setReadTimeout(5000);
-                    conn.setConnectTimeout(5000);
-                    conn.setDoInput(true);
-                    conn.setDoOutput(true);
-                    conn.setInstanceFollowRedirects(true);
-
-                    InputStream in = conn.getInputStream();
-                    itemImg = BitmapFactory.decodeStream(in);
-                }catch (Exception e){
-                    e.printStackTrace();
-                }
-                return itemImg;
-            }
+        public  GetImgURL(ImageView imgView){
+            this.imgView = imgView;
         }
 
-        getImgURL imgObj = new getImgURL();
-        imgObj.execute();
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+        }
+
+        @Override
+        protected void onPostExecute(Bitmap bmpres) {
+            super.onPostExecute(bmpres);
+            imgView.setImageBitmap(bmpres);
+        }
+
+        @Override
+        protected Bitmap doInBackground(String... urls){
+            String imgurl = urls[0];
+            Bitmap bmp = null;
+
+            try{
+                URL url = new URL(imgurl);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setReadTimeout(5000);
+                conn.setConnectTimeout(5000);
+                conn.setRequestMethod("GET");
+                conn.setDoInput(true);
+                conn.setDoOutput(true);
+
+                InputStream in = conn.getInputStream();
+                bmp = BitmapFactory.decodeStream(in);
+
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+            return bmp;
+        }
     }
 
     public View getView(int position, View convertView, ViewGroup parent){
@@ -94,7 +94,7 @@ public class CustomAdapter extends BaseAdapter{
         }
 
         cell.txtVw.setText(itemString.get(position));
-        cell.imgVw.setImageBitmap(BitmapFactory.decodeResource(mContext.getResources(),R.drawable.sawiputih));
+        new GetImgURL(cell.imgVw).execute(imgStrURL.get(position));
 
         return convertView;
     }
