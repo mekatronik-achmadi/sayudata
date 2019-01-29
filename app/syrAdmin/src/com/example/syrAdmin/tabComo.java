@@ -89,7 +89,7 @@ public class tabComo extends Activity implements View.OnClickListener {
             protected String doInBackground(Void... v) {
                 HashMap<String,String> params = new HashMap<String, String>();
                 params.put(ServerConst.KEY_COMO_SAYUR,sayur);
-                params.put(ServerConst.KEY_COMO_IMG,img+".bmp");
+                params.put(ServerConst.KEY_COMO_IMG,img+ServerConst.IMAGES_EXT);
 
                 ReqHandler rh = new ReqHandler();
                 String res = rh.sendPostReq(ServerConst.SERVER_URL + ServerConst.URL_COMO_ADD, params);
