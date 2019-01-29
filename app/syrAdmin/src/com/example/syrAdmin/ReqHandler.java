@@ -1,10 +1,7 @@
 package com.example.syrAdmin;
 
-import android.graphics.drawable.Drawable;
-
 import java.io.*;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 import java.util.HashMap;

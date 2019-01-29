@@ -17,7 +17,7 @@ import java.util.HashMap;
 /**
  * Created by farm on 1/25/19.
  */
-public class tabComo extends Activity implements View.OnClickListener {
+public class tabComo extends Activity {
     EditText txtComoEntry;
     EditText txtComoImgEntry;
     EditText txtComoSearch;
@@ -51,10 +51,6 @@ public class tabComo extends Activity implements View.OnClickListener {
         lstComo = (GridView) findViewById(R.id.lstComo);
         lstSearch = (GridView) findViewById(R.id.lstSearch);
 
-        btnComoEntry.setOnClickListener(this);
-        btnComoSearch.setOnClickListener(this);
-        btnComoDelete.setOnClickListener(this);
-
         listComoHndl = new Handler();
         listComoReq = new Runnable() {
             @Override
@@ -63,7 +59,45 @@ public class tabComo extends Activity implements View.OnClickListener {
             }
         };
 
+        btnComoEntry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!txtComoEntry.getText().toString().isEmpty()) {
+                    hideKeyboard();
+                    addComo();
+                    listComoHndl.postAtTime(listComoReq,500);
+                }
+            }
+        });
+        btnComoSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!txtComoSearch.getText().toString().isEmpty()) {
+                    hideKeyboard();
+                    findComo();
+                    listComoHndl.postAtTime(listComoReq,500);
+                }
+            }
+        });
+        btnComoDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!txtComoDelete.getText().toString().isEmpty()){
+                    hideKeyboard();
+                    delComo();
+                    listComoHndl.postAtTime(listComoReq,500);
+                }
+            }
+        });
+        lstComo.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getApplicationContext(),((TextView) view.findViewById(R.id.txt)).getText()+" sedang habis",Toast.LENGTH_SHORT).show();
+            }
+        });
+
         listComoHndl.postAtTime(listComoReq,500);
+
     }
 
     private void addComo(){
@@ -243,28 +277,5 @@ public class tabComo extends Activity implements View.OnClickListener {
     private void hideKeyboard(){
         InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
         imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-    }
-
-    @Override
-    public void onClick(View v) {
-        if(v == btnComoEntry){
-            if(!txtComoEntry.getText().toString().isEmpty()) {
-                hideKeyboard();
-                addComo();
-                listComoHndl.postAtTime(listComoReq,500);
-            }
-        }else if(v == btnComoSearch){
-            if(!txtComoSearch.getText().toString().isEmpty()) {
-                hideKeyboard();
-                findComo();
-                listComoHndl.postAtTime(listComoReq,500);
-            }
-        }else if(v == btnComoDelete){
-            if(!txtComoDelete.getText().toString().isEmpty()){
-                hideKeyboard();
-                delComo();
-                listComoHndl.postAtTime(listComoReq,500);
-            }
-        }
     }
 }
