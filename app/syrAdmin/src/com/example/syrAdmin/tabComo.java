@@ -112,7 +112,7 @@ public class tabComo extends Activity implements View.OnClickListener {
                 sayur = jo.getString(ServerConst.TAG_COMO_SAYUR);
 
                 txtList.add(id+":"+sayur);
-                imgList.add("http://www.sayu-run.com/imagesayur/sawi-putih.jpg");
+                imgList.add("http://www.sayu-run.com/imagesayur/sawiputih.bmp");
             }
         }catch (JSONException e){
             e.printStackTrace();
@@ -162,7 +162,7 @@ public class tabComo extends Activity implements View.OnClickListener {
                 sayur = jo.getString(ServerConst.TAG_COMO_SAYUR);
 
                 txtList.add(id+":"+sayur);
-                imgList.add("http://www.sayu-run.com/imagesayur/sawi-putih.jpg");
+                imgList.add("http://www.sayu-run.com/imagesayur/sawiputih.bmp");
             }
         }catch (JSONException e){
             e.printStackTrace();

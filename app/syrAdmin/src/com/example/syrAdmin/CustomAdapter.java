@@ -37,9 +37,10 @@ public class CustomAdapter extends BaseAdapter{
         ImageView imgVw;
     }
 
-    private void getImgURL(String strURL){
+    private void getImgURL(final String strURL){
+        itemImage = null;
 
-        class getImgURL extends AsyncTask<String, Void, Bitmap>{
+        class getImgURL extends AsyncTask<Void, Void, Bitmap>{
             @Override
             protected void onPreExecute() {
                 super.onPreExecute();
@@ -48,15 +49,14 @@ public class CustomAdapter extends BaseAdapter{
             @Override
             protected void onPostExecute(Bitmap bmp) {
                 super.onPostExecute(bmp);
-                itemImage = bmp;
+                itemImage = BitmapFactory.decodeResource(mContext.getResources(),R.drawable.ic_launcher);
             }
 
             @Override
-            protected Bitmap doInBackground(String... urlStr) {
-                String imgurl = urlStr[0];
+            protected Bitmap doInBackground(Void... v) {
                 Bitmap itemImg = null;
                 try{
-                    URL url = new URL(imgurl);
+                    URL url = new URL(strURL);
                     HttpURLConnection conn = (HttpURLConnection) url.openConnection();
                     conn.setReadTimeout(5000);
                     conn.setConnectTimeout(5000);
@@ -74,7 +74,7 @@ public class CustomAdapter extends BaseAdapter{
         }
 
         getImgURL imgObj = new getImgURL();
-        imgObj.execute(strURL);
+        imgObj.execute();
     }
 
     public View getView(int position, View convertView, ViewGroup parent){
@@ -94,8 +94,7 @@ public class CustomAdapter extends BaseAdapter{
         }
 
         cell.txtVw.setText(itemString.get(position));
-        getImgURL(imgStrURL.get(position));
-        cell.imgVw.setImageBitmap(itemImage);
+        cell.imgVw.setImageBitmap(BitmapFactory.decodeResource(mContext.getResources(),R.drawable.sawiputih));
 
         return convertView;
     }
