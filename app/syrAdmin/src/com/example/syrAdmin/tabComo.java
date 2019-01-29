@@ -51,14 +51,6 @@ public class tabComo extends Activity {
         lstComo = (GridView) findViewById(R.id.lstComo);
         lstSearch = (GridView) findViewById(R.id.lstSearch);
 
-        listComoHndl = new Handler();
-        listComoReq = new Runnable() {
-            @Override
-            public void run() {
-                listComo();
-            }
-        };
-
         btnComoEntry.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -96,8 +88,15 @@ public class tabComo extends Activity {
             }
         });
 
-        listComoHndl.postAtTime(listComoReq,500);
+        listComoHndl = new Handler();
+        listComoReq = new Runnable() {
+            @Override
+            public void run() {
+                listComo();
+            }
+        };
 
+        listComoHndl.postAtTime(listComoReq,500);
     }
 
     private void addComo(){

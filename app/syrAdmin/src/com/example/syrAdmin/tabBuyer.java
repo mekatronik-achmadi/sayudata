@@ -17,7 +17,7 @@ import java.util.HashMap;
 /**
  * Created by farm on 1/25/19.
  */
-public class tabBuyer extends Activity implements View.OnClickListener{
+public class tabBuyer extends Activity{
     EditText txtBuyerEntry;
     EditText txtBuyerSearch;
     EditText txtBuyerDelete;
@@ -46,14 +46,38 @@ public class tabBuyer extends Activity implements View.OnClickListener{
         btnBuyerDelete = (Button) findViewById(R.id.btnBuyerDelete);
 
         lstBuyer = (GridView) findViewById(R.id.lstBuyer);
-        lstBuyer.setAdapter(null);
-
         lstSearch = (GridView) findViewById(R.id.lstSearch);
-        lstSearch.setAdapter(null);
 
-        btnBuyerEntry.setOnClickListener(this);
-        btnBuyerSearch.setOnClickListener(this);
-        btnBuyerDelete.setOnClickListener(this);
+        btnBuyerEntry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!txtBuyerEntry.getText().toString().isEmpty()){
+                    hideKeyboard();
+                    addBuyer();
+                    listBuyerHndl.postAtTime(listBuyerReq,500);
+                }
+            }
+        });
+        btnBuyerSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (!txtBuyerSearch.getText().toString().isEmpty()) {
+                    hideKeyboard();
+                    findBuyer();
+                    listBuyerHndl.postAtTime(listBuyerReq,500);
+                }
+            }
+        });
+        btnBuyerDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!txtBuyerDelete.getText().toString().isEmpty()){
+                    hideKeyboard();
+                    delBuyer();
+                    listBuyerHndl.postAtTime(listBuyerReq,500);
+                }
+            }
+        });
 
         listBuyerHndl = new Handler();
         listBuyerReq = new Runnable() {
@@ -248,28 +272,5 @@ public class tabBuyer extends Activity implements View.OnClickListener{
     private void hideKeyboard(){
         InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
         imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-    }
-
-    @Override
-    public void onClick(View v){
-        if(v == btnBuyerEntry){
-            if(!txtBuyerEntry.getText().toString().isEmpty()){
-                hideKeyboard();
-                addBuyer();
-                listBuyerHndl.postAtTime(listBuyerReq,500);
-            }
-        }else if(v == btnBuyerSearch) {
-            if (!txtBuyerSearch.getText().toString().isEmpty()) {
-                hideKeyboard();
-                findBuyer();
-                listBuyerHndl.postAtTime(listBuyerReq,500);
-            }
-        }else if(v == btnBuyerDelete){
-            if(!txtBuyerDelete.getText().toString().isEmpty()){
-                hideKeyboard();
-                delBuyer();
-                listBuyerHndl.postAtTime(listBuyerReq,500);
-            }
-        }
     }
 }

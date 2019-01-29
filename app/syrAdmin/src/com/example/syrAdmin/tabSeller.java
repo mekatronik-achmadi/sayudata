@@ -17,7 +17,7 @@ import java.util.HashMap;
 /**
  * Created by farm on 1/25/19.
  */
-public class tabSeller extends Activity implements View.OnClickListener{
+public class tabSeller extends Activity{
     EditText txtSellerEntry;
     EditText txtSellerSearch;
     EditText txtSellerDelete;
@@ -52,9 +52,36 @@ public class tabSeller extends Activity implements View.OnClickListener{
         lstSearch = (GridView) findViewById(R.id.lstSearch);
         lstSearch.setAdapter(null);
 
-        btnSellerEntry.setOnClickListener(this);
-        btnSellerSearch.setOnClickListener(this);
-        btnSellerDelete.setOnClickListener(this);
+        btnSellerEntry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!txtSellerEntry.getText().toString().isEmpty()){
+                    hideKeyboard();
+                    addSeller();
+                    listSellerHndl.postAtTime(listSellerReq,500);
+                }
+            }
+        });
+        btnSellerSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!txtSellerSearch.getText().toString().isEmpty()){
+                    hideKeyboard();
+                    findSeller();
+                    listSellerHndl.postAtTime(listSellerReq,500);
+                }
+            }
+        });
+        btnSellerDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!txtSellerDelete.getText().toString().isEmpty()){
+                    hideKeyboard();
+                    delSeller();
+                    listSellerHndl.postAtTime(listSellerReq,500);
+                }
+            }
+        });
 
         listSellerHndl = new Handler();
         listSellerReq = new Runnable() {
@@ -249,28 +276,5 @@ public class tabSeller extends Activity implements View.OnClickListener{
     private void hideKeyboard(){
         InputMethodManager imm = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
         imm.toggleSoftInput(InputMethodManager.HIDE_IMPLICIT_ONLY, 0);
-    }
-
-    @Override
-    public void onClick(View v){
-        if(v == btnSellerEntry){
-            if(!txtSellerEntry.getText().toString().isEmpty()){
-                hideKeyboard();
-                addSeller();
-                listSellerHndl.postAtTime(listSellerReq,500);
-            }
-        }else if(v == btnSellerSearch){
-            if(!txtSellerSearch.getText().toString().isEmpty()){
-                hideKeyboard();
-                findSeller();
-                listSellerHndl.postAtTime(listSellerReq,500);
-            }
-        }else if(v == btnSellerDelete){
-            if(!txtSellerDelete.getText().toString().isEmpty()){
-                hideKeyboard();
-                delSeller();
-                listSellerHndl.postAtTime(listSellerReq,500);
-            }
-        }
     }
 }
