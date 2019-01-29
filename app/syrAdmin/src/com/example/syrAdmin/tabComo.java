@@ -89,7 +89,7 @@ public class tabComo extends Activity implements View.OnClickListener {
             protected String doInBackground(Void... v) {
                 HashMap<String,String> params = new HashMap<String, String>();
                 params.put(ServerConst.KEY_COMO_SAYUR,sayur);
-                params.put(ServerConst.KEY_COMO_IMG,img+ServerConst.IMAGES_EXT);
+                params.put(ServerConst.KEY_COMO_IMG,img);
 
                 ReqHandler rh = new ReqHandler();
                 String res = rh.sendPostReq(ServerConst.SERVER_URL + ServerConst.URL_COMO_ADD, params);
@@ -119,7 +119,7 @@ public class tabComo extends Activity implements View.OnClickListener {
                 img = jo.getString(ServerConst.TAG_COMO_IMG);
 
                 txtList.add(id+":"+sayur);
-                imgList.add(ServerConst.IMAGES_URL+img);
+                imgList.add(ServerConst.IMAGES_URL+img+ServerConst.IMAGES_EXT);
             }
         }catch (JSONException e){
             e.printStackTrace();
@@ -171,7 +171,7 @@ public class tabComo extends Activity implements View.OnClickListener {
                 img = jo.getString(ServerConst.TAG_COMO_IMG);
 
                 txtList.add(id+":"+sayur);
-                imgList.add(ServerConst.IMAGES_URL+img);
+                imgList.add(ServerConst.IMAGES_URL+img+ServerConst.IMAGES_EXT);
             }
         }catch (JSONException e){
             e.printStackTrace();
