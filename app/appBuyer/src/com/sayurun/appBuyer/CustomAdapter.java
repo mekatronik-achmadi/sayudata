@@ -21,16 +21,19 @@ import java.util.ArrayList;
  */
 public class CustomAdapter extends BaseAdapter{
     private Context mContext;
+    private ArrayList<String> nidString;
     private ArrayList<String> itemString;
     private ArrayList<String> imgStrURL;
 
-    public CustomAdapter(Context context, ArrayList<String> itemString, ArrayList<String> imgStrURL){
+    public CustomAdapter(Context context, ArrayList<String> nidString, ArrayList<String> itemString, ArrayList<String> imgStrURL){
         this.mContext = context;
+        this.nidString = nidString;
         this.itemString = itemString;
         this.imgStrURL = imgStrURL;
     }
 
     private class ViewCell{
+        TextView nidVw;
         TextView txtVw;
         ImageView imgVw;
     }
@@ -90,6 +93,7 @@ public class CustomAdapter extends BaseAdapter{
             convertView = inflater.inflate(R.layout.list_grid,null);
 
             cell = new ViewCell();
+            cell.nidVw = (TextView) convertView.findViewById(R.id.nid);
             cell.txtVw = (TextView) convertView.findViewById(R.id.txt);
             cell.imgVw = (ImageView) convertView.findViewById(R.id.img);
             convertView.setTag(cell);
@@ -97,6 +101,7 @@ public class CustomAdapter extends BaseAdapter{
             cell = (ViewCell) convertView.getTag();
         }
 
+        cell.nidVw.setText(nidString.get(position));
         cell.txtVw.setText(itemString.get(position));
         new GetImgURL(cell.imgVw).execute(imgStrURL.get(position));
         cell.imgVw.getLayoutParams().height = 150;

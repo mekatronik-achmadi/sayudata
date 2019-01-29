@@ -14,7 +14,7 @@
 
         <Space
                 android:layout_width="0dp"
-                android:layout_weight="20"
+                android:layout_weight="40"
                 android:layout_height="match_parent"
         />
 
@@ -27,12 +27,11 @@
                 android:background="@android:color/background_light"
                 android:inputType="text"/>
 
-        <Button
+        <Space
                 android:layout_width="0dp"
+                android:layout_weight="10"
                 android:layout_height="match_parent"
-                android:text="@string/btnSearch"
-                android:id="@+id/btnSearch"
-                android:layout_weight="30" style="@android:style/Holo.ButtonBar"/>
+        />
     </LinearLayout>
 
     <Space
