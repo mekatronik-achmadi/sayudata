@@ -20,6 +20,8 @@ public class Main extends TabActivity {
 
         TabHost.TabSpec tabComo = tabHost.newTabSpec("Comodity");
         TabHost.TabSpec tabChoice = tabHost.newTabSpec("Choice");
+        TabHost.TabSpec tabOrder = tabHost.newTabSpec("Order");
+        TabHost.TabSpec tabGoing = tabHost.newTabSpec("Going");
 
         tabComo.setIndicator("Sayur");
         tabComo.setContent(new Intent(this,tabComo.class));
@@ -27,7 +29,15 @@ public class Main extends TabActivity {
         tabChoice.setIndicator("Pilihan");
         tabChoice.setContent(new Intent(this,tabChoice.class));
 
+        tabOrder.setIndicator("Pesan");
+        tabOrder.setContent(new Intent(this,tabOrder.class));
+
+        tabGoing.setIndicator("Daftar");
+        tabGoing.setContent(new Intent(this,tabGoing.class));
+
         tabHost.addTab(tabComo);
         tabHost.addTab(tabChoice);
+        tabHost.addTab(tabOrder);
+        tabHost.addTab(tabGoing);
     }
 }

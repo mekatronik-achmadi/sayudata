@@ -16,6 +16,8 @@
         </activity>
         <activity android:name="tabComo"></activity>
         <activity android:name="tabChoice"></activity>
+        <activity android:name="tabOrder"></activity>
+        <activity android:name="tabGoing"></activity>
     </application>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>
