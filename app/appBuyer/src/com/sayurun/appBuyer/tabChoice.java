@@ -25,10 +25,10 @@ public class tabChoice extends Activity {
         runComo = new Runnable() {
             @Override
             public void run() {
-                if(tabComo.runCho==true){
-                    txtNid.setText(tabComo.strChoNid);
-                    txtSayur.setText(tabComo.strChoTxt);
-                    tabComo.runCho=false;
+                if(GlobalVar.runCho==true){
+                    txtNid.setText(GlobalVar.strChoNid);
+                    txtSayur.setText(GlobalVar.strChoTxt);
+                    GlobalVar.runCho=false;
                 }
                 hdlComo.postDelayed(this,100);
             }

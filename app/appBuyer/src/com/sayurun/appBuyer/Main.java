@@ -13,9 +13,7 @@ import java.util.Random;
 public class Main extends TabActivity {
     public static Main self;
 
-    private static final String ALLOWED_CHARACTERS ="0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
-    private static String fPrefName="sayurun";
-    public static String idTokenApp;
+    final String ALLOWED_CHARACTERS ="0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
     TextView txtToken;
 
     @Override
@@ -26,20 +24,20 @@ public class Main extends TabActivity {
         setContentView(R.layout.main);
 
         txtToken = (TextView) findViewById(R.id.txtToken);
-        SharedPreferences idToken = getApplicationContext().getSharedPreferences(fPrefName,0);
-        File fpref = new File("/data/data/" + getPackageName() +  "/shared_prefs/" + fPrefName + ".xml");
+        SharedPreferences idToken = getApplicationContext().getSharedPreferences(GlobalVar.fPrefName,0);
+        File fpref = new File("/data/data/" + getPackageName() +  "/shared_prefs/" + GlobalVar.fPrefName + ".xml");
         if(fpref.exists()){
-            idTokenApp = idToken.getString("token",null);
-            txtToken.setText("ID Token: "+idTokenApp);
+            GlobalVar.idTokenApp = idToken.getString("token",null);
+            txtToken.setText("ID Token: "+GlobalVar.idTokenApp);
         }
         else {
-            idTokenApp = getRandomString(8);
+            GlobalVar.idTokenApp = getRandomString(8);
 
             SharedPreferences.Editor editToken = idToken.edit();
-            editToken.putString("token",idTokenApp);
+            editToken.putString("token",GlobalVar.idTokenApp);
             editToken.commit();
 
-            txtToken.setText("ID Token: "+idTokenApp);
+            txtToken.setText("ID Token: "+GlobalVar.idTokenApp);
         }
 
         TabHost tabHost = (TabHost)findViewById(android.R.id.tabhost);
