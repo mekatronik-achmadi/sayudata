@@ -24,16 +24,6 @@
 
 	/////////////////////////////////////////////////
 
-	$tbl_buyer = "CREATE TABLE pembeli (
-	 `id` INT(4) NOT NULL AUTO_INCREMENT,
-	 `name` TEXT NOT NULL,
-	  PRIMARY KEY (`id`)
-	  ) ENGINE = InnoDB;";
-
-	mysqli_query($con,$tbl_buyer);
-
-	/////////////////////////////////////////////////
-
 	$tbl_order = "CREATE TABLE pesan (
 	 `id` INT(16) NOT NULL AUTO_INCREMENT,
 	 `buyer` INT(4) NOT NULL,
@@ -48,11 +38,14 @@
 	/////////////////////////////////////////////////
 
 	$tbl_provide = "CREATE TABLE sedia (
-	 `id` INT(16) NOT NULL AUTO_INCREMENT,
-	 `seller` INT(4) NOT NULL,
+	 `id` INT(64) NOT NULL AUTO_INCREMENT,
+	 `seller` TEXT NOT NULL,
 	 `tanggal` DATE NOT NULL,
 	 `sayur` INT(4) NOT NULL,
-	 `jumlah` INT(16) NOT NULL,
+	 `stok` INT(16) NOT NULL,
+	 `harga` INT(16) NOT NULL,
+	 `satuan` TEXT NOT NULL,
+	 `area` TEXT NOT NULL,
 	  PRIMARY KEY (`id`)
 	  ) ENGINE = InnoDB;";
 
