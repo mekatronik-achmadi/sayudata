@@ -5,16 +5,13 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.widget.TextView;
 
-/**
- * Created by farm on 1/30/19.
- */
 public class tabChoice extends Activity {
-
-    TextView txtNid;
-    TextView txtSayur;
 
     Handler hdlComo;
     Runnable runComo;
+
+    TextView txtNid;
+    TextView txtSayur;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,6 +25,11 @@ public class tabChoice extends Activity {
         runComo = new Runnable() {
             @Override
             public void run() {
+                if(tabComo.runCho==true){
+                    txtNid.setText(tabComo.strChoNid);
+                    txtSayur.setText(tabComo.strChoTxt);
+                    tabComo.runCho=false;
+                }
                 hdlComo.postDelayed(this,100);
             }
         };

@@ -16,6 +16,10 @@ import java.util.ArrayList;
 
 public class tabComo extends Activity{
 
+    public static boolean runCho;
+    public static String strChoNid;
+    public static String strChoTxt;
+
     EditText txtSearch;
     GridView lstView;
 
@@ -58,9 +62,9 @@ public class tabComo extends Activity{
         lstView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String nid = ((TextView) view.findViewById(R.id.nid)).getText().toString().trim();
-                String txt = ((TextView) view.findViewById(R.id.txt)).getText().toString().trim();
-
+                strChoNid = ((TextView) view.findViewById(R.id.nid)).getText().toString().trim();
+                strChoTxt = ((TextView) view.findViewById(R.id.txt)).getText().toString().trim();
+                runCho = true;
                 Main.self.getTabHost().setCurrentTab(1);
             }
         });
