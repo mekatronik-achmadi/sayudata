@@ -65,31 +65,4 @@
 
 	echo "<br />";
 
-	///////////////////////////////////////////
-
-	echo "<p>Tabel Pembeli.</p>";
-
-	$sql2 = "SELECT * FROM pembeli";
-
-	$result2 = mysqli_query($con,$sql2);
-
-	echo "<table border='1'>
-	<tr>
-	<th>ID</th>
-	<th>NAMA</th>
-	</tr>";
-
-	$i = 0;
-	while($row2 = mysqli_fetch_array($result2))
-	{
-		$i++;
-		echo "<tr>";
-		echo "<td>" . $row2['id'] . "</td>";
-		echo "<td>" . $row2['name'] . "</td>";
-		echo "</tr>";
-	}
-	echo "</table>";
-
-	mysqli_close($con);
-
 ?>
