@@ -90,7 +90,7 @@ public class CustomAdapter extends BaseAdapter{
 
         if(convertView == null){
             LayoutInflater inflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.list_grid,null);
+            convertView = inflater.inflate(R.layout.list_como,null);
 
             cell = new ViewCell();
             cell.nidVw = (TextView) convertView.findViewById(R.id.nid);

@@ -15,6 +15,7 @@
             </intent-filter>
         </activity>
         <activity android:name="tabComo"></activity>
+        <activity android:name="tabChoice"></activity>
     </application>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.INTERNET"/>

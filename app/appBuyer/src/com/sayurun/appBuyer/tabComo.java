@@ -12,13 +12,11 @@ import android.widget.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 import java.util.ArrayList;
 
 public class tabComo extends Activity{
 
     EditText txtSearch;
-
     GridView lstView;
 
     @Override
@@ -63,7 +61,7 @@ public class tabComo extends Activity{
                 String nid = ((TextView) view.findViewById(R.id.nid)).getText().toString().trim();
                 String txt = ((TextView) view.findViewById(R.id.txt)).getText().toString().trim();
 
-                Toast.makeText(getApplicationContext(),"sayur "+txt+" ("+nid+") habis",Toast.LENGTH_SHORT).show();
+                Main.self.getTabHost().setCurrentTab(1);
             }
         });
 
