@@ -4,4 +4,6 @@
 
     <string name="btnSearch">Cari Sayur</string>
     <string name="imgView"></string>
+
+    <string name="txtToken">ID Token:</string>
 </resources>
