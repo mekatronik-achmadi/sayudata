@@ -2,7 +2,7 @@
 	if($_SERVER['REQUEST_METHOD']=='POST'){
 
 		$seller = $_POST['seller'];
-		$tanggal = date("Y-m-d H:i:s");
+		$tanggal = date("Y-m-d");
 		$sayur = $_POST['sayur'];
 		$stok = $_POST['stok'];
 		$harga = $_POST['harga'];

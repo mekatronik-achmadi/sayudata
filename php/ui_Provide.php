@@ -70,31 +70,39 @@
 		</form>
 
 		<?php
-			require_once('db_Connect.php');
-		
-			$sql = "SELECT * FROM sedia";
-		
-			$r = mysqli_query($con,$sql);
-		
-			$result = array();
-		
-			while($row = mysqli_fetch_array($r)){
-		
-				array_push($result,array(
-					"id"=>$row['id'],
-					"seller"=>$row['seller'],
-					"tanggal"=>$row['tanggal'],
-					"sayur"=>$row['sayur'],
-					"stok"=>$row['stok'],
-					"harga"=>$row['harga'],
-					"satuan"=>$row['satuan'],
-					"area"=>$row['area']
-				));
-			}
-		
-			echo json_encode(array('result'=>$result));
-		
-			mysqli_close($con);
+				require_once('db_Connect.php');
+			   	echo "<h2>Tabel Persediaan.</h2>";
+				$sql0 = "SELECT * FROM sedia";
+				$result0 = mysqli_query($con,$sql0);
+				echo "<table border='1'>
+				<tr>
+				<th>No</th>
+				<th>ID</th>
+				<th>Penjual</th>
+				<th>Tanggal</th>
+				<th>Sayur</th>
+				<th>Stok</th>
+				<th>Harga</th>
+				<th>Satuan</th>
+				<th>Area</th>
+				</tr>";
+				$i = 0;
+				while($row0 = mysqli_fetch_array($result0))
+				{
+					$i++;
+					echo "<tr>";
+					echo "<td>" . $i . "</td>";
+					echo "<td>" . $row0['id'] . "</td>";
+					echo "<td>" . $row0['seller'] . "</td>";
+					echo "<td>" . $row0['tanggal'] . "</td>";
+					echo "<td>" . $row0['sayur'] . "</td>";
+					echo "<td>" . $row0['stok'] . "</td>";
+					echo "<td>" . $row0['harga'] . "</td>";
+					echo "<td>" . $row0['satuan'] . "</td>";
+					echo "<td>" . $row0['area'] . "</td>";
+					echo "</tr>";
+				}
+				echo "</table>";
 		?>
 
 	</body>
