@@ -16,7 +16,8 @@
 		if(mysqli_query($con,$sql)){
 			echo "Provide Added Successfully";
 		}else{
-			echo "Could Not Add Comodity";
+			echo "Could Not Add Comodity<br>";
+			printf("Errormessage: %s\n", mysqli_error($con));
 		}
 
 		mysqli_close($con);
