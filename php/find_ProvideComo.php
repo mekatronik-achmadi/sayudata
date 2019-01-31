@@ -1,10 +1,9 @@
 <?php
-
 	$sayur = $_GET['sayur'];
 
 	require_once('db_Connect.php');
-
-	$sql = "SELECT * FROM komoditi WHERE sayur LIKE '%$sayur%'";
+		
+	$sql = "SELECT * FROM sedia WHERE sayur=$sayur";
 
 	$r = mysqli_query($con,$sql);
 
@@ -14,8 +13,13 @@
 
 		array_push($result,array(
 			"id"=>$row['id'],
+			"seller"=>$row['seller'],
+			"tanggal"=>$row['tanggal'],
 			"sayur"=>$row['sayur'],
-			"image"=>$row['image']
+			"stok"=>$row['stok'],
+			"harga"=>$row['harga'],
+			"satuan"=>$row['satuan'],
+			"area"=>$row['area']
 		));
 	}
 

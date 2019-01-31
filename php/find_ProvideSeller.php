@@ -1,9 +1,9 @@
 <?php
-	$sayur = $_GET['sayur'];
+	$seller = $_GET['sayur'];
 
 	require_once('db_Connect.php');
-
-	$sql = "SELECT * FROM sedia WHERE sayur LIKE '%$sayur%'";
+		
+	$sql = "SELECT * FROM sedia WHERE sayur=$seller";
 
 	$r = mysqli_query($con,$sql);
 
