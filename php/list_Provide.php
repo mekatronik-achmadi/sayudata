@@ -13,7 +13,7 @@
 			"id"=>$row['id'],
 			"seller"=>$row['seller'],
 			"tanggal"=>$row['tanggal'],
-			"sayur"=>$row['sayur'],
+			"idsayur"=>$row['idsayur'],
 			"stok"=>$row['stok'],
 			"harga"=>$row['harga'],
 			"satuan"=>$row['satuan'],

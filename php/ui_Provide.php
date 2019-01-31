@@ -13,8 +13,8 @@
 		    	<input type="text" name="seller" id="Seller" required>
 			</p>
 			<p>
-		    	<label for="Sayur">Sayur:</label>
-		    	<input type="text" name="sayur" id="Sayur" required>
+		    	<label for="IDSayur">Sayur:</label>
+		    	<input type="number" name="idsayur" id="IDSayur" required>
 			</p>
 			<p>
 		    	<label for="Stok">Stok:  </label>
@@ -26,7 +26,13 @@
 			</p>
 			<p>
 		    	<label for="Satuan">Satuan:  </label>
-		    	<input type="text" name="satuan" id="Satuan" required>
+		    	<select id="Satuan" name="satuan">
+					<option disabled selected value>--pilih satuan--</option>
+					<option value="kg">kg</option>
+					<option value="ons">ons</option>
+					<option value="ikat">ikat</option>
+					<option value="biji">biji</option>
+				</select>
 			</p>
 			<p>
 		    	<label for="Area">Area:  </label>
@@ -37,7 +43,7 @@
 			<input type="reset"  value="Bersihkan">
 		</form>
 
-		<h2> Hapus Komoditi </h2>
+<!--		<h2> Hapus Komoditi </h2>
 		<form action="del_Como.php" method="post">
 			<p>
 		    	<label for="IDSayur">ID Sayur:  </label>
@@ -67,7 +73,7 @@
 
 			<input type="submit" value="Gantikan">
 			<input type="reset"  value="Bersihkan">
-		</form>
+		</form>-->
 
 		<?php
 				require_once('db_Connect.php');
@@ -95,7 +101,7 @@
 					echo "<td>" . $row0['id'] . "</td>";
 					echo "<td>" . $row0['seller'] . "</td>";
 					echo "<td>" . $row0['tanggal'] . "</td>";
-					echo "<td>" . $row0['sayur'] . "</td>";
+					echo "<td>" . $row0['idsayur'] . "</td>";
 					echo "<td>" . $row0['stok'] . "</td>";
 					echo "<td>" . $row0['harga'] . "</td>";
 					echo "<td>" . $row0['satuan'] . "</td>";

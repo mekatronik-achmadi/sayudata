@@ -1,9 +1,9 @@
 <?php
-	$sayur = $_GET['sayur'];
+	$idsayur = $_GET['idsayur'];
 
 	require_once('db_Connect.php');
 		
-	$sql = "SELECT * FROM sedia WHERE sayur=$sayur";
+	$sql = "SELECT * FROM sedia WHERE idsayur=$idsayur";
 
 	$r = mysqli_query($con,$sql);
 
@@ -15,7 +15,7 @@
 			"id"=>$row['id'],
 			"seller"=>$row['seller'],
 			"tanggal"=>$row['tanggal'],
-			"sayur"=>$row['sayur'],
+			"idsayur"=>$row['idsayur'],
 			"stok"=>$row['stok'],
 			"harga"=>$row['harga'],
 			"satuan"=>$row['satuan'],
