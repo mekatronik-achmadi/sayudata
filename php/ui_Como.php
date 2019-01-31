@@ -20,6 +20,15 @@
 			<input type="submit" value="Tambahkan">
 			<input type="reset"  value="Bersihkan">
 		</form>
+		
+		<h2> Upload Gambar Komoditi </h2>
+		<form action="imgup_Como.php" method="post" enctype="multipart/form-data">
+			<p>
+				<input type="file" name="fileToUpload" id="fileToUpload" required>
+			</p>
+			<input type="submit" value="Upload Image" name="submit">
+			<input type="reset"  value="Bersihkan">
+		</form>
 
 		<h2> Hapus Komoditi </h2>
 		<form action="del_Como.php" method="post">
@@ -52,15 +61,7 @@
 			<input type="submit" value="Gantikan">
 			<input type="reset"  value="Bersihkan">
 		</form>
-		<h2> Upload Gambar Komoditi </h2>
-		<form action="imgup_Como.php" method="post" enctype="multipart/form-data">
-			<p>
-				<input type="file" name="fileToUpload" id="fileToUpload" required>
-			</p>
-			<input type="submit" value="Upload Image" name="submit">
-			<input type="reset"  value="Bersihkan">
-		</form>
-
+		
 		<?php
 				require_once('db_Connect.php');
 			   	echo "<h2>Tabel Komoditi.</h2>";
