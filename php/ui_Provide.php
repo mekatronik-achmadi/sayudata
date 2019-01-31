@@ -14,15 +14,15 @@
 			</p>
 			<p>
 		    	<label for="IDSayur">ID Sayur:</label>
-		    	<input type="text" name="idsayur" id="IDSayur" required>
+		    	<input type="number" name="idsayur" id="IDSayur" required>
 			</p>
 			<p>
 		    	<label for="Stok">Stok:  </label>
-		    	<input type="text" name="stok" id="Stok" required>
+		    	<input type="number" name="stok" id="Stok" required>
 			</p>
 			<p>
 		    	<label for="Harga">Harga:  </label>
-		    	<input type="text" name="harga" id="Harga" required>
+		    	<input type="number" name="harga" id="Harga" required>
 			</p>
 			<p>
 		    	<label for="Satuan">Satuan:  </label>
