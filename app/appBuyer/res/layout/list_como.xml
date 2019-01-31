@@ -26,11 +26,4 @@
             android:layout_height="0dp"
             android:layout_weight="10"
             android:textColor="@android:color/background_dark"/>
-
-    <TextView
-            android:id="@+id/imgurl"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textColor="@android:color/background_dark"
-            android:visibility="gone"/>
 </LinearLayout>

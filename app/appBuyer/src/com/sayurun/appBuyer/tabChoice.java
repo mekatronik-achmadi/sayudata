@@ -45,61 +45,15 @@ public class tabChoice extends Activity {
             @Override
             public void run() {
                 if(GlobalVar.runCho==true){
-                    new GetImgURL(imgView).execute(GlobalVar.strChoImg);
-                    txtSayur.setText(GlobalVar.strChoTxt);
-                    findData();
                     GlobalVar.runCho=false;
+                    imgView.setImageDrawable(GlobalVar.imgCho);
+//                    txtSayur.setText(GlobalVar.strChoTxt);
+                    findData();
                 }
-                hdlComo.postDelayed(this,500);
+                hdlComo.postDelayed(this,100);
             }
         };
         hdlComo.post(runComo);
-    }
-
-    private class GetImgURL extends AsyncTask<String,Void,Bitmap> {
-        ImageView imgView;
-
-        public  GetImgURL(ImageView imgView){
-            this.imgView = imgView;
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @Override
-        protected void onPostExecute(Bitmap bmpres) {
-            super.onPostExecute(bmpres);
-            imgView.setImageBitmap(bmpres);
-        }
-
-        @Override
-        protected Bitmap doInBackground(String... urls){
-            String imgurl = urls[0];
-            Bitmap bmp = null;
-
-            try{
-                URL url = new URL(imgurl);
-                HttpURLConnection.setFollowRedirects(false);
-                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setReadTimeout(5000);
-                conn.setConnectTimeout(5000);
-                conn.setRequestMethod("GET");
-                conn.setDoInput(true);
-                conn.setDoOutput(true);
-
-                if(conn.getResponseCode() == HttpURLConnection.HTTP_OK) {
-                    InputStream in = conn.getInputStream();
-                    bmp = BitmapFactory.decodeStream(in);
-                }else{
-                    bmp = BitmapFactory.decodeResource(self.getResources(),R.drawable.ic_launcher);
-                }
-            }catch (Exception e){
-                e.printStackTrace();
-            }
-            return bmp;
-        }
     }
 
     private void viewData(String str_input){
@@ -140,6 +94,7 @@ public class tabChoice extends Activity {
             e.printStackTrace();
         }
 
+        txtSayur.setText(str_input);
         lstProvide.setAdapter(new AdapterChoice(getBaseContext(),strHarga,strSatuan,strSeller,strStok,strArea));
     }
 
