@@ -54,8 +54,11 @@
 		</form>
 		<h2> Upload Gambar Komoditi </h2>
 		<form action="imgup_Como.php" method="post" enctype="multipart/form-data">
-			<input type="file" name="fileToUpload" id="fileToUpload">
+			<p>
+				<input type="file" name="fileToUpload" id="fileToUpload" required>
+			</p>
 			<input type="submit" value="Upload Image" name="submit">
+			<input type="reset"  value="Bersihkan">
 		</form>
 
 		<?php

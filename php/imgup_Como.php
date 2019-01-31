@@ -7,38 +7,38 @@
 	if(isset($_POST["submit"])){
 		$check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
 		if($check !== false){
-			echo "File is an image".$check["mime"].".";
+			echo "File is an image".$check["mime"].". \r\n";
 			$uploadOk = 1;
 		}
 		else{
-			echo "File not an image";
+			echo "File not an image \r\n";
 			$uploadOk = 0;
 		}
 	}
 	
 	if(file_exists($targetfile)){
-		echo "File already exist. Overwriting";
+		echo "File already exist. Overwriting \r\n";
 	}
 	
 	if($_FILES["fileToUpload"]["size"] > 30000){
-		echo "Sorry your file too big";
+		echo "Sorry your file too big \r\n";
 		$uploadOk = 0;
 	}
 	
 	if($imageFileType != "jpg"){
-		echo "Sorry your image is not JPG";
+		echo "Sorry your image is not JPG \r\n";
 		$uploadOk = 0;	
 	}
 	
 	if($uploadOk == 0){
-		echo "Your image not uploaded";
+		echo "Your image not uploaded \r\n";
 	}
 	else{
 		if(move_uploaded_file($_FILES["fileToUpload"]["tmp_name"],$targetfile)){
-			echo "File ".basename($_FILES["fileToUpload"]["name"])." uploaded";
+			echo "File ".basename($_FILES["fileToUpload"]["name"])." uploaded \r\n";
 		}
 		else{
-			echo "An error happen";
+			echo "An error happen while uploading \r\n";
 		}
 	}
 	
