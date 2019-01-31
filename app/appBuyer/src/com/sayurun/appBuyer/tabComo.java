@@ -17,6 +17,7 @@ import java.util.ArrayList;
 public class tabComo extends Activity{
 
     EditText txtSearch;
+    TextView txtLoading;
     GridView lstView;
 
     @Override
@@ -25,6 +26,7 @@ public class tabComo extends Activity{
         setContentView(R.layout.gui_como);
 
         txtSearch = (EditText) findViewById(R.id.txtSearch);
+        txtLoading = (TextView) findViewById(R.id.txtLoading);
         lstView = (GridView) findViewById(R.id.lstView);
 
         txtSearch.setOnKeyListener(new View.OnKeyListener() {
@@ -96,9 +98,15 @@ public class tabComo extends Activity{
         }
 
         lstView.setAdapter(new AdapterComo(getBaseContext(), nidList, txtList, imgList));
+        if(nidList.size()==0){
+            txtLoading.setText("Komoditas tidak ditemukan");
+        }else{
+            txtLoading.setText("Silahkan Pilih Komoditas");
+        }
     }
 
     private void listData(){
+        txtLoading.setText("Menyiapkan Komoditas");
         class listData extends AsyncTask<Void,Void,String> {
             @Override
             protected void onPreExecute() {
@@ -124,6 +132,7 @@ public class tabComo extends Activity{
     }
 
     private void findData(){
+        txtLoading.setText("Mencari Komoditas");
         final String sayur = txtSearch.getText().toString().trim();
 
         class findData extends AsyncTask<Void,Void,String>{

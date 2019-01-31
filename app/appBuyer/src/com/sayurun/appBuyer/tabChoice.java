@@ -6,7 +6,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -22,6 +21,7 @@ public class tabChoice extends Activity {
 
     ImageView imgView;
     TextView txtSayur;
+    TextView txtLoading;
     ListView lstProvide;
 
     @Override
@@ -31,6 +31,7 @@ public class tabChoice extends Activity {
 
         imgView = (ImageView) findViewById(R.id.imgView);
         txtSayur = (TextView) findViewById(R.id.txtSayur);
+        txtLoading = (TextView) findViewById(R.id.txtLoading);
         lstProvide = (ListView) findViewById(R.id.lstProvide);
 
         txtSayur.addTextChangedListener(new TextWatcher() {
@@ -104,9 +105,15 @@ public class tabChoice extends Activity {
         }
 
         lstProvide.setAdapter(new AdapterChoice(getBaseContext(),strHarga,strSatuan,strSeller,strStok,strArea));
+        if(strSeller.size()==0){
+            txtLoading.setText("Penjual Tidak Ada");
+        }else {
+            txtLoading.setText("Silahkan Pilih Harga");
+        }
     }
 
     private void findData(){
+        txtLoading.setText("Sedang Mencari");
         final String idsayur = GlobalVar.strChoNid;
 
         class findData extends AsyncTask<Void,Void,String>{

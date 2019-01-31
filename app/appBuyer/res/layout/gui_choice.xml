@@ -49,6 +49,15 @@
             android:layout_weight="5"
             android:layout_height="0dp"/>
 
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="5"
+            android:id="@+id/txtLoading"
+            android:background="@android:color/background_light"
+            android:textColor="@android:color/background_dark"
+            android:gravity="center_horizontal"/>
+
     <ListView
             android:layout_width="match_parent"
             android:layout_height="0dp"
