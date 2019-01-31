@@ -12,7 +12,7 @@ public class ServerConst {
     public static final String URL_COMO_LIST="list_Como.php";
     public static final String URL_COMO_FIND="find_Como.php?sayur=";
 
-    public static final String URL_PROVIDE_COMO_FIND = "find_ProvideComo.php?sayur=";
+    public static final String URL_PROVIDE_COMO_FIND = "find_ProvideComo.php?idsayur=";
 
     ////////////////////////////////////////////////////////////////////////////////////
 
@@ -28,7 +28,7 @@ public class ServerConst {
     public static final String TAG_COMO_IMG="image";
 
     public static final String TAG_CHOICE_RESULT="result";
-    public static final String TAG_CHOICE_SAYUR="sayur";
+    public static final String TAG_CHOICE_IDSAYUR="idsayur";
     public static final String TAG_CHOICE_HARGA="harga";
     public static final String TAG_CHOICE_SATUAN="satuan";
     public static final String TAG_CHOICE_SELLER="seller";

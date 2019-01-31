@@ -38,18 +38,19 @@ public class tabChoice extends Activity {
 
         imgView = (ImageView) findViewById(R.id.imgView);
         txtSayur = (TextView) findViewById(R.id.txtSayur);
+        lstProvide = (ListView) findViewById(R.id.lstProvide);
 
         hdlComo = new Handler();
         runComo = new Runnable() {
             @Override
             public void run() {
                 if(GlobalVar.runCho==true){
-                    GlobalVar.runCho=false;
                     new GetImgURL(imgView).execute(GlobalVar.strChoImg);
                     txtSayur.setText(GlobalVar.strChoTxt);
                     findData();
+                    GlobalVar.runCho=false;
                 }
-                hdlComo.postDelayed(this,100);
+                hdlComo.postDelayed(this,500);
             }
         };
         hdlComo.post(runComo);
@@ -143,7 +144,7 @@ public class tabChoice extends Activity {
     }
 
     private void findData(){
-        final String sayur = GlobalVar.strChoTxt;
+        final String idsayur = GlobalVar.strChoNid;
 
         class findData extends AsyncTask<Void,Void,String>{
             @Override
@@ -160,7 +161,7 @@ public class tabChoice extends Activity {
             @Override
             protected String doInBackground(Void... v) {
                 ReqHandler rh = new ReqHandler();
-                String s = rh.sendGetRequestParam(ServerConst.SERVER_URL + ServerConst.URL_PROVIDE_COMO_FIND,sayur);
+                String s = rh.sendGetRequestParam(ServerConst.SERVER_URL + ServerConst.URL_PROVIDE_COMO_FIND,idsayur);
                 return s;
             }
         }

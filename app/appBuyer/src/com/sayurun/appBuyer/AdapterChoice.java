@@ -38,6 +38,7 @@ public class AdapterChoice extends BaseAdapter{
         TextView txtSeller;
         TextView txtStok;
         TextView txtArea;
+        TextView txtIDSeller;
         TextView txtDataHarga;
         TextView txtDataStok;
     }
@@ -55,6 +56,7 @@ public class AdapterChoice extends BaseAdapter{
             cell.txtSeller = (TextView) convertView.findViewById(R.id.txtSeller);
             cell.txtStok  = (TextView) convertView.findViewById(R.id.txtStok);
             cell.txtArea = (TextView) convertView.findViewById(R.id.txtArea);
+            cell.txtIDSeller = (TextView) convertView.findViewById(R.id.txtIDSeller);
             cell.txtDataHarga  = (TextView) convertView.findViewById(R.id.txtDataHarga);
             cell.txtDataStok = (TextView) convertView.findViewById(R.id.txtDataStok);
             convertView.setTag(cell);
@@ -63,15 +65,15 @@ public class AdapterChoice extends BaseAdapter{
             cell = (ViewCell) convertView.getTag();
         }
 
+        cell.txtHarga.setText("Rp. "+strHarga.get(position));
         cell.txtSatuan.setText("/"+ strSatuan.get(position));
-        cell.txtStok.setText(strStok.get(position) + " " + strSatuan.get(position));
-        cell.txtSeller.setText(strSeller.get(position));
-        cell.txtArea.setText(strArea.get(position));
+        cell.txtStok.setText("Stok Tersedia: "+strStok.get(position) + " " + strSatuan.get(position));
+        cell.txtSeller.setText("Penyedia: "+strSeller.get(position));
+        cell.txtArea.setText("Area Penjualan: "+strArea.get(position));
+
+        cell.txtIDSeller.setText(strSeller.get(position));
         cell.txtDataStok.setText(strStok.get(position));
         cell.txtDataHarga.setText(strHarga.get(position));
-
-        String rupiah = String.format("%.d",Integer.valueOf(strHarga.get(position)));
-        cell.txtHarga.setText("Rp. "+rupiah);
 
         return convertView;
     }

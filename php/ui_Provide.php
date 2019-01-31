@@ -86,7 +86,7 @@
 				<th>ID</th>
 				<th>Penjual</th>
 				<th>Tanggal</th>
-				<th>Sayur</th>
+				<th>ID_Sayur</th>
 				<th>Stok</th>
 				<th>Harga</th>
 				<th>Satuan</th>
