@@ -13,7 +13,7 @@
 		    	<input type="text" name="seller" id="Seller" required>
 			</p>
 			<p>
-		    	<label for="IDSayur">Sayur:</label>
+		    	<label for="IDSayur">ID Sayur:</label>
 		    	<input type="text" name="idsayur" id="IDSayur" required>
 			</p>
 			<p>
@@ -26,8 +26,8 @@
 			</p>
 			<p>
 		    	<label for="Satuan">Satuan:  </label>
-		    	<select id="Satuan" name="satuan">
-					<option disabled selected value>--pilih satuan--</option>
+		    	<select id="Satuan" name="satuan" required>
+					<option disabled selected value="">--pilih satuan--</option>
 					<option value="kg">kg</option>
 					<option value="ons">ons</option>
 					<option value="ikat">ikat</option>
