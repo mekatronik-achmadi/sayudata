@@ -62,8 +62,8 @@ public class AdapterComo extends BaseAdapter{
                 URL url = new URL(imgurl);
                 HttpURLConnection.setFollowRedirects(false);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setReadTimeout(5000);
-                conn.setConnectTimeout(5000);
+                conn.setReadTimeout(10000);
+                conn.setConnectTimeout(10000);
                 conn.setRequestMethod("GET");
                 conn.setDoInput(true);
                 conn.setDoOutput(true);

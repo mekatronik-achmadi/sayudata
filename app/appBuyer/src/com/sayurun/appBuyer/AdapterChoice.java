@@ -80,7 +80,7 @@ public class AdapterChoice extends BaseAdapter{
 
     @Override
     public int getCount(){
-        return this.strHarga.size();
+        return strSeller.size();
     }
 
     @Override

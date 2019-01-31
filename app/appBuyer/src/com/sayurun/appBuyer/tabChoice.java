@@ -1,27 +1,21 @@
 package com.sayurun.appBuyer;
 
 import android.app.Activity;
-import android.content.Context;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.util.ArrayList;
 
 public class tabChoice extends Activity {
-
-    private tabChoice self;
 
     Handler hdlComo;
     Runnable runComo;
@@ -32,7 +26,6 @@ public class tabChoice extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        self = this;
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gui_choice);
 
@@ -40,17 +33,33 @@ public class tabChoice extends Activity {
         txtSayur = (TextView) findViewById(R.id.txtSayur);
         lstProvide = (ListView) findViewById(R.id.lstProvide);
 
+        txtSayur.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                imgView.setImageDrawable(GlobalVar.imgCho);
+                findData();
+            }
+        });
+
         hdlComo = new Handler();
         runComo = new Runnable() {
             @Override
             public void run() {
                 if(GlobalVar.runCho==true){
                     GlobalVar.runCho=false;
-                    imgView.setImageDrawable(GlobalVar.imgCho);
-//                    txtSayur.setText(GlobalVar.strChoTxt);
-                    findData();
+                    txtSayur.setText(GlobalVar.strChoTxt);
                 }
-                hdlComo.postDelayed(this,100);
+                hdlComo.postDelayed(this,10);
             }
         };
         hdlComo.post(runComo);
@@ -94,7 +103,6 @@ public class tabChoice extends Activity {
             e.printStackTrace();
         }
 
-        txtSayur.setText(str_input);
         lstProvide.setAdapter(new AdapterChoice(getBaseContext(),strHarga,strSatuan,strSeller,strStok,strArea));
     }
 

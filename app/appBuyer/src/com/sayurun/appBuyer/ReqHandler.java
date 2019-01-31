@@ -7,9 +7,6 @@ import java.net.URLEncoder;
 import java.util.HashMap;
 import java.util.Map;
 
-/**
- * Created by farm on 1/25/19.
- */
 public class ReqHandler {
 
     public String sendPostReq(String reqURL, HashMap<String,String> PostDataParam){
@@ -21,8 +18,8 @@ public class ReqHandler {
             HttpURLConnection.setFollowRedirects(false);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
-            conn.setReadTimeout(5000);
-            conn.setConnectTimeout(5000);
+            conn.setReadTimeout(10000);
+            conn.setConnectTimeout(10000);
             conn.setRequestMethod("POST");
             conn.setDoInput(true);
             conn.setDoOutput(true);
@@ -59,8 +56,8 @@ public class ReqHandler {
             HttpURLConnection.setFollowRedirects(false);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
 
-            con.setReadTimeout(5000);
-            con.setConnectTimeout(5000);
+            con.setReadTimeout(10000);
+            con.setConnectTimeout(10000);
             con.setRequestMethod("GET");
             con.setDoInput(true);
             con.setDoOutput(true);
@@ -83,8 +80,8 @@ public class ReqHandler {
             URL url = new URL(requestURL+id);
             HttpURLConnection.setFollowRedirects(false);
             HttpURLConnection con = (HttpURLConnection) url.openConnection();
-            con.setReadTimeout(5000);
-            con.setConnectTimeout(5000);
+            con.setReadTimeout(10000);
+            con.setConnectTimeout(10000);
             con.setRequestMethod("GET");
             con.setDoInput(true);
             con.setDoOutput(true);
