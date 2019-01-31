@@ -5,6 +5,6 @@ public class GlobalVar {
     public static String idTokenApp;
 
     public static boolean runCho;
-    public static String strChoNid;
+    public static String strChoImg;
     public static String strChoTxt;
 }

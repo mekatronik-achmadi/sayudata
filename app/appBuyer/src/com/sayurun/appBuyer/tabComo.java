@@ -58,8 +58,8 @@ public class tabComo extends Activity{
         lstView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                GlobalVar.strChoNid = ((TextView) view.findViewById(R.id.nid)).getText().toString().trim();
                 GlobalVar.strChoTxt = ((TextView) view.findViewById(R.id.txt)).getText().toString().trim();
+                GlobalVar.strChoImg = ((TextView) view.findViewById(R.id.imgurl)).getText().toString().trim();
                 GlobalVar.runCho = true;
                 Main.self.getTabHost().setCurrentTab(1);
             }
@@ -94,7 +94,7 @@ public class tabComo extends Activity{
             e.printStackTrace();
         }
 
-        lstView.setAdapter(new CustomAdapter(getBaseContext(), nidList, txtList, imgList));
+        lstView.setAdapter(new AdapterComo(getBaseContext(), nidList, txtList, imgList));
     }
 
     private void listData(){

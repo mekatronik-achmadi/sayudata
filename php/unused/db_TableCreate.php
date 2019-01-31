@@ -42,8 +42,8 @@
 	 `seller` TEXT NOT NULL,
 	 `tanggal` DATE NOT NULL,
 	 `sayur` TEXT NOT NULL,
-	 `stok` INT(8) NOT NULL,
-	 `harga` INT(16) NOT NULL,
+	 `stok` TEXT NOT NULL,
+	 `harga` TEXT NOT NULL,
 	 `satuan` TEXT NOT NULL,
 	 `area` TEXT NOT NULL,
 	  PRIMARY KEY (`id`)

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:weightSum="100">
+
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="70"
+            android:weightSum="100">
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="70"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="@string/txtView"
+                android:id="@+id/txtHarga"
+                android:background="@android:color/background_light"
+                android:textColor="@android:color/background_dark"/>
+
+        <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="70"
+                android:text="@string/txtView"
+                android:id="@+id/txtSatuan"
+                android:background="@android:color/background_light"
+                android:textColor="@android:color/background_dark"/>
+    </LinearLayout>
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:text="@string/txtView"
+            android:id="@+id/txtSeller"
+            android:background="@android:color/background_light"
+            android:textColor="@android:color/background_dark"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:text="@string/txtView"
+            android:id="@+id/txtStok"
+            android:background="@android:color/background_light"
+            android:textColor="@android:color/background_dark"/>
+
+    <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:text="@string/txtView"
+            android:id="@+id/txtArea"
+            android:background="@android:color/background_light"
+            android:textColor="@android:color/background_dark"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtView"
+            android:id="@+id/txtDataHarga"
+            android:visibility="gone"/>
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/txtView"
+            android:id="@+id/txtDataStok"
+            android:visibility="gone"/>
+</LinearLayout>

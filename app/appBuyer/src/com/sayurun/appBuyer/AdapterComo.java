@@ -16,16 +16,13 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.ArrayList;
 
-/**
- * Created by farm on 1/28/19.
- */
-public class CustomAdapter extends BaseAdapter{
+public class AdapterComo extends BaseAdapter{
     private Context mContext;
     private ArrayList<String> nidString;
     private ArrayList<String> itemString;
     private ArrayList<String> imgStrURL;
 
-    public CustomAdapter(Context context, ArrayList<String> nidString, ArrayList<String> itemString, ArrayList<String> imgStrURL){
+    public AdapterComo(Context context, ArrayList<String> nidString, ArrayList<String> itemString, ArrayList<String> imgStrURL){
         this.mContext = context;
         this.nidString = nidString;
         this.itemString = itemString;
@@ -35,6 +32,7 @@ public class CustomAdapter extends BaseAdapter{
     private class ViewCell{
         TextView nidVw;
         TextView txtVw;
+        TextView imgurlVw;
         ImageView imgVw;
     }
 
@@ -95,6 +93,7 @@ public class CustomAdapter extends BaseAdapter{
             cell = new ViewCell();
             cell.nidVw = (TextView) convertView.findViewById(R.id.nid);
             cell.txtVw = (TextView) convertView.findViewById(R.id.txt);
+            cell.imgurlVw = (TextView) convertView.findViewById(R.id.imgurl);
             cell.imgVw = (ImageView) convertView.findViewById(R.id.img);
             convertView.setTag(cell);
         }else{
@@ -103,6 +102,7 @@ public class CustomAdapter extends BaseAdapter{
 
         cell.nidVw.setText(nidString.get(position));
         cell.txtVw.setText(itemString.get(position));
+        cell.imgurlVw.setText(imgStrURL.get(position));
         new GetImgURL(cell.imgVw).execute(imgStrURL.get(position));
         cell.imgVw.getLayoutParams().height = 150;
 
