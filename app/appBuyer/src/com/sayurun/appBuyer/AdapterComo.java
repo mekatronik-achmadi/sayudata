@@ -32,6 +32,7 @@ public class AdapterComo extends BaseAdapter{
     private class ViewCell{
         TextView nidVw;
         TextView txtVw;
+        TextView imgurlVw;
         ImageView imgVw;
     }
 
@@ -92,6 +93,7 @@ public class AdapterComo extends BaseAdapter{
             cell = new ViewCell();
             cell.nidVw = (TextView) convertView.findViewById(R.id.nid);
             cell.txtVw = (TextView) convertView.findViewById(R.id.txt);
+            cell.imgurlVw = (TextView) convertView.findViewById(R.id.imgurl);
             cell.imgVw = (ImageView) convertView.findViewById(R.id.img);
             convertView.setTag(cell);
         }else{
@@ -100,6 +102,7 @@ public class AdapterComo extends BaseAdapter{
 
         cell.nidVw.setText(nidString.get(position));
         cell.txtVw.setText(itemString.get(position));
+        cell.imgurlVw.setText(imgStrURL.get(position));
         new GetImgURL(cell.imgVw).execute(imgStrURL.get(position));
         cell.imgVw.getLayoutParams().height = 150;
 

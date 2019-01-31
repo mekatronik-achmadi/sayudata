@@ -8,6 +8,7 @@ public class GlobalVar {
 
     public static boolean runCho;
     public static Drawable imgCho;
+    public static String strChoImg;
     public static String strChoTxt;
     public static String strChoNid;
 }

@@ -62,6 +62,7 @@ public class tabComo extends Activity{
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 GlobalVar.strChoNid = ((TextView) view.findViewById(R.id.nid)).getText().toString().trim();
                 GlobalVar.strChoTxt = ((TextView) view.findViewById(R.id.txt)).getText().toString().trim();
+                GlobalVar.strChoImg = ((TextView) view.findViewById(R.id.imgurl)).getText().toString().trim();
                 GlobalVar.imgCho = ((ImageView) view.findViewById(R.id.img)).getDrawable();
                 GlobalVar.runCho = true;
                 Main.self.getTabHost().setCurrentTab(1);
