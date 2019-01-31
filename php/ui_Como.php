@@ -53,8 +53,7 @@
 			<input type="reset"  value="Bersihkan">
 		</form>
 		<h2> Upload Gambar Komoditi </h2>
-		<form action="upload.php" method="post" enctype="multipart/form-data">
-			Select image to upload:
+		<form action="imgup_Como.php" method="post" enctype="multipart/form-data">
 			<input type="file" name="fileToUpload" id="fileToUpload">
 			<input type="submit" value="Upload Image" name="submit">
 		</form>
