@@ -19,7 +19,6 @@ public class Main extends TabActivity {
 
     final String ALLOWED_CHARACTERS ="0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
     TextView txtToken;
-    TextView txtNet;
 
     Handler hdlChkInet;
     Runnable runChkInet;
@@ -32,7 +31,6 @@ public class Main extends TabActivity {
         setContentView(R.layout.main);
 
         txtToken = (TextView) findViewById(R.id.txtToken);
-        txtNet = (TextView) findViewById(R.id.txtNet);
         SharedPreferences idToken = getApplicationContext().getSharedPreferences(GlobalVar.fPrefName,0);
         File fpref = new File("/data/data/" + getPackageName() +  "/shared_prefs/" + GlobalVar.fPrefName + ".xml");
         if(fpref.exists()){
@@ -79,11 +77,9 @@ public class Main extends TabActivity {
             public void run() {
                 if(checkNetwork()){
                     GlobalVar.netAvail = true;
-                    txtNet.setText("Jaringan Tersedia");
                 }
                 else{
                     GlobalVar.netAvail = false;
-                    txtNet.setText("Jaringan Tidak Ada");
                 }
                 hdlChkInet.postDelayed(this,1000);
             }

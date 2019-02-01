@@ -47,8 +47,10 @@ public class tabChoice extends Activity {
 
             @Override
             public void afterTextChanged(Editable editable) {
-                imgView.setImageDrawable(GlobalVar.imgCho);
-                findData();
+                if(GlobalVar.netAvail==true) {
+                    imgView.setImageDrawable(GlobalVar.imgCho);
+                    findData();
+                }
             }
         });
 
@@ -60,7 +62,14 @@ public class tabChoice extends Activity {
                     GlobalVar.runCho=false;
                     txtSayur.setText(GlobalVar.strChoTxt);
                 }
-                hdlComo.postDelayed(this,10);
+
+                if(GlobalVar.netAvail==false){
+                    txtLoading.setText("Jaringan Tidak Tersedia");
+                    txtSayur.setText("");
+                    imgView.setImageDrawable(getResources().getDrawable(R.drawable.ic_launcher));
+                    lstProvide.setAdapter(null);
+                }
+                hdlComo.postDelayed(this,100);
             }
         };
         hdlComo.post(runComo);

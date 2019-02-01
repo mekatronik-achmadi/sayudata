@@ -18,11 +18,12 @@ import java.util.ArrayList;
 
 public class tabComo extends Activity{
 
+    boolean sttNeedUpd=false;
+
     EditText txtSearch;
     TextView txtLoading;
     GridView lstView;
 
-    TextView txtReload;
     Handler hdlComoListUpd;
     Runnable runComoListUpd;
 
@@ -34,19 +35,6 @@ public class tabComo extends Activity{
         txtSearch = (EditText) findViewById(R.id.txtSearch);
         txtLoading = (TextView) findViewById(R.id.txtLoading);
         lstView = (GridView) findViewById(R.id.lstView);
-
-        txtReload = (TextView) findViewById(R.id.txtReload);
-        txtReload.setText("");
-        txtReload.setClickable(false);
-
-        txtReload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                txtReload.setText("");
-                txtReload.setClickable(false);
-                listData();
-            }
-        });
 
         txtSearch.setOnKeyListener(new View.OnKeyListener() {
             @Override
@@ -92,11 +80,14 @@ public class tabComo extends Activity{
         runComoListUpd = new Runnable() {
             @Override
             public void run() {
-                if((txtSearch.getText().toString().isEmpty()) && (GlobalVar.netAvail==false)){
-                    txtLoading.setText("");
-                    txtReload.setText("Klik Disini untuk Muat-Ulang");
-                    txtReload.setClickable(true);
+                if((txtSearch.getText().toString().isEmpty()) && (GlobalVar.netAvail==false) && (sttNeedUpd==false)){
+                    txtLoading.setText("Jaringan Tidak Tersedia");
                     lstView.setAdapter(null);
+                    sttNeedUpd = true;
+                }
+                else if((txtSearch.getText().toString().isEmpty()) && (GlobalVar.netAvail==true) && (sttNeedUpd==true)){
+                    listData();
+                    sttNeedUpd=false;
                 }
                 hdlComoListUpd.postDelayed(this,500);
             }

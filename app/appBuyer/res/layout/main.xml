@@ -27,40 +27,15 @@
                 android:background="#ffffff">
         </FrameLayout>
 
-        <LinearLayout
-                android:orientation="horizontal"
+        <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:background="#ffad3c"
                 android:layout_weight="3"
-                android:weightSum="100">
-
-            <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="40"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/txtView"
-                    android:background="#ffad3c"
-                    android:textColor="@android:color/background_dark"
-                    android:id="@+id/txtToken"/>
-
-            <Space
-                    android:layout_width="0dp"
-                    android:layout_weight="10"
-                    android:layout_height="match_parent"
-            />
-            <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="50"
-                    android:textAppearance="?android:attr/textAppearanceSmall"
-                    android:text="@string/txtView"
-                    android:background="#ffad3c"
-                    android:textColor="@android:color/background_dark"
-                    android:id="@+id/txtNet"
-                    android:gravity="center_horizontal"/>
-        </LinearLayout>
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="@string/txtView"
+                android:background="#ffad3c"
+                android:textColor="@android:color/background_dark"
+                android:id="@+id/txtToken"/>
 
     </LinearLayout>
 
