@@ -3,6 +3,7 @@ package com.sayurun.appBuyer;
 import android.app.Activity;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.KeyEvent;
@@ -12,6 +13,7 @@ import android.widget.*;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class tabComo extends Activity{
@@ -19,6 +21,10 @@ public class tabComo extends Activity{
     EditText txtSearch;
     TextView txtLoading;
     GridView lstView;
+
+    TextView txtReload;
+    Handler hdlComoListUpd;
+    Runnable runComoListUpd;
 
     @Override
     public void onCreate(Bundle savedInstanceState){
@@ -28,6 +34,19 @@ public class tabComo extends Activity{
         txtSearch = (EditText) findViewById(R.id.txtSearch);
         txtLoading = (TextView) findViewById(R.id.txtLoading);
         lstView = (GridView) findViewById(R.id.lstView);
+
+        txtReload = (TextView) findViewById(R.id.txtReload);
+        txtReload.setText("");
+        txtReload.setClickable(false);
+
+        txtReload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                txtReload.setText("");
+                txtReload.setClickable(false);
+                listData();
+            }
+        });
 
         txtSearch.setOnKeyListener(new View.OnKeyListener() {
             @Override
@@ -68,6 +87,21 @@ public class tabComo extends Activity{
                 Main.self.getTabHost().setCurrentTab(1);
             }
         });
+
+        hdlComoListUpd = new Handler();
+        runComoListUpd = new Runnable() {
+            @Override
+            public void run() {
+                if((txtSearch.getText().toString().isEmpty()) && (GlobalVar.netAvail==false)){
+                    txtLoading.setText("");
+                    txtReload.setText("Klik Disini untuk Muat-Ulang");
+                    txtReload.setClickable(true);
+                    lstView.setAdapter(null);
+                }
+                hdlComoListUpd.postDelayed(this,500);
+            }
+        };
+        hdlComoListUpd.post(runComoListUpd);
 
         listData();
     }

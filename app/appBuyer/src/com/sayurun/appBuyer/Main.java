@@ -1,9 +1,13 @@
 package com.sayurun.appBuyer;
 
 import android.app.TabActivity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.Window;
 import android.widget.TabHost;
 import android.widget.TextView;
@@ -15,6 +19,10 @@ public class Main extends TabActivity {
 
     final String ALLOWED_CHARACTERS ="0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
     TextView txtToken;
+    TextView txtNet;
+
+    Handler hdlChkInet;
+    Runnable runChkInet;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -24,6 +32,7 @@ public class Main extends TabActivity {
         setContentView(R.layout.main);
 
         txtToken = (TextView) findViewById(R.id.txtToken);
+        txtNet = (TextView) findViewById(R.id.txtNet);
         SharedPreferences idToken = getApplicationContext().getSharedPreferences(GlobalVar.fPrefName,0);
         File fpref = new File("/data/data/" + getPackageName() +  "/shared_prefs/" + GlobalVar.fPrefName + ".xml");
         if(fpref.exists()){
@@ -63,6 +72,23 @@ public class Main extends TabActivity {
         tabHost.addTab(tabChoice);
         tabHost.addTab(tabOrder);
         tabHost.addTab(tabGoing);
+
+        hdlChkInet = new Handler();
+        runChkInet = new Runnable() {
+            @Override
+            public void run() {
+                if(checkNetwork()){
+                    GlobalVar.netAvail = true;
+                    txtNet.setText("Jaringan Tersedia");
+                }
+                else{
+                    GlobalVar.netAvail = false;
+                    txtNet.setText("Jaringan Tidak Ada");
+                }
+                hdlChkInet.postDelayed(this,1000);
+            }
+        };
+        hdlChkInet.post(runChkInet);
     }
 
     private String getRandomString(final int sizeOfRandomString)
@@ -73,5 +99,12 @@ public class Main extends TabActivity {
             sb.append(ALLOWED_CHARACTERS.charAt(random.nextInt(ALLOWED_CHARACTERS.length())));
         }
         return sb.toString();
+    }
+
+
+    private boolean checkNetwork(){
+        ConnectivityManager cm = (ConnectivityManager) self.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo an = cm.getActiveNetworkInfo();
+        return ((an != null) && (an.isConnected() && (an.isAvailable())));
     }
 }

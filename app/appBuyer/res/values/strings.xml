@@ -3,9 +3,8 @@
     <string name="app_name">Sayu-Run</string>
 
     <string name="btnSearch">Cari Sayur</string>
+    <string name="btnReload"></string>
     <string name="imgView"></string>
     <string name="txtView"></string>
-
-    <string name="txtToken">ID Token:</string>
 
 </resources>
