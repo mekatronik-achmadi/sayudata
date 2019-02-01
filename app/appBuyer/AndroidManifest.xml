@@ -18,6 +18,7 @@
         <activity android:name="tabChoice"></activity>
         <activity android:name="tabOrder"></activity>
         <activity android:name="tabGoing"></activity>
+        <activity android:name="tabBuyer"></activity>
     </application>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />

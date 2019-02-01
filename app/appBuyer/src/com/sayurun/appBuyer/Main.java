@@ -53,6 +53,7 @@ public class Main extends TabActivity {
         TabHost.TabSpec tabChoice = tabHost.newTabSpec("Choice");
         TabHost.TabSpec tabOrder = tabHost.newTabSpec("Order");
         TabHost.TabSpec tabGoing = tabHost.newTabSpec("Going");
+        TabHost.TabSpec tabBuyer = tabHost.newTabSpec("Buyer");
 
         tabComo.setIndicator("Sayur");
         tabComo.setContent(new Intent(this,tabComo.class));
@@ -66,10 +67,14 @@ public class Main extends TabActivity {
         tabGoing.setIndicator("Daftar");
         tabGoing.setContent(new Intent(this,tabGoing.class));
 
+        tabBuyer.setIndicator("Anda");
+        tabBuyer.setContent(new Intent(this,tabBuyer.class));
+
         tabHost.addTab(tabComo);
         tabHost.addTab(tabChoice);
         tabHost.addTab(tabOrder);
         tabHost.addTab(tabGoing);
+        tabHost.addTab(tabBuyer);
 
         hdlChkInet = new Handler();
         runChkInet = new Runnable() {
