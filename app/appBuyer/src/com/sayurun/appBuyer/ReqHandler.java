@@ -31,8 +31,8 @@ public class ReqHandler {
             writer.flush();
             writer.close();
             os.close();
-            int responseCode = conn.getResponseCode();
 
+            int responseCode = conn.getResponseCode();
             if (responseCode == HttpURLConnection.HTTP_OK) {
 
                 BufferedReader br = new BufferedReader(new InputStreamReader(conn.getInputStream()));
@@ -62,11 +62,14 @@ public class ReqHandler {
             con.setDoInput(true);
             con.setDoOutput(true);
 
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+            int responseCode = con.getResponseCode();
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
-            String s;
-            while((s=bufferedReader.readLine())!=null){
-                sb.append(s+"\n");
+                String s;
+                while ((s = bufferedReader.readLine()) != null) {
+                    sb.append(s + "\n");
+                }
             }
         }catch(Exception e){
             e.printStackTrace();
@@ -85,11 +88,15 @@ public class ReqHandler {
             con.setRequestMethod("GET");
             con.setDoInput(true);
             con.setDoOutput(true);
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
 
-            String s;
-            while((s=bufferedReader.readLine())!=null){
-                sb.append(s+"\n");
+            int responseCode = con.getResponseCode();
+            if (responseCode == HttpURLConnection.HTTP_OK) {
+                BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(con.getInputStream()));
+
+                String s;
+                while ((s = bufferedReader.readLine()) != null) {
+                    sb.append(s + "\n");
+                }
             }
         }catch(Exception e){
         }
