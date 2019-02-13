@@ -9,8 +9,8 @@
 		<h2> Tambah Komoditi </h2>
 		<form action="add_Como.php" method="post">
 			<p>
-				Petunjuk:
-				Jenis Sayur: Nama Sayuran dalam bahasa Indonesia yang sekiranya dikenal luas.
+				Petunjuk: <br>
+				Jenis Sayur: Nama Sayuran dalam bahasa Indonesia yang sekiranya dikenal luas. <br>
 				Contoh: Bayam Merah
 			</p>
 			<p>
