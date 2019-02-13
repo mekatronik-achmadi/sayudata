@@ -13,6 +13,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class tabChoice extends Activity {
 
@@ -139,8 +140,10 @@ public class tabChoice extends Activity {
 
             @Override
             protected String doInBackground(Void... v) {
+                HashMap<String,String> params = new HashMap<String, String>();
+                params.put(ServerConst.KEY_PROVIDE_IDSAYUR,idsayur);
                 ReqHandler rh = new ReqHandler();
-                String s = rh.sendGetRequestParam(ServerConst.SERVER_URL + ServerConst.URL_PROVIDE_COMO_FIND,idsayur);
+                String s = rh.sendPostReq(ServerConst.SERVER_URL + ServerConst.URL_PROVIDE_COMO_FIND,params);
                 return s;
             }
         }

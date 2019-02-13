@@ -49,6 +49,23 @@ public class ReqHandler {
 
     }
 
+    private String getPostDataString(HashMap<String, String> params) throws UnsupportedEncodingException {
+        StringBuilder result = new StringBuilder();
+        boolean first = true;
+        for (Map.Entry<String, String> entry : params.entrySet()) {
+            if (first)
+                first = false;
+            else
+                result.append("&");
+
+            result.append(URLEncoder.encode(entry.getKey(), "UTF-8"));
+            result.append("=");
+            result.append(URLEncoder.encode(entry.getValue(), "UTF-8"));
+        }
+
+        return result.toString();
+    }
+
     public String sendGetReq(String requestURL){
         StringBuilder sb =new StringBuilder();
         try {
@@ -77,7 +94,7 @@ public class ReqHandler {
         return sb.toString();
     }
 
-    public String sendGetRequestParam(String requestURL, String id){
+    public String sendGetReqParam(String requestURL, String id){
         StringBuilder sb =new StringBuilder();
         try {
             URL url = new URL(requestURL+id);
@@ -101,22 +118,5 @@ public class ReqHandler {
         }catch(Exception e){
         }
         return sb.toString();
-    }
-
-    private String getPostDataString(HashMap<String, String> params) throws UnsupportedEncodingException {
-        StringBuilder result = new StringBuilder();
-        boolean first = true;
-        for (Map.Entry<String, String> entry : params.entrySet()) {
-            if (first)
-                first = false;
-            else
-                result.append("&");
-
-            result.append(URLEncoder.encode(entry.getKey(), "UTF-8"));
-            result.append("=");
-            result.append(URLEncoder.encode(entry.getValue(), "UTF-8"));
-        }
-
-        return result.toString();
     }
 }

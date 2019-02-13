@@ -12,13 +12,15 @@ public class ServerConst {
     public static final String URL_COMO_LIST="list_Como.php";
     public static final String URL_COMO_FIND="find_Como.php";
 
-    public static final String URL_PROVIDE_COMO_FIND = "find_ProvideComo.php?idsayur=";
+    public static final String URL_PROVIDE_COMO_FIND = "find_ProvideComo.php";
 
     ////////////////////////////////////////////////////////////////////////////////////
 
     public static final String KEY_COMO_ID = "id";
     public static final String KEY_COMO_SAYUR = "sayur";
     public static final String KEY_COMO_IMG = "image";
+
+    public static final String KEY_PROVIDE_IDSAYUR = "idsayur";
 
     ////////////////////////////////////////////////////////////////////////////////////
 

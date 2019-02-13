@@ -15,6 +15,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class tabComo extends Activity{
 
@@ -175,8 +176,10 @@ public class tabComo extends Activity{
 
             @Override
             protected String doInBackground(Void... v) {
+                HashMap<String,String> params = new HashMap<String, String>();
+                params.put(ServerConst.KEY_COMO_SAYUR,sayur);
                 ReqHandler rh = new ReqHandler();
-                String s = rh.sendGetRequestParam(ServerConst.SERVER_URL + ServerConst.URL_COMO_FIND,sayur);
+                String s = rh.sendPostReq(ServerConst.SERVER_URL + ServerConst.URL_COMO_FIND,params);
                 return s;
             }
         }
