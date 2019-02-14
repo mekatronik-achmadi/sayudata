@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8">
+		<meta charset="UTF-8" name="viewport">
 		<title>Manage Sayuran Form</title>
 		<style>
 			* {
