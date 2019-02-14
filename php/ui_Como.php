@@ -80,6 +80,7 @@
 				</script>
 				<p>
 					<input type="file" name="fileToUpload" id="fileToUpload" required>
+					<img id="blah" src="#" alt="your image" />
 				</p>
 				<input type="submit" value="Upload Image" name="submit">
 				<input type="reset"  value="Bersihkan">
