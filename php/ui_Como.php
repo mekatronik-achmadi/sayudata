@@ -33,7 +33,7 @@
 				</p>
 				<p>
 					<label for="JenisSayur">Jenis Sayur:</label>
-					<input type="text" name="sayur" id="JenisSayur" required>
+					<input type="text" name="sayur" id="JenisSayur" onkeyup="setImgName();" required>
 				</p>
 				<p>
 					Gambar Sayur &rarr; Nama File gambar sesuai nama sayur. <br>
@@ -49,6 +49,13 @@
 	
 				<input type="submit" value="Tambahkan">
 				<input type="reset"  value="Bersihkan">
+				
+				<script>
+				function setImgName() {
+				  var txtsayur = document.getElementById("JenisSayur").value;
+				  document.getElementById("GambarSayur").innerHTML = txtsayur;
+				}
+				</script>
 			</form>
 		  </div>
 		  
