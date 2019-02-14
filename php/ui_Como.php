@@ -44,7 +44,7 @@
 				</p>
 				<p>
 					<label for="GambarSayur">Gambar Sayur:</label>
-					<input type="text" name="image" id="GambarSayur" required>
+					<input type="text" name="image" id="GambarSayur" readonly required>
 				</p>
 	
 				<input type="submit" value="Tambahkan">
@@ -53,7 +53,8 @@
 				<script>
 				function setImgName() {
 				  var txtsayur = document.getElementById("JenisSayur").value;
-				  document.getElementById("GambarSayur").innerHTML = txtsayur;
+				  var strsayur = txtsayur.toLowerCase();
+				  document.getElementById("GambarSayur").value = strsayur.replace(/\s+/g, '');
 				}
 				</script>
 			</form>
