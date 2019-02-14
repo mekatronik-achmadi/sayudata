@@ -1,49 +1,38 @@
 <!DOCTYPE html>
-	
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<style>
-			body {
-				font-family: Arial;
-				color: black;
+			* {
+			  box-sizing: border-box;
 			}
-			
-			.split {
-				height: 100%;
-				width: 50%;
-				position: fixed;
-				z-index: 1;
-				top: 0;
-				overflow-x: hidden;
-				padding-top: 20px;
+
+			.column {
+			  float: left;
+			  width: 50%;
+			  padding: 10px;
+			  height: 300px; 
 			}
-			  
-			.left {
-				left: 0;
-			}
-			  
-			.right {
-				right: 0;
+
+			.row:after {
+			  content: "";
+			  display: table;
+			  clear: both;
 			}
 		</style>
-		<title>Manage Sayuran Form</title>
 	</head>
-	
 	<body>
-		<div class="split left">
-			<div class="centered">
-			  <h2>Jane Flex</h2>
-			  <p>Some text.</p>
-			</div>
-		</div>
-
-		<div class="split right">
-		  <div class="centered">
-			<h2>John Doe</h2>
-			<p>Some text here too.</p>
+		<h2>Two Equal Columns</h2>
+	
+		<div class="row">
+		  <div class="column" style="background-color:#aaa;">
+			<h2>Column 1</h2>
+			<p>Some text..</p>
+		  </div>
+		  <div class="column" style="background-color:#bbb;">
+			<h2>Column 2</h2>
+			<p>Some text..</p>
 		  </div>
 		</div>
-		
 	</body>
 </html>
