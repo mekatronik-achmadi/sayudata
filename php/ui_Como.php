@@ -63,24 +63,14 @@
 		  <div class="column">
 			<h2> Upload Gambar Komoditi </h2>
 			<script>
-				function readURL(input) {
-					if (input.files && input.files[0]) {
-					  var reader = new FileReader();
-				  
-					  reader.onload = function(e) {
-						$('#imgview').attr('src', e.target.result);
-					  };
-					  reader.readAsDataURL(input.files[0]);
-					}
+				function img_pathUrl(input){
+				   $('#imgview')[0].src = (window.URL ? URL : webkitURL).createObjectURL(input.files[0]);
 				}
-				$("#fileToUpload").change(function() {
-					readURL(this);
-				});
 			</script>
-			<form action="imgup_Como.php" method="post" enctype="multipart/form-data" runat="server">
+			<form action="imgup_Como.php" method="post" enctype="multipart/form-data">
 				<p>
-					<input type="file" name="fileToUpload" id="fileToUpload" required>
-					<img id="imgview" src="#"/>
+					<input type="file" name="fileToUpload" id="fileToUpload" onChange="img_pathUrl(this);" required>
+					<img id="imgview" src=""/>
 				</p>
 				<input type="submit" value="Upload Image" name="submit">
 				<input type="reset"  value="Bersihkan">
