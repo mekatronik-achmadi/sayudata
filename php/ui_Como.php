@@ -63,6 +63,21 @@
 		  <div class="column">
 			<h2> Upload Gambar Komoditi </h2>
 			<form action="imgup_Como.php" method="post" enctype="multipart/form-data">
+				<script>
+					function readURL(input) {
+						if (input.files && input.files[0]) {
+						  var reader = new FileReader();
+					  
+						  reader.onload = function(e) {
+							$('#blah').attr('src', e.target.result);
+						  };
+						  reader.readAsDataURL(input.files[0]);
+						}
+					}
+					$("#fileToUpload").change(function() {
+						readURL(this);
+					});
+				</script>
 				<p>
 					<input type="file" name="fileToUpload" id="fileToUpload" required>
 				</p>
