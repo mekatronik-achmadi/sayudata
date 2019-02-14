@@ -62,15 +62,10 @@
 		  
 		  <div class="column">
 			<h2> Upload Gambar Komoditi </h2>
-			<script>
-				function img_pathUrl(input){
-				   $('#imgview')[0].src = (window.URL ? URL : webkitURL).createObjectURL(input.files[0]);
-				}
-			</script>
-			<form action="imgup_Como.php" method="post" enctype="multipart/form-data">
+				<form action="imgup_Como.php" method="post" enctype="multipart/form-data">
 				<p>
-					<input type="file" name="fileToUpload" id="fileToUpload" onChange="img_pathUrl(this);" required>
-					<img id="imgview" src=""/>
+					<input type="file" name="fileToUpload" id="fileToUpload" onchange="document.getElementById('imgview').src = window.URL.createObjectURL(this.files[0]);" required>
+					<img id="imgview" width="100" height="100"/>
 				</p>
 				<input type="submit" value="Upload Image" name="submit">
 				<input type="reset"  value="Bersihkan">
