@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1">
+		<meta charset="UTF-8">
 		<title>Manage Sayuran Form</title>
 		<style>
 			* {
@@ -12,7 +12,7 @@
 			  float: left;
 			  width: 50%;
 			  padding: 10px;
-			  height: 200px; 
+			  height: 300px; 
 			}
 
 			.row:after {
