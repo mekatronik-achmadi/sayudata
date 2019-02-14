@@ -7,22 +7,12 @@
 	 `id` INT(16) NOT NULL AUTO_INCREMENT ,
 	 `sayur` VARCHAR(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
 	 `img` VARCHAR(200) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+	 `wiki` TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
 	  PRIMARY KEY (`id`)
 	  ) ENGINE = InnoDB;";
 
 	mysqli_query($con,$tbl_como);
 	
-	/////////////////////////////////////////////////
-
-	$tbl_wiki = "CREATE TABLE sayuwiki (
-	 `id` INT(16) NOT NULL AUTO_INCREMENT,
-	 `idsayur` INT(16) NOT NULL,
-	 `wiki` TEXT CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-	  PRIMARY KEY (`id`)
-	  ) ENGINE = InnoDB;";
-
-	mysqli_query($con,$tbl_wiki);
-
 	/////////////////////////////////////////////////
 
 	$tbl_seller = "CREATE TABLE penjual (
