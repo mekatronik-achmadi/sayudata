@@ -17,6 +17,10 @@
 		    	<input type="text" name="sayur" id="JenisSayur" required>
 			</p>
 			<p>
+				Gambar Sayur &rarr; Nama File gambar sesuai nama sayur (tanpa spasi dan semua huruf kecil). <br>
+				Contoh &rarr; bayammerah
+			</p>
+			<p>
 		    	<label for="GambarSayur">Gambar Sayur:</label>
 		    	<input type="text" name="image" id="GambarSayur" required>
 			</p>
